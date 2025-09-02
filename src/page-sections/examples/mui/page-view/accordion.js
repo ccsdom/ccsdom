@@ -1,0 +1,15 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState } from "react";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+// CUSTOM COMPONENT
+import { Block } from "@/components/block";
+import ComponentPageLayout from "../../ComponentPageLayout";
+const MuiAccordionPageView = () => {
+    const [expand, setExpand] = useState("panel1");
+    const handleChange = (panel) => (_, isExpanded) => {
+        setExpand(isExpanded ? panel : "");
+    };
+    return (_jsxs(ComponentPageLayout, { title: "Accordion", children: [_jsxs(Block, { title: "Basic", children: [_jsxs(Accordion, { children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "By Uko to save tons and more to time money projects are listed and outstanding." })] }), _jsxs(Accordion, { children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "By Uko to save tons and more to time money projects are listed and outstanding." })] })] }), _jsxs(Block, { title: "Controlled", children: [_jsxs(Accordion, { expanded: expand === "panel1", onChange: handleChange("panel1"), children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "By Uko to save tons and more to time money projects are listed and outstanding." })] }), _jsxs(Accordion, { expanded: expand === "panel2", onChange: handleChange("panel2"), children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "By Uko to save tons and more to time money projects are listed and outstanding." })] })] }), _jsxs(Block, { title: "Outlined Variant", children: [_jsxs(Accordion, { variant: "outlined", expanded: true, children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "The vows and named is he seven his origin myself any is decision-making. The interface of Jeni\u2019s is simple and clean, with the section includes questions that are very specific to their customer group. First thing first, you need to sort out what explicit. The advice is to see mails and phone call data, then make a rundown of the top questions that show up continually." })] }), _jsxs(Accordion, { variant: "outlined", children: [_jsx(AccordionSummary, { expandIcon: _jsx(ExpandMore, {}), children: "What admin theme does?" }), _jsx(AccordionDetails, { children: "The vows and named is he seven his origin myself any is decision-making. The interface of Jeni\u2019s is simple and clean, with the section includes questions that are very specific to their customer group. First thing first, you need to sort out what explicit. The advice is to see mails and phone call data, then make a rundown of the top questions that show up continually." })] })] })] }));
+};
+export default MuiAccordionPageView;

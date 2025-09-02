@@ -1,0 +1,28 @@
+{
+  "name": "ccs-functions",
+  "private": true,
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf lib",
+    "serve": "npm run build && firebase emulators:start --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^5.0.1",
+    "stripe": "^15.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "cross-fetch": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/node": "^20.12.7",
+    "rimraf": "^5.0.5"
+  }
+}

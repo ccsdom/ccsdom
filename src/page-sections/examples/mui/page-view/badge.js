@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Box, Grid, Badge, Stack } from "@mui/material";
+import Mail from "@mui/icons-material/Mail";
+// CUSTOM COMPONENT
+import { Block } from "@/components/block";
+import ComponentPageLayout from "../../ComponentPageLayout";
+const shapeStyles = { bgcolor: "grey.400", width: 40, height: 40 };
+const rectangle = _jsx(Box, { component: "span", sx: shapeStyles });
+const circle = (_jsx(Box, { component: "span", sx: { ...shapeStyles, borderRadius: "50%" } }));
+const MuiBadgePageView = () => {
+    return (_jsx(ComponentPageLayout, { title: "Badge", children: _jsxs(Grid, { container: true, spacing: 3, children: [_jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Basic", children: _jsxs(Stack, { direction: "row", spacing: 2, justifyContent: "center", children: [_jsx(Badge, { badgeContent: 4, color: "default", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "error", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "info", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "primary", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "secondary", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "success", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 4, color: "warning", children: _jsx(Mail, {}) })] }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Maximum Value", children: _jsxs(Stack, { direction: "row", spacing: 5, justifyContent: "center", children: [_jsx(Badge, { badgeContent: 100, max: 99, color: "primary", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 1000, max: 999, color: "primary", children: _jsx(Mail, {}) }), _jsx(Badge, { badgeContent: 10000, max: 9999, color: "primary", children: _jsx(Mail, {}) })] }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Dot Badge", children: _jsxs(Stack, { direction: "row", spacing: 5, justifyContent: "center", children: [_jsx(Badge, { color: "primary", variant: "dot", children: _jsx(Mail, {}) }), _jsx(Badge, { color: "primary", variant: "dot", children: "Essence" })] }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Badge Overlap", children: _jsxs(Stack, { direction: "row", spacing: 5, justifyContent: "center", children: [_jsx(Badge, { color: "primary", badgeContent: "", children: rectangle }), _jsx(Badge, { color: "primary", variant: "dot", children: rectangle }), _jsx(Badge, { color: "primary", overlap: "circular", badgeContent: "", children: circle }), _jsx(Badge, { color: "primary", overlap: "circular", variant: "dot", children: circle })] }) }) })] }) }));
+};
+export default MuiBadgePageView;

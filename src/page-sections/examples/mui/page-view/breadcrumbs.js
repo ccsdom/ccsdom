@@ -1,0 +1,12 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from "@/components/link";
+import { Box, Grid, Stack, Breadcrumbs } from "@mui/material";
+import { Home, KeyboardTabOutlined, ShoppingCartOutlined, } from "@mui/icons-material";
+// CUSTOM COMPONENT
+import { Block } from "@/components/block";
+import { Paragraph } from "@/components/typography";
+import ComponentPageLayout from "../../ComponentPageLayout";
+const MuiBreadcrumbsPageView = () => {
+    return (_jsx(ComponentPageLayout, { title: "Breadcrumbs", children: _jsxs(Grid, { container: true, spacing: 3, children: [_jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Basic", children: _jsx(Stack, { direction: "row", spacing: 2, justifyContent: "center", children: _jsxs(Breadcrumbs, { children: [_jsx(Box, { component: Link, href: "#", fontSize: 16, color: "inherit", children: "Home" }), _jsx(Box, { component: Link, href: "#", fontSize: 16, color: "inherit", children: "Product Page" }), _jsx(Paragraph, { fontSize: 16, color: "grey.400", children: "Active" })] }) }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "With Dot", children: _jsx(Stack, { direction: "row", spacing: 2, justifyContent: "center", children: _jsxs(Breadcrumbs, { "aria-label": "breadcrumb", separator: _jsx(Box, { className: "dot" }), children: [_jsx(Box, { component: Link, href: "#", fontSize: 16, color: "inherit", children: "Home" }), _jsx(Box, { component: Link, href: "#", fontSize: 16, color: "inherit", children: "Product Page" }), _jsx(Paragraph, { fontSize: 16, color: "grey.400", children: "Active" })] }) }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "With Icon", children: _jsx(Stack, { direction: "row", spacing: 2, justifyContent: "center", children: _jsxs(Breadcrumbs, { "aria-label": "breadcrumb", children: [_jsxs(Box, { component: Link, href: "/", display: "flex", alignItems: "center", color: "inherit", children: [_jsx(Home, { sx: { mr: 0.5 }, fontSize: "inherit" }), "Home"] }), _jsxs(Box, { component: Link, href: "/", display: "flex", alignItems: "center", color: "inherit", children: [_jsx(ShoppingCartOutlined, { fontSize: "inherit", sx: { mr: 0.5 } }), "Product Page"] }), _jsxs(Box, { display: "flex", alignItems: "center", color: "grey.400", children: [_jsx(KeyboardTabOutlined, { fontSize: "inherit", sx: { mr: 0.5 } }), "Active"] })] }) }) }) })] }) }));
+};
+export default MuiBreadcrumbsPageView;

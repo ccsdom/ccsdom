@@ -1,0 +1,10 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { BookmarkBorder, Favorite, FavoriteBorder, Bookmark, } from "@mui/icons-material";
+import { Checkbox, FormControlLabel } from "@mui/material";
+// CUSTOM COMPONENTS
+import ComponentPageLayout from "../../ComponentPageLayout";
+import { Block } from "@/components/block";
+const MuiCheckboxPageView = () => {
+    return (_jsxs(ComponentPageLayout, { title: "Checkbox", children: [_jsxs(Block, { title: "Basic", children: [_jsx(Checkbox, {}), _jsx(Checkbox, { defaultChecked: true }), _jsx(Checkbox, { defaultChecked: true, indeterminate: true }), _jsx(Checkbox, { disabled: true }), _jsx(Checkbox, { disabled: true, defaultChecked: true }), _jsx(Checkbox, { disabled: true, defaultChecked: true, indeterminate: true })] }), _jsxs(Block, { title: "Colors", children: [_jsx(Checkbox, { defaultChecked: true }), _jsx(Checkbox, { defaultChecked: true, color: "secondary" }), _jsx(Checkbox, { defaultChecked: true, color: "success" }), _jsx(Checkbox, { defaultChecked: true, color: "warning" }), _jsx(Checkbox, { defaultChecked: true, color: "error" }), _jsx(Checkbox, { defaultChecked: true, color: "info" }), _jsx(Checkbox, { defaultChecked: true, color: "default" })] }), _jsxs(Block, { title: "Label", children: [_jsx(FormControlLabel, { control: _jsx(Checkbox, { defaultChecked: true }), label: "Primary" }), _jsx(FormControlLabel, { label: "Secondary", control: _jsx(Checkbox, { color: "secondary", defaultChecked: true }) }), _jsx(FormControlLabel, { control: _jsx(Checkbox, { color: "success", defaultChecked: true }), label: "Success" }), _jsx(FormControlLabel, { control: _jsx(Checkbox, { color: "warning", defaultChecked: true }), label: "Warning" })] }), _jsxs(Block, { title: "Sizes & Custom Icon", children: [_jsx(Checkbox, { size: "small", defaultChecked: true }), _jsx(Checkbox, { size: "medium", defaultChecked: true }), _jsx(Checkbox, { defaultChecked: true, icon: _jsx(FavoriteBorder, {}), checkedIcon: _jsx(Favorite, {}) }), _jsx(Checkbox, { defaultChecked: true, icon: _jsx(BookmarkBorder, {}), checkedIcon: _jsx(Bookmark, {}) })] })] }));
+};
+export default MuiCheckboxPageView;

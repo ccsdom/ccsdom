@@ -1,0 +1,2 @@
+// types/insee.ts
+export {};

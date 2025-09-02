@@ -1,0 +1,9 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Grid, Stack, Switch, FormControlLabel } from "@mui/material";
+// CUSTOM COMPONENTS
+import ComponentPageLayout from "../../ComponentPageLayout";
+import { Block } from "@/components/block";
+const MuiSwitchPageView = () => {
+    return (_jsx(ComponentPageLayout, { title: "Switch", children: _jsxs(Grid, { container: true, spacing: 3, children: [_jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Basic", children: _jsxs(Stack, { direction: "row", alignItems: "center", justifyContent: "center", spacing: 3, children: [_jsx(Switch, { defaultChecked: true }), _jsx(Switch, {}), _jsx(Switch, { disabled: true, defaultChecked: true }), _jsx(Switch, { disabled: true })] }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Sizes", children: _jsxs(Stack, { direction: "row", alignItems: "center", justifyContent: "center", spacing: 3, children: [_jsx(Switch, { size: "medium", defaultChecked: true }), _jsx(Switch, { size: "small" })] }) }) }), _jsx(Grid, { item: true, lg: 6, xs: 12, children: _jsx(Block, { title: "Colors", children: _jsxs(Stack, { alignContent: "center", flexWrap: "wrap", children: [_jsx(FormControlLabel, { label: "Default", control: _jsx(Switch, { color: "default", defaultChecked: true }) }), _jsx(FormControlLabel, { label: "Info", control: _jsx(Switch, { color: "info", defaultChecked: true }) }), _jsx(FormControlLabel, { control: _jsx(Switch, { color: "error", defaultChecked: true }), label: "Error" }), _jsx(FormControlLabel, { label: "Primary", control: _jsx(Switch, { color: "primary", defaultChecked: true }) }), _jsx(FormControlLabel, { label: "Success", control: _jsx(Switch, { color: "success", defaultChecked: true }) }), _jsx(FormControlLabel, { label: "Warning", control: _jsx(Switch, { color: "warning", defaultChecked: true }) })] }) }) })] }) }));
+};
+export default MuiSwitchPageView;
