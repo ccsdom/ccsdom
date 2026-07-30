@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "default": "bizhome-hub"
+  },
+  "targets": {},
+  "etags": {
+    "bizhome-hub": {
+      "extensionInstances": {
+        "delete-user-data": "426287ea5f5a8d94c8a18daff42ec8e2c37c0a8f756c398956ee4bdd7c905733",
+        "firestore-pdf-generator": "7c0129b61f10483b10b1fb8dc88767c666f1302d24e9174110e00208f0735995",
+        "firestore-pdf-generator-attestation-paris": "0cbe2f49920da0c7eae4eab3f9c044f00b5cb68e7253362838001e2a95898e6b",
+        "firestore-pdf-generator-contrat-orly": "8d7026dc33283a986c57272eb14f655a3f96a9750d86ce552b8e773ee3121e8d",
+        "firestore-pdf-generator-contrats-paris": "b147b0dd533f338c3d745ca210cfc4b390c705a6b3bdb080d03ad46076ec50a0",
+        "firestore-send-email": "e9d7096d2b2b143095e8e080602433b9eac6da3f61e293ecd554b7b425518126",
+        "firestore-stripe-payments": "1400bc9be4e00e95e4fc30c9c5485a2f4d7526c0a91c4c27c30173d4baf291cd",
+        "pdf-generator-invoices-orly": "03fa63f4b0ab12b0ee8d048d1f7a212b9ee19fe3173be215f7634a19a0a39496",
+        "pdf-generator-invoices-paris": "d6acec72ac19c3d1efef794575e8cbb1ccab4ec14e2ba675105d4dcf6424ee9c",
+        "storage-extract-image-text": "93f9c3a0d5235bff0ac2794b0693d773b3e75c342ffb6975482d92db5aab0a2f"
+      }
+    }
+  }
+}

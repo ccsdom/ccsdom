@@ -1,0 +1,203 @@
+/* ==============================
+   FEUILLE DE STYLE PDF PRO — CCS
+   ============================== */
+
+@page {
+  size: A4;
+  margin: 20mm 15mm 20mm 15mm;
+}
+
+/* Reset et base typographique */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 11.25pt;
+  line-height: 1.45;
+  color: #111;
+  background: #fff;
+}
+
+h1, h2, h3 {
+  color: #0f172a;
+  margin: 0;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 17pt;
+  text-align: center;
+  margin: 14pt 0 12pt;
+}
+
+h2 {
+  font-size: 13.5pt;
+  margin-top: 14pt;
+}
+
+h3 {
+  font-size: 12pt;
+  margin-top: 12pt;
+}
+
+p {
+  margin: 6pt 0;
+}
+
+ul {
+  margin: 0 0 6pt 18pt;
+}
+
+small {
+  color: #64748b;
+}
+
+strong {
+  color: #0f172a;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 12pt 0;
+}
+
+/* ==============================
+   STRUCTURE GLOBALE
+   ============================== */
+.header {
+  display: grid;
+  grid-template-columns: 100pt 1fr;
+  gap: 16pt;
+  align-items: center;
+  padding-bottom: 8pt;
+  border-bottom: 2px solid #0ea5e9;
+}
+
+.brand h2 {
+  margin: 0;
+}
+
+.brand small {
+  display: block;
+  font-size: 9.5pt;
+  color: #475569;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  margin: 12pt 0 10pt;
+}
+
+.callout {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6pt;
+  padding: 10pt 12pt;
+}
+
+.avoid-break {
+  break-inside: avoid;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+/* ==============================
+   TABLES
+   ============================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0;
+}
+
+td, th {
+  padding: 4pt 6pt;
+  vertical-align: top;
+  font-size: 10.5pt;
+}
+
+th {
+  background: #f1f5f9;
+  text-align: left;
+}
+
+/* ==============================
+   SIGNATURES
+   ============================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18pt;
+}
+
+.signature-block {
+  margin-top: 16pt;
+  padding-top: 14pt;
+  border-top: 1px dashed #cbd5e1;
+  break-inside: avoid;
+}
+
+.signature-area {
+  height: 72pt;
+  display: flex;
+  align-items: flex-end;
+}
+
+.signature-area img {
+  max-height: 60pt;
+  width: auto;
+  border-bottom: 1px solid #0f172a;
+  padding-bottom: 4pt;
+}
+
+.signature-meta {
+  margin-top: 6pt;
+  font-size: 9.5pt;
+  color: #334155;
+}
+
+/* ==============================
+   FILIGRANE
+   ============================== */
+.filigrane {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 80pt;
+  letter-spacing: 6pt;
+  color: rgba(15, 23, 42, 0.06);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ==============================
+   PIED DE PAGE / ENTÊTE OPTIONNEL
+   ============================== */
+.footer {
+  font-size: 9pt;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media print {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

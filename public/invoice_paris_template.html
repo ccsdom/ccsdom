@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Facture {{invoiceNumber}}</title>
+  <style>
+    @page { size: A4; margin: 18mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #172033;
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      background: #ffffff;
+    }
+    .invoice { max-width: 780px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 28px;
+      border-bottom: 3px solid #2563eb;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .mark {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 56%, #60a5fa 100%);
+      color: #ffffff;
+      font-size: 20pt;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.26), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+      text-shadow: 0 1px 3px rgba(15, 23, 42, 0.22);
+      overflow: hidden;
+    }
+    .mark:before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      right: -18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .mark span { position: relative; z-index: 1; }
+    .brand h2 { margin: 0; font-size: 15pt; color: #2563eb; }
+    .brand p { margin: 3px 0 0; color: #5b677a; font-size: 9pt; }
+    .seller { text-align: right; color: #3d4a5c; font-size: 9.5pt; max-width: 330px; }
+    .seller strong { color: #172033; }
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 34px 0 26px;
+    }
+    h1 { margin: 0; color: #2563eb; font-size: 29pt; font-weight: 700; letter-spacing: -0.03em; }
+    .status {
+      border: 2px solid #18864b;
+      color: #18864b;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 10pt;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .card {
+      border: 1px solid #dbe3ee;
+      border-radius: 14px;
+      padding: 18px;
+      background: #f8fafc;
+      min-height: 130px;
+    }
+    .label {
+      margin-bottom: 8px;
+      color: #69778a;
+      text-transform: uppercase;
+      font-size: 8.5pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .meta-row { display: flex; justify-content: space-between; padding: 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th {
+      padding: 12px 14px;
+      background: #2563eb;
+      color: #ffffff;
+      text-align: left;
+      font-size: 9.5pt;
+    }
+    td { padding: 14px; border-bottom: 1px solid #dbe3ee; vertical-align: top; }
+    .right { text-align: right; }
+    .totals {
+      width: 310px;
+      margin-left: auto;
+      margin-top: 22px;
+      border: 1px solid #dbe3ee;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .totals .row { display: flex; justify-content: space-between; padding: 10px 14px; }
+    .totals .grand { background: #2563eb; color: #ffffff; font-weight: 800; font-size: 13pt; }
+    .note {
+      margin-top: 42px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f8fafc;
+      color: #5b677a;
+      font-size: 8.5pt;
+    }
+    .footer {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid #dbe3ee;
+      color: #69778a;
+      text-align: center;
+      font-size: 8pt;
+    }
+  </style>
+</head>
+<body>
+  <main class="invoice">
+    <section class="topbar">
+      <div class="brand">
+        <div class="mark"><span>{{sellerLogoLabel}}</span></div>
+        <div>
+          <h2>{{sellerName}}</h2>
+          <p>{{sellerLegalLine}}</p>
+          <p>{{sellerApproval}}</p>
+        </div>
+      </div>
+      <div class="seller">
+        <strong>{{sellerName}}</strong><br>
+        {{sellerAddress}}<br>
+        Email : {{sellerEmail}}<br>
+        SIREN/SIRET : {{sellerSiret}}<br>
+        TVA : {{sellerVat}}
+      </div>
+    </section>
+
+    <section class="title-row">
+      <h1>Facture</h1>
+      <div class="status">{{invoiceStatusLabel}}</div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="label">Informations facture</div>
+        <div class="meta-row"><span>Numero</span><strong>{{invoiceNumber}}</strong></div>
+        <div class="meta-row"><span>Date d'emission</span><strong>{{issuedAtFormatted}}</strong></div>
+        <div class="meta-row"><span>Date de paiement</span><strong>{{paidAtFormatted}}</strong></div>
+        <div class="meta-row"><span>Echeance</span><strong>{{dueDateFormatted}}</strong></div>
+      </div>
+      <div class="card">
+        <div class="label">Facture a</div>
+        <strong>{{clientName}}</strong><br>
+        SIRET : {{clientSiret}}<br>
+        {{clientAddress}}<br>
+        {{clientEmail}}
+      </div>
+    </section>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="right">Montant HT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>{{lineDescription}}</strong></td>
+          <td class="right">{{lineAmountFormatted}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="totals">
+      <div class="row"><span>Sous-total HT</span><strong>{{subtotalFormatted}}</strong></div>
+      <div class="row"><span>TVA 20%</span><strong>{{vatFormatted}}</strong></div>
+      <div class="row grand"><span>Total TTC</span><span>{{totalFormatted}}</span></div>
+    </section>
+
+    <section class="note">
+      En cas de retard de paiement, une penalite egale a trois fois le taux d'interet legal peut etre appliquee.
+      Indemnite forfaitaire pour frais de recouvrement : 40 EUR.
+    </section>
+
+    <footer class="footer">
+      {{sellerName}} - {{sellerAddress}} - SIREN/SIRET : {{sellerSiret}}
+    </footer>
+  </main>
+</body>
+</html>

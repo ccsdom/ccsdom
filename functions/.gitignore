@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+
+# Compiled code
+lib/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Misc
+.DS_Store
+.npm
+.eslintcache
+.pnpm-debug.log*
+.idea

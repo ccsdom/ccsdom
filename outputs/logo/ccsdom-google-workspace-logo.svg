@@ -1,0 +1,14 @@
+<svg width="320" height="132" viewBox="0 0 320 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="24" y="34" width="64" height="64" rx="14" fill="#2563EB"/>
+  <path d="M44 84V56C44 54.8954 44.8954 54 46 54H66C67.1046 54 68 54.8954 68 56V84" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 84V68C60 66.8954 59.1046 66 58 66H54C52.8954 66 52 66.8954 52 68V84" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 50L56 42L68 50" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 62H50.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 62H56.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 62H62.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 76H50.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 76H56.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 76H62.01" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="104" y="62" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="800" letter-spacing="-0.8">CCS DOM</text>
+  <text x="106" y="86" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">Domiciliation d'entreprise</text>
+</svg>

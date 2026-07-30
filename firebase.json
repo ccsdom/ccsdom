@@ -1,0 +1,52 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json",
+    "database": "(default)"
+  },
+  "storage": {
+    "rules": "storage.rules",
+    "bucket": "bizhome-hub.firebasestorage.app"
+  },
+  "extensions": {
+    "delete-user-data": "firebase/delete-user-data@0.1.25",
+    "firestore-pdf-generator": "pdfplum/firestore-pdf-generator@0.19.0",
+    "firestore-pdf-generator-attestation-paris": "pdfplum/firestore-pdf-generator@0.19.0",
+    "firestore-pdf-generator-contrat-orly": "pdfplum/firestore-pdf-generator@0.19.0",
+    "firestore-pdf-generator-contrats-paris": "pdfplum/firestore-pdf-generator@0.19.0",
+    "firestore-send-email": "firebase/firestore-send-email@0.2.6",
+    "firestore-stripe-payments": "stripe/firestore-stripe-payments@0.3.4",
+    "pdf-generator-invoices-orly": "pdfplum/firestore-pdf-generator@0.19.0",
+    "pdf-generator-invoices-paris": "pdfplum/firestore-pdf-generator@0.19.0",
+    "storage-extract-image-text": "googlecloud/storage-extract-image-text@0.1.6"
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "functions": {
+    "source": "functions",
+    "predeploy": [
+      "npm --prefix functions run build"
+    ]
+  },
+  "apphosting": {
+    "backendId": "ccsdom",
+    "rootDir": "./",
+    "ignore": [
+      "node_modules",
+      ".git",
+      ".agents",
+      ".idx",
+      "*.log",
+      "tsconfig.tsbuildinfo",
+      "functions",
+      ".next",
+      "dataconnect/.dataconnect",
+      "tmp",
+      "*.pdf",
+      "serviceAccountKey.json",
+      ".env.local"
+    ],
+    "alwaysDeployFromSource": true
+  }
+}

@@ -1,0 +1,1895 @@
+{
+  "generatedAt": "2026-05-19T15:42:33.167Z",
+  "projectId": "bizhome-hub",
+  "mode": "dry-run",
+  "source": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\orly\\orly_clients_import_ready.csv",
+  "batchId": "orly_legacy_import_2026-05-19T15-42-32-962Z",
+  "options": {
+    "createAuthDisabled": true,
+    "limit": 0,
+    "writesClientRequests": false,
+    "writesInvoices": false,
+    "sendsEmails": false
+  },
+  "summary": {
+    "scanned": 123,
+    "wouldImport": 0,
+    "imported": 0,
+    "skipped": 123,
+    "wouldCreateAuthDisabled": 0,
+    "createdAuthDisabled": 0,
+    "existingAuthUsers": 123,
+    "legacyIdWithoutAuth": 0
+  },
+  "skipped": [
+    {
+      "sourceRow": "7",
+      "email": "hocinearib@gmail.com",
+      "companyName": "A.H PLUS DEMENAGEMENT",
+      "siret": "85200647700016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:xeFkQKtVuDSsOks0Rz2DCVayuKy1",
+      "existingClients": [
+        {
+          "id": "xeFkQKtVuDSsOks0Rz2DCVayuKy1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "8",
+      "email": "ab.services.contactpro@gmail.com",
+      "companyName": "AB SERVICES",
+      "siret": "93882176600012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:iO3tc451v5boUnxfWfNNkaRynEj1",
+      "existingClients": [
+        {
+          "id": "iO3tc451v5boUnxfWfNNkaRynEj1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "9",
+      "email": "belgacemameziane@gmail.com",
+      "companyName": "ABSH",
+      "siret": "83859117000025",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:pcNTCv3wiuc7kNVOiHS3ansWM5D2",
+      "existingClients": [
+        {
+          "id": "pcNTCv3wiuc7kNVOiHS3ansWM5D2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "10",
+      "email": "staf.autos@gmail.com",
+      "companyName": "ADEM AUTOS",
+      "siret": "93068966600012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:tioldnFUVjbet5l8YpX8gsewXNe2",
+      "existingClients": [
+        {
+          "id": "tioldnFUVjbet5l8YpX8gsewXNe2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "12",
+      "email": "benhaddirachid@gmail.com",
+      "companyName": "ALL SERVICES",
+      "siret": "",
+      "auth": "existing",
+      "warnings": [
+        "siret_manquant"
+      ],
+      "reason": "existing_client:QlPHcL5bq4giaMvdphSNkK4DKQI3",
+      "existingClients": [
+        {
+          "id": "QlPHcL5bq4giaMvdphSNkK4DKQI3",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "13",
+      "email": "salah.ghanem1995@gmail.com",
+      "companyName": "AMG SERVICE",
+      "siret": "97746063300018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:74ZviA0TMiUiUyA1TD2Tmh9cNNn2",
+      "existingClients": [
+        {
+          "id": "74ZviA0TMiUiUyA1TD2Tmh9cNNn2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "14",
+      "email": "aziznemmar10@gmail.com",
+      "companyName": "AMZ AUTOS",
+      "siret": "85097784400016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:UsfGmIgJjUVFGPUF9MFJDRyaNhS2",
+      "existingClients": [
+        {
+          "id": "UsfGmIgJjUVFGPUF9MFJDRyaNhS2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "15",
+      "email": "aghiles-etude@outlook.fr",
+      "companyName": "AN TRANS",
+      "siret": "88428000900017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:vTtPV9xqLHgwgwtmJ9E3qFMurx03",
+      "existingClients": [
+        {
+          "id": "vTtPV9xqLHgwgwtmJ9E3qFMurx03",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "16",
+      "email": "autocompany87@gmail.com",
+      "companyName": "AUTO COMPANY",
+      "siret": "93203483800015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:oEcVmR5YWIeKcuzKsyleizY1D973",
+      "existingClients": [
+        {
+          "id": "oEcVmR5YWIeKcuzKsyleizY1D973",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "18",
+      "email": "baldem.btp@gmail.com",
+      "companyName": "BALDEM BTP",
+      "siret": "89925899000014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+      "existingClients": [
+        {
+          "id": "VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "19",
+      "email": "amarabouslah@gmail.com",
+      "companyName": "BATI PRO",
+      "siret": "97817289800022",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ZZskpfPLleTeMfUFrPpr4s6xrcr2",
+      "existingClients": [
+        {
+          "id": "ZZskpfPLleTeMfUFrPpr4s6xrcr2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "20",
+      "email": "begpeinture28@gmail.com",
+      "companyName": "BEG PEINTURE",
+      "siret": "91162586100016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:GIoey2k28QQqLG8DVqJP15SSkKP2",
+      "existingClients": [
+        {
+          "id": "GIoey2k28QQqLG8DVqJP15SSkKP2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "21",
+      "email": "takfarinasbouda@hotmail.fr",
+      "companyName": "BEST EDUCATION",
+      "siret": "84233039100017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+      "existingClients": [
+        {
+          "id": "5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "23",
+      "email": "bfsecuriteprivee@gmail.com",
+      "companyName": "BF SECURITE PRIVEE",
+      "siret": "92254469700019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:bPoRBSfXW0P0tlSz8PINYK9BdYL2",
+      "existingClients": [
+        {
+          "id": "bPoRBSfXW0P0tlSz8PINYK9BdYL2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "25",
+      "email": "brscorpion93@gmail.com",
+      "companyName": "BR SCORPION",
+      "siret": "85293356300011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:F52M2apySyZvuYmAUNRmfa8AyWf2",
+      "existingClients": [
+        {
+          "id": "F52M2apySyZvuYmAUNRmfa8AyWf2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "26",
+      "email": "beacras.acras@gmail.com",
+      "companyName": "B-RESTAURANT",
+      "siret": "",
+      "auth": "existing",
+      "warnings": [
+        "siret_manquant"
+      ],
+      "reason": "existing_client:SLOBwGGuZdeFSPzV0L8y3NVW1vD2",
+      "existingClients": [
+        {
+          "id": "SLOBwGGuZdeFSPzV0L8y3NVW1vD2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "27",
+      "email": "nait.azouzou@hotmail.fr",
+      "companyName": "BTF FAMILY",
+      "siret": "88401954800020",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:gZKH84ggZOZnRn71eBtez2wgWOM2",
+      "existingClients": [
+        {
+          "id": "gZKH84ggZOZnRn71eBtez2wgWOM2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "29",
+      "email": "yazidboncer@gmail.com",
+      "companyName": "BY SERVICES",
+      "siret": "84926166400023",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:CxrcqY4y6mOGDzbGK8BMAcCarH13",
+      "existingClients": [
+        {
+          "id": "CxrcqY4y6mOGDzbGK8BMAcCarH13",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "30",
+      "email": "cobitel.services@outlook.com",
+      "companyName": "COBITEL",
+      "siret": "94936041600018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:aaDepqignvQ8BexYv4MT2hphWLj1",
+      "existingClients": [
+        {
+          "id": "aaDepqignvQ8BexYv4MT2hphWLj1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "31",
+      "email": "csg.securite94@gmail.com",
+      "companyName": "COMPAGNIE DE SECURITE ET G",
+      "siret": "98412256400011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:o9TArHtn5wMLfprOrBJmZCSf7Cy2",
+      "existingClients": [
+        {
+          "id": "o9TArHtn5wMLfprOrBJmZCSf7Cy2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "32",
+      "email": "contact.dts94@gmail.com",
+      "companyName": "DIANTRA SECURITY",
+      "siret": "95074230400013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:l3c3jskvieeb2l50sxU9VFyAxWg1",
+      "existingClients": [
+        {
+          "id": "l3c3jskvieeb2l50sxU9VFyAxWg1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "33",
+      "email": "zainabenbekkou@yahoo.fr",
+      "companyName": "DIGITALCOM",
+      "siret": "89512280200013",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:kDLCLuRp1SQGcOFiNRMZ3hvrR3E3",
+      "existingClients": [
+        {
+          "id": "kDLCLuRp1SQGcOFiNRMZ3hvrR3E3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "34",
+      "email": "gildasehouli@yahoo.fr",
+      "companyName": "EG-SERVICES",
+      "siret": "93488924700011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5OK5tJ23tzRoxT59SvYaU8DrjKh1",
+      "existingClients": [
+        {
+          "id": "5OK5tJ23tzRoxT59SvYaU8DrjKh1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "35",
+      "email": "baldem.btp@gmail.com",
+      "companyName": "EUROPE ETANCHE",
+      "siret": "91757084800015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+      "existingClients": [
+        {
+          "id": "VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "36",
+      "email": "contact.es94@gmail.com",
+      "companyName": "EXPERT SECURITY",
+      "siret": "88860399000019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:iB0ziMzKWXNxrKhbieYR27GHt8Q2",
+      "existingClients": [
+        {
+          "id": "iB0ziMzKWXNxrKhbieYR27GHt8Q2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "37",
+      "email": "contact.expressliv@gmail.com",
+      "companyName": "EXPRESS LIV",
+      "siret": "84759971900014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:vPkna02mfeWwwF9WQO9YmUZdlRn2",
+      "existingClients": [
+        {
+          "id": "vPkna02mfeWwwF9WQO9YmUZdlRn2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "38",
+      "email": "contact.fts94@gmail.com",
+      "companyName": "FIBER TECHNOLOGIES SOLUTIONS",
+      "siret": "94935264500012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:rle7ca8Sk1bHeKMHS0GeWccePnr2",
+      "existingClients": [
+        {
+          "id": "rle7ca8Sk1bHeKMHS0GeWccePnr2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "39",
+      "email": "jubanahi19@gmail.com",
+      "companyName": "FIBROPOSE",
+      "siret": "90040753700019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:HsBD1hbmMaeMVYkDl78CIPiqRH93",
+      "existingClients": [
+        {
+          "id": "HsBD1hbmMaeMVYkDl78CIPiqRH93",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "40",
+      "email": "djouadi91hocine@gmail.com",
+      "companyName": "FIBROXYGENE",
+      "siret": "88328406900019",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:mc0W7RSBd1cKZIe8IIIMbGxXvrB3",
+      "existingClients": [
+        {
+          "id": "mc0W7RSBd1cKZIe8IIIMbGxXvrB3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "41",
+      "email": "contact.fpg94@gmail.com",
+      "companyName": "FORTIS PROTECTION GARDIENNAGE",
+      "siret": "97831361700018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:0OFS0RXf9jXLjEGieXZ3X87vPrL2",
+      "existingClients": [
+        {
+          "id": "0OFS0RXf9jXLjEGieXZ3X87vPrL2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "43",
+      "email": "ghservices454@gmail.com",
+      "companyName": "GH-SERVICES",
+      "siret": "98109391700012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ePKbJs8NFFX9OIx6vcD01oBRbgu1",
+      "existingClients": [
+        {
+          "id": "ePKbJs8NFFX9OIx6vcD01oBRbgu1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "45",
+      "email": "mouradnouara7181@gmail.com",
+      "companyName": "GM SERVICES",
+      "siret": "93231215000018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:NU6o3dT0yRffROs1jeCjXHKrjYn1",
+      "existingClients": [
+        {
+          "id": "NU6o3dT0yRffROs1jeCjXHKrjYn1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "46",
+      "email": "goldsec94@gmail.com",
+      "companyName": "GOLD SECURITY PRIVATE",
+      "siret": "92105311200014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:csObkK4IknTZHDrccSAnKkPZ4eN2",
+      "existingClients": [
+        {
+          "id": "csObkK4IknTZHDrccSAnKkPZ4eN2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "47",
+      "email": "aziztoure@gmail.com",
+      "companyName": "GRAND EST PROTECT",
+      "siret": "95360073100012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:xYOuB3HbomRcx1mW5PlXs4yR5203",
+      "existingClients": [
+        {
+          "id": "xYOuB3HbomRcx1mW5PlXs4yR5203",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "49",
+      "email": "guedesecuriteprivee@gmail.com",
+      "companyName": "GUEDE SECURITE PRIVEE",
+      "siret": "89174616600018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:vuYeyhpf1bSIMwDmC8f5MPZ8miJ2",
+      "existingClients": [
+        {
+          "id": "vuYeyhpf1bSIMwDmC8f5MPZ8miJ2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "50",
+      "email": "anishadim2020@gmail.com",
+      "companyName": "HDM SERVICES",
+      "siret": "98101295800014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:8pjuWkyOqkPK2CumJxbkLgU7M202",
+      "existingClients": [
+        {
+          "id": "8pjuWkyOqkPK2CumJxbkLgU7M202",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "51",
+      "email": "dehiabenamara@outlook.fr",
+      "companyName": "HIGIE SERVICE",
+      "siret": "98071686400015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ORaLclSGqFZaNJ35I5GhqJgiQ653",
+      "existingClients": [
+        {
+          "id": "ORaLclSGqFZaNJ35I5GhqJgiQ653",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "52",
+      "email": "hmimiphone@gmail.com",
+      "companyName": "HTW EURO",
+      "siret": "97952567200015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:H5fvflEWUUYjZkaCeS2b3gWYWS13",
+      "existingClients": [
+        {
+          "id": "H5fvflEWUUYjZkaCeS2b3gWYWS13",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "53",
+      "email": "contact.icnf94@gmail.com",
+      "companyName": "ICNF",
+      "siret": "87793572600019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:GNJwqEjHWvg1iqwANqUzbxc4C4A3",
+      "existingClients": [
+        {
+          "id": "GNJwqEjHWvg1iqwANqUzbxc4C4A3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "55",
+      "email": "nabil_belkessa@hotmail.fr",
+      "companyName": "INFO QUALITE PLUS",
+      "siret": "88032604600021",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:Oxa4ayJc5AcfXy4VV2sG41QGbtm1",
+      "existingClients": [
+        {
+          "id": "Oxa4ayJc5AcfXy4VV2sG41QGbtm1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "56",
+      "email": "abbasyerou@gmail.com",
+      "companyName": "INTELLIGENCE SERVICE",
+      "siret": "94930460400018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:IO2S2QYlI6WgZEY5CGX15a2oTOI3",
+      "existingClients": [
+        {
+          "id": "IO2S2QYlI6WgZEY5CGX15a2oTOI3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "58",
+      "email": "isa.securite94@gmail.com",
+      "companyName": "ISA SECURITE",
+      "siret": "83787835400021",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5SZGysJThaYsrQDxR4nXXaIDH333",
+      "existingClients": [
+        {
+          "id": "5SZGysJThaYsrQDxR4nXXaIDH333",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "59",
+      "email": "ismailmouloud7@gmail.com",
+      "companyName": "ISM-MUS SERVICES",
+      "siret": "91069322500013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:GIaJ0B253xZmNdDAQu5pWwCsuXr2",
+      "existingClients": [
+        {
+          "id": "GIaJ0B253xZmNdDAQu5pWwCsuXr2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "60",
+      "email": "karim.meradji95@gmail.com",
+      "companyName": "K2S GARDIENNAGE",
+      "siret": "89183460800012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:rVs6hL6XYbask3zvtE1ugvMOPf22",
+      "existingClients": [
+        {
+          "id": "rVs6hL6XYbask3zvtE1ugvMOPf22",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "61",
+      "email": "cherifmechehed@gmail.com",
+      "companyName": "KAB ISOLATION",
+      "siret": "91155259400010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:4Gcft3uR5Qa0ub3vESTqyDeP0tp2",
+      "existingClients": [
+        {
+          "id": "4Gcft3uR5Qa0ub3vESTqyDeP0tp2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "63",
+      "email": "kimsecurite.privee@gmail.com",
+      "companyName": "KIMSECURITE PRIVEE",
+      "siret": "98071315000012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:mIksIygQCab7Zu4vSUIhd5gu1Ig2",
+      "existingClients": [
+        {
+          "id": "mIksIygQCab7Zu4vSUIhd5gu1Ig2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "64",
+      "email": "aliyazag50@gmail.com",
+      "companyName": "KYYA BTP",
+      "siret": "97895665400013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:Ui7HlTI6taV7gHxLRxS39WOMRzR2",
+      "existingClients": [
+        {
+          "id": "Ui7HlTI6taV7gHxLRxS39WOMRzR2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "65",
+      "email": "lahnaservices@outlook.fr",
+      "companyName": "LAHNA SERVICES",
+      "siret": "87855236300011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:0ZeAExm9YONEusYf3xAEADySgCw1",
+      "existingClients": [
+        {
+          "id": "0ZeAExm9YONEusYf3xAEADySgCw1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "66",
+      "email": "touazi.nabila@gmail.com",
+      "companyName": "LENA SERVICES",
+      "siret": "84453877700013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:Be7Vn3HBQlW0UdKXycgmrYTF7ND3",
+      "existingClients": [
+        {
+          "id": "Be7Vn3HBQlW0UdKXycgmrYTF7ND3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "67",
+      "email": "madge02@yahoo.fr",
+      "companyName": "LES COUVREURS ETANCHEURS P",
+      "siret": "94317824400019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+      "existingClients": [
+        {
+          "id": "xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "68",
+      "email": "exploitation.lmlogistique@gmail.com",
+      "companyName": "LM LOGISTIQUE",
+      "siret": "88834425600019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:aSwyzCkMmxRHFWMCsfAxfSYVNcr2",
+      "existingClients": [
+        {
+          "id": "aSwyzCkMmxRHFWMCsfAxfSYVNcr2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "69",
+      "email": "naitabdellahlounas@gmail.com",
+      "companyName": "LNS PLUS SERVICES",
+      "siret": "98036278400012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:4OrLIHVhJVUHZpUhkbPZBKX34Wz1",
+      "existingClients": [
+        {
+          "id": "4OrLIHVhJVUHZpUhkbPZBKX34Wz1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "70",
+      "email": "logitisservice@gmail.com",
+      "companyName": "LOGITIS SERVICES",
+      "siret": "90247634000010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:9Yl156xx1sfFKhLXNWdZX5944SO2",
+      "existingClients": [
+        {
+          "id": "9Yl156xx1sfFKhLXNWdZX5944SO2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "71",
+      "email": "salimabijoux@gmail.com",
+      "companyName": "LOUISE SERVICES",
+      "siret": "98384173500019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:NlmKbkLReocaSG2Sh6JQz9dCa842",
+      "existingClients": [
+        {
+          "id": "NlmKbkLReocaSG2Sh6JQz9dCa842",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "72",
+      "email": "ls.gardiennage@gmail.com",
+      "companyName": "LS SECURITE",
+      "siret": "85213557300016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:q6qeCVGedzRH0V3oZwXaVQcFoSl2",
+      "existingClients": [
+        {
+          "id": "q6qeCVGedzRH0V3oZwXaVQcFoSl2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "73",
+      "email": "medinesecurite@gmail.com",
+      "companyName": "MEDINE SECURITE",
+      "siret": "92159301800010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:GVXYHA5494aHQbShdep1OeWfJIq1",
+      "existingClients": [
+        {
+          "id": "GVXYHA5494aHQbShdep1OeWfJIq1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "75",
+      "email": "ganounmassi@gmail.com",
+      "companyName": "MG SPEED SERVICES",
+      "siret": "90097232400017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:pSN9CfAMdAY9qwqUuoaskWMef6i1",
+      "existingClients": [
+        {
+          "id": "pSN9CfAMdAY9qwqUuoaskWMef6i1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "76",
+      "email": "amina_psy@hotmail.fr",
+      "companyName": "MINA ACCOMPAGNEMENT PSY",
+      "siret": "92267084900012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:GYOxyXpwGBf83GVy8uWpdqMG2r43",
+      "existingClients": [
+        {
+          "id": "GYOxyXpwGBf83GVy8uWpdqMG2r43",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "79",
+      "email": "sidalimedjbar1@gmail.com",
+      "companyName": "MST",
+      "siret": "95176458800012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:SGd00NxNvWRxZVObtwEyg4sodVA3",
+      "existingClients": [
+        {
+          "id": "SGd00NxNvWRxZVObtwEyg4sodVA3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "80",
+      "email": "mnefous@hotmail.fr",
+      "companyName": "NEFOUS Ali",
+      "siret": "97976222600012",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:MLMepAqTwlPwyDD0kyuLOW8LJUm1",
+      "existingClients": [
+        {
+          "id": "MLMepAqTwlPwyDD0kyuLOW8LJUm1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "81",
+      "email": "contact@optimalis-securite.fr",
+      "companyName": "OPTIMALIS SECURITE PRIVEE",
+      "siret": "91980872500015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:RbUFWmEaxtbUcOuVIvEUu7jYlwX2",
+      "existingClients": [
+        {
+          "id": "RbUFWmEaxtbUcOuVIvEUu7jYlwX2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "82",
+      "email": "nourarebouh@outlook.com",
+      "companyName": "ORCI",
+      "siret": "94914796100013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:LE994CBtPZSUsbO2XotwpVt8DeC2",
+      "existingClients": [
+        {
+          "id": "LE994CBtPZSUsbO2XotwpVt8DeC2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "83",
+      "email": "parisfirstdriving@gmail.com",
+      "companyName": "PARIS FIRST DRIVING",
+      "siret": "94067628100014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:FAWwJDjyEgXb3Sp61l1DrA4vAPP2",
+      "existingClients": [
+        {
+          "id": "FAWwJDjyEgXb3Sp61l1DrA4vAPP2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "84",
+      "email": "paris.interprive@gmail.com",
+      "companyName": "PARIS INTER",
+      "siret": "90987799500011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:WkDCkXH3LJfjKhM8nVfj1zu22fB3",
+      "existingClients": [
+        {
+          "id": "WkDCkXH3LJfjKhM8nVfj1zu22fB3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "86",
+      "email": "prestaplus78@gmail.com",
+      "companyName": "PRESTA PLUS",
+      "siret": "85112363800013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:v8lRhhimdUg9j3VRcVvKX0vG2lz2",
+      "existingClients": [
+        {
+          "id": "v8lRhhimdUg9j3VRcVvKX0vG2lz2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "87",
+      "email": "benhaddirachid343@gmail.com",
+      "companyName": "PRESTIGE CARS 94",
+      "siret": "94344571800019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:FoWPfDLuNNgus5NQQxQTHsdV9u52",
+      "existingClients": [
+        {
+          "id": "FoWPfDLuNNgus5NQQxQTHsdV9u52",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "88",
+      "email": "akli.meziane@gmail.com",
+      "companyName": "PRO CONSULTING AND SERVICES",
+      "siret": "88766868900011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:vSmbqCCntEfoaQAujhG9RvB52rh2",
+      "existingClients": [
+        {
+          "id": "vSmbqCCntEfoaQAujhG9RvB52rh2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "89",
+      "email": "azzougyanes@gmail.com",
+      "companyName": "PRO SERVICE",
+      "siret": "90414294000025",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:6uhHLwSJbqbIcvFiXTUqqoi7Ngs2",
+      "existingClients": [
+        {
+          "id": "6uhHLwSJbqbIcvFiXTUqqoi7Ngs2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "90",
+      "email": "ouarme888@gmail.com",
+      "companyName": "PROTECTION France SECURITY",
+      "siret": "91527222300024",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:25w1hBl2BohsLLJtaHvCgdk5oFy2",
+      "existingClients": [
+        {
+          "id": "25w1hBl2BohsLLJtaHvCgdk5oFy2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "92",
+      "email": "mdiane56@yahoo.fr",
+      "companyName": "RENOVATION 22",
+      "siret": "91190154400013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+      "existingClients": [
+        {
+          "id": "sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "93",
+      "email": "ouali.saal@gmail.com",
+      "companyName": "RHO TRANSPORTS",
+      "siret": "93462350500013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:kbVvFWUzRph89WpXkfSptUEKlu53",
+      "existingClients": [
+        {
+          "id": "kbVvFWUzRph89WpXkfSptUEKlu53",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "96",
+      "email": "hamidielize@gmail.com",
+      "companyName": "S&N SERVICES",
+      "siret": "88757833400021",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:YzNAocyaClTjTDCqlmPHGPxYXJ02",
+      "existingClients": [
+        {
+          "id": "YzNAocyaClTjTDCqlmPHGPxYXJ02",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "97",
+      "email": "madge02@yahoo.fr",
+      "companyName": "SECA IDF",
+      "siret": "94317790700012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+      "existingClients": [
+        {
+          "id": "xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "98",
+      "email": "samiyahadim@yahoo.fr",
+      "companyName": "SH CONSEIL ET GESTION",
+      "siret": "85367612000019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:crthAL22NrbYFNuqZro7tTg6KQi1",
+      "existingClients": [
+        {
+          "id": "crthAL22NrbYFNuqZro7tTg6KQi1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "99",
+      "email": "boudjemamessaoud9@gmail.com",
+      "companyName": "SIM SECURITE PRIVEE",
+      "siret": "98246754000018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:nkLqN6YFLjNIw0BQ5o8l3agHFws1",
+      "existingClients": [
+        {
+          "id": "nkLqN6YFLjNIw0BQ5o8l3agHFws1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "100",
+      "email": "smasri.lynda1@gmail.com",
+      "companyName": "SMASRI SERVICES",
+      "siret": "89265170400017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:XuYNdpKzhITaU1oFTo02pIiMV2k2",
+      "existingClients": [
+        {
+          "id": "XuYNdpKzhITaU1oFTo02pIiMV2k2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "102",
+      "email": "fatah.mouloudj@sofalom.fr",
+      "companyName": "SOFALOM",
+      "siret": "90760756800017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:zTpfdi6UQKRGCISHHMUTaCJX7Q02",
+      "existingClients": [
+        {
+          "id": "zTpfdi6UQKRGCISHHMUTaCJX7Q02",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "104",
+      "email": "contact.sotrabal@gmail.com",
+      "companyName": "STAFF SERVICES",
+      "siret": "84763629700040",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:LHupqEF430XAD6KX4YxRDv94wJG3",
+      "existingClients": [
+        {
+          "id": "LHupqEF430XAD6KX4YxRDv94wJG3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "105",
+      "email": "ste.starcab94@gmail.com",
+      "companyName": "STARCAB94",
+      "siret": "82383153200028",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:TDilOeQF6aNvtcFsrdBHJmLM8hm2",
+      "existingClients": [
+        {
+          "id": "TDilOeQF6aNvtcFsrdBHJmLM8hm2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "106",
+      "email": "adembensalem@yahoo.fr",
+      "companyName": "STPC",
+      "siret": "98235584400019",
+      "auth": "existing",
+      "warnings": [
+        "telephone_a_verifier"
+      ],
+      "reason": "existing_client:zJjMKUxTslUjSu5R0dCVWsVuJ4b2",
+      "existingClients": [
+        {
+          "id": "zJjMKUxTslUjSu5R0dCVWsVuJ4b2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "107",
+      "email": "sylkaharoun200314@gmail.com",
+      "companyName": "SYLKA COM",
+      "siret": "87799151300012",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:3ksQaPcKYGbDmsmSPTQvawzq36S2",
+      "existingClients": [
+        {
+          "id": "3ksQaPcKYGbDmsmSPTQvawzq36S2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "108",
+      "email": "talebimportexport@gmail.com",
+      "companyName": "TA IMPORT EXPORT",
+      "siret": "84365370000016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:KoOApnyRQKUm6zDaUqCZVeLiibJ2",
+      "existingClients": [
+        {
+          "id": "KoOApnyRQKUm6zDaUqCZVeLiibJ2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "109",
+      "email": "tbfiber0@gmail.com",
+      "companyName": "TB FIBER",
+      "siret": "94907193000018",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:O3LYvyp3Yob88NjlvhQmBhrlO3f1",
+      "existingClients": [
+        {
+          "id": "O3LYvyp3Yob88NjlvhQmBhrlO3f1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "110",
+      "email": "ouarezki.nordine@live.fr",
+      "companyName": "TGT AUTOMOBILE",
+      "siret": "89231528400010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:HKpSMzVBR7eFV7As13MRYig9N2W2",
+      "existingClients": [
+        {
+          "id": "HKpSMzVBR7eFV7As13MRYig9N2W2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "111",
+      "email": "bbinam29@gmail.com",
+      "companyName": "T-GTE",
+      "siret": "94445723300012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "existingClients": [
+        {
+          "id": "ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "112",
+      "email": "ahcenetaguemount@hotmail.com",
+      "companyName": "THT SERVICES",
+      "siret": "89024647300015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5YxPCW8wDuRpoMafV7a4ctz9gkq1",
+      "existingClients": [
+        {
+          "id": "5YxPCW8wDuRpoMafV7a4ctz9gkq1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "113",
+      "email": "tarek.kettane2016@gmail.com",
+      "companyName": "TK SERVICES",
+      "siret": "89540642900012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:zpvPLPOG63TnjMVWB7pemdH3spr2",
+      "existingClients": [
+        {
+          "id": "zpvPLPOG63TnjMVWB7pemdH3spr2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "114",
+      "email": "tarikmahfouf1997@hotmail.com",
+      "companyName": "TM SERVICES PLUS",
+      "siret": "92140673200013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:a1i54qx2giUSE4HHGdFdcBued8r2",
+      "existingClients": [
+        {
+          "id": "a1i54qx2giUSE4HHGdFdcBued8r2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "115",
+      "email": "sabrina.barbara@icloud.com",
+      "companyName": "TRADING MANAGEMENT SOLUTION",
+      "siret": "84843602800015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:LNcp6w0B07OmHd416qPVMNegsSn1",
+      "existingClients": [
+        {
+          "id": "LNcp6w0B07OmHd416qPVMNegsSn1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "116",
+      "email": "transalison2019@gmail.com",
+      "companyName": "TRANS ALISON",
+      "siret": "85177588200026",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:lo5PsS0ZNqXpYyY5zieJq0yQDfg1",
+      "existingClients": [
+        {
+          "id": "lo5PsS0ZNqXpYyY5zieJq0yQDfg1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "117",
+      "email": "transchabour@gmail.com",
+      "companyName": "TRANS CHABOUR",
+      "siret": "83750183200021",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:UlhEWwnInLaA2VNMMGUEgMnLW6S2",
+      "existingClients": [
+        {
+          "id": "UlhEWwnInLaA2VNMMGUEgMnLW6S2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "118",
+      "email": "f.saidutd@gmail.com",
+      "companyName": "TRANS LYDIA",
+      "siret": "98348743000016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:mtuBSCj1LpgfsfoFNVvf84G9PX32",
+      "existingClients": [
+        {
+          "id": "mtuBSCj1LpgfsfoFNVvf84G9PX32",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "119",
+      "email": "mameri-rabah@hotmail.fr",
+      "companyName": "TRANS R.N MAM",
+      "siret": "93536794600016",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:qaPhRhCkBgRdVFOFrCU6EFBe7U93",
+      "existingClients": [
+        {
+          "id": "qaPhRhCkBgRdVFOFrCU6EFBe7U93",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "120",
+      "email": "transazi94@gmail.com",
+      "companyName": "TransAZI",
+      "siret": "90010302900014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ljGKr0jffDZdjGKje1QABVNEQBh2",
+      "existingClients": [
+        {
+          "id": "ljGKr0jffDZdjGKje1QABVNEQBh2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "124",
+      "email": "transportdujour@outlook.fr",
+      "companyName": "TRANSPORT DU JOUR",
+      "siret": "88378690700021",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:0QFxCCZJn8YFqpmdoXOSIUDesaI2",
+      "existingClients": [
+        {
+          "id": "0QFxCCZJn8YFqpmdoXOSIUDesaI2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "125",
+      "email": "bbinam29@gmail.com",
+      "companyName": "TRANSPORT GTE",
+      "siret": "890711336",
+      "auth": "existing",
+      "warnings": [
+        "siret_invalide"
+      ],
+      "reason": "existing_client:ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "existingClients": [
+        {
+          "id": "ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "126",
+      "email": "nassim.chelfi@outlook.fr",
+      "companyName": "TRANSPRO'N",
+      "siret": "91053664800017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:N98YflSqGfhureKHbkFromHdIy52",
+      "existingClients": [
+        {
+          "id": "N98YflSqGfhureKHbkFromHdIy52",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "127",
+      "email": "ag.moussouni@gmail.com",
+      "companyName": "TRUCKPRO92",
+      "siret": "87946189500028",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:BHDY9txzB4URU4l4Dg7lGCjXUDH3",
+      "existingClients": [
+        {
+          "id": "BHDY9txzB4URU4l4Dg7lGCjXUDH3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "128",
+      "email": "mdiane56@yahoo.fr",
+      "companyName": "VIGILENCE SECURITY",
+      "siret": "98015308400010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+      "existingClients": [
+        {
+          "id": "sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "129",
+      "email": "gurgen.shamoyan@icloud.com",
+      "companyName": "WALT SERVICES",
+      "siret": "85112702700015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:WV08OAsOr8Tqt8Tf7ucBYgoMEd42",
+      "existingClients": [
+        {
+          "id": "WV08OAsOr8Tqt8Tf7ucBYgoMEd42",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "130",
+      "email": "yandrive.57@gmail.com",
+      "companyName": "YAN DRIVE",
+      "siret": "97844344800011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:sbveEivHyTWLxB0lCatoVnyLOoI3",
+      "existingClients": [
+        {
+          "id": "sbveEivHyTWLxB0lCatoVnyLOoI3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "132",
+      "email": "laliouimourad6@gmail.com",
+      "companyName": "ZLS",
+      "siret": "83327982100049",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:vqesXyQieWXj21Coo75hQ608Sjb2",
+      "existingClients": [
+        {
+          "id": "vqesXyQieWXj21Coo75hQ608Sjb2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "6",
+      "email": "bkdempro@gmail.com",
+      "companyName": "B.K DEM PRO",
+      "siret": "88526515700010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:Xj9R5PKw4vaM0vHJVGEoG4FV2br1",
+      "existingClients": [
+        {
+          "id": "Xj9R5PKw4vaM0vHJVGEoG4FV2br1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "7",
+      "email": "benamarayacine89@gmail.com",
+      "companyName": "BEN RH",
+      "siret": "84793178900014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:fiejYeePxIbREHaXAQ9GGCDBdlG2",
+      "existingClients": [
+        {
+          "id": "fiejYeePxIbREHaXAQ9GGCDBdlG2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "8",
+      "email": "tabani_1991@live.fr",
+      "companyName": "BIO'WASH CARS",
+      "siret": "84142214000027",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:FB0xeq5sipb923z5i0ua3qJMq5g2",
+      "existingClients": [
+        {
+          "id": "FB0xeq5sipb923z5i0ua3qJMq5g2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "9",
+      "email": "oudah.sofiane1993@gmail.com",
+      "companyName": "EDEN FIBRE",
+      "siret": "87919670700019",
+      "auth": "existing",
+      "warnings": [
+        "forme_juridique_manquante"
+      ],
+      "reason": "existing_client:cwXLKiFzo8ZWI8HG3hqr22j8ViY2",
+      "existingClients": [
+        {
+          "id": "cwXLKiFzo8ZWI8HG3hqr22j8ViY2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "10",
+      "email": "nawalboulahbal85@gmail.com",
+      "companyName": "FIFI SERVICES PLUS",
+      "siret": "87994072400013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:n1ON07rn80aR5v2Yb6SioxlzMY13",
+      "existingClients": [
+        {
+          "id": "n1ON07rn80aR5v2Yb6SioxlzMY13",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "11",
+      "email": "flayebat@yahoo.com",
+      "companyName": "FLAYE BAT",
+      "siret": "88093522600014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:pkFu0ZBBo2MNHrV1mynJcvGxA1K3",
+      "existingClients": [
+        {
+          "id": "pkFu0ZBBo2MNHrV1mynJcvGxA1K3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "12",
+      "email": "hbservices37@gmail.com",
+      "companyName": "HBS",
+      "siret": "90162146600027",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:rLGELapGoASBKTOy462OVVmr3jG3",
+      "existingClients": [
+        {
+          "id": "rLGELapGoASBKTOy462OVVmr3jG3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "13",
+      "email": "securitepriveeservice@gmail.com",
+      "companyName": "SERVICE SECURITE PRIVEE",
+      "siret": "91350907100019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:d0d2D2uDIZTeoL2LQTmLvtXGqqA2",
+      "existingClients": [
+        {
+          "id": "d0d2D2uDIZTeoL2LQTmLvtXGqqA2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "14",
+      "email": "takfarinasbouda@hotmail.fr",
+      "companyName": "SOLVE CONSULTING",
+      "siret": "89826656400019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+      "existingClients": [
+        {
+          "id": "5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "15",
+      "email": "envichlef@gmail.com",
+      "companyName": "BA LOGISTIQUES",
+      "siret": "88386650100017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:BLaFUWzrYfhjyKXZtvSdnfr0dA83",
+      "existingClients": [
+        {
+          "id": "BLaFUWzrYfhjyKXZtvSdnfr0dA83",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "16",
+      "email": "contact.bamyp94@gmail.com",
+      "companyName": "BAMYP",
+      "siret": "97882896000010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:9SkRWsbAXEZPHNYsRuIhjTBchd23",
+      "existingClients": [
+        {
+          "id": "9SkRWsbAXEZPHNYsRuIhjTBchd23",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "17",
+      "email": "fibreoplus@gmail.com",
+      "companyName": "FIBRE OPLUS",
+      "siret": "90444051800010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:NPclTTgsNWUgcuEhy3W74cC9LQT2",
+      "existingClients": [
+        {
+          "id": "NPclTTgsNWUgcuEhy3W74cC9LQT2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "18",
+      "email": "boufergueneadam@gmail.com",
+      "companyName": "STAF AUTOS",
+      "siret": "89876580500012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:lvO5NoexlVRs9dNr9DPb5g71Leb2",
+      "existingClients": [
+        {
+          "id": "lvO5NoexlVRs9dNr9DPb5g71Leb2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "19",
+      "email": "store.addict.beaute@gmail.com",
+      "companyName": "STORE ADDICT BEAUTE",
+      "siret": "84454368600027",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:eNWmCAxZqZTEDYaDZVGsF2OGwov1",
+      "existingClients": [
+        {
+          "id": "eNWmCAxZqZTEDYaDZVGsF2OGwov1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "20",
+      "email": "contact.topservices@gmail.com",
+      "companyName": "TOP SERVICES",
+      "siret": "89126404600014",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:30dSUfUm36eF84Nzzcpcu0UjkH52",
+      "existingClients": [
+        {
+          "id": "30dSUfUm36eF84Nzzcpcu0UjkH52",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "21",
+      "email": "gdicar@outlook.fr",
+      "companyName": "TOPOBATI/GD ICAR",
+      "siret": "87855854300012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:EOuAKuw6cuP79o65gE3uv2JT8Mw1",
+      "existingClients": [
+        {
+          "id": "EOuAKuw6cuP79o65gE3uv2JT8Mw1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "22",
+      "email": "mal.zegane@gmail.com",
+      "companyName": "ZEGANE MMINKA",
+      "siret": "90768657000017",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:uLHDLd4WbJZXwLrvVmDmMaYRJLA3",
+      "existingClients": [
+        {
+          "id": "uLHDLd4WbJZXwLrvVmDmMaYRJLA3",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "23",
+      "email": "belkhisboualem@gmail.com",
+      "companyName": "B.L PRESTA",
+      "siret": "88929879000011",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:WynYY8VX9wbEl4FUUCw4VYYbpNj1",
+      "existingClients": [
+        {
+          "id": "WynYY8VX9wbEl4FUUCw4VYYbpNj1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "24",
+      "email": "mahdizerarga3@gmail.com",
+      "companyName": "ZK PRESTA",
+      "siret": "88159658900013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:ghfSLErn45WyzFnuuGHp5XQbCOz1",
+      "existingClients": [
+        {
+          "id": "ghfSLErn45WyzFnuuGHp5XQbCOz1",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "25",
+      "email": "rachidhassani93@gmail.com",
+      "companyName": "DJURA FIBRE",
+      "siret": "83829183900028",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:HHku3eDHNwMKQaNN7RYN5ZatioP2",
+      "existingClients": [
+        {
+          "id": "HHku3eDHNwMKQaNN7RYN5ZatioP2",
+          "reason": "siretNorm"
+        }
+      ]
+    },
+    {
+      "sourceRow": "26",
+      "email": "contact.kendelservices@gmail.com",
+      "companyName": "KENDEL SERVICES",
+      "siret": "85019762500013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:oiVjFf8df5WPtENTz3YCNR2ceII3",
+      "existingClients": [
+        {
+          "id": "oiVjFf8df5WPtENTz3YCNR2ceII3",
+          "reason": "siretNorm"
+        }
+      ]
+    }
+  ],
+  "candidates": [],
+  "created": []
+}

@@ -1,0 +1,61 @@
+"use client"
+
+import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts"
+import { ChartTooltipContent } from "@/components/ui/chart"
+
+
+const data = [
+  { month: "Janvier", count: 12 },
+  { month: "Février", count: 25 },
+  { month: "Mars", count: 18 },
+  { month: "Avril", count: 32 },
+  { month: "Mai", count: 22 },
+  { month: "Juin", count: 45 },
+]
+
+export function ClientChart() {
+  return (
+    <div className="h-[250px]">
+        <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+            data={data}
+            margin={{
+            top: 5,
+            right: 10,
+            left: 10,
+            bottom: 0,
+            }}
+        >
+            <Tooltip
+            content={
+                <ChartTooltipContent
+                    indicator="dot"
+                    hideLabel
+                    formatter={(value, name) => (
+                        <div className="flex flex-col items-start gap-1">
+                            <span className="font-bold text-foreground">{`${value} courriers`}</span>
+                            <span className="text-muted-foreground">{data.find(d => d.count === value)?.month}</span>
+                        </div>
+                    )}
+                />
+            }
+            />
+            <XAxis dataKey="month" hide />
+            <YAxis hide />
+            <Line
+            type="monotone"
+            strokeWidth={3}
+            dataKey="count"
+            stroke="hsl(var(--primary))"
+            dot={{
+                r: 6,
+                fill: 'hsl(var(--primary))',
+                stroke: 'hsl(var(--background))',
+                strokeWidth: 2,
+            }}
+            />
+        </LineChart>
+        </ResponsiveContainer>
+    </div>
+  )
+}

@@ -1,0 +1,391 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSuperAdminEmail() {
+      return signedIn() && request.auth.token.email == 'contact.ccs94@gmail.com';
+    }
+
+    function currentUserData() {
+      return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+        : {};
+    }
+
+    function currentRole() {
+      let tokenRole = (request.auth != null && request.auth.token.role != null)
+        ? string(request.auth.token.role).lower()
+        : '';
+      let userRole = string(currentUserData().get('role', '')).lower();
+
+      return tokenRole != ''
+        ? tokenRole
+        : (isSuperAdminEmail())
+          ? 'super_admin'
+          : userRole;
+    }
+
+    function isStaff() {
+      return signedIn() && (
+        isSuperAdminEmail() ||
+        currentRole() in [
+          'admin', 'super_admin', 'manager',
+          'manager_paris', 'manager_orly', 'secretary_paris', 'secretary_orly'
+        ]
+      );
+    }
+
+    function isStaffOf(data) {
+      let location = string(data.get('centerId', data.get('domiciliationAddressId', data.get('locationKey', data.get('addressKey', data.get('addressId', data.get('centerKey', ''))))))).lower();
+      let centerIds = data.get('centerIds', []);
+      let role = currentRole();
+      let userData = currentUserData();
+      let managedId = request.auth.token.get('managedAddressId', userData.get('managedAddressId', ''));
+      let managedIds = request.auth.token.get('managedCenterIds', userData.get('managedCenterIds', []));
+      
+      return isSuperAdmin() || 
+             role in ['admin', 'super_admin'] ||
+             managedIds.hasAny(centerIds) ||
+             managedIds.hasAny([location]) ||
+             (location == 'paris' && managedIds.hasAny(['paris_12e'])) ||
+             (location == 'orly' && managedIds.hasAny(['orly_ville'])) ||
+             (managedId != '' && (
+               managedId == location ||
+               (managedId == 'paris_12e' && location == 'paris') ||
+               (managedId == 'orly_ville' && location == 'orly')
+             )) ||
+             // Fallback temporaire pour les tokens non encore rafraÃ®chis
+             (role in ['manager_paris', 'secretary_paris'] && location in ['paris', 'paris_12e']) ||
+             (role in ['manager_orly', 'secretary_orly'] && location in ['orly', 'orly_ville']) ||
+             (role in ['manager_paris', 'secretary_paris'] && centerIds.hasAny(['paris', 'paris_12e'])) ||
+             (role in ['manager_orly', 'secretary_orly'] && centerIds.hasAny(['orly', 'orly_ville']));
+    }
+
+    function isStaffOfExistingAndNext() {
+      return isSuperAdmin() ||
+        (isStaff() && isStaffOf(resource.data) && isStaffOf(request.resource.data));
+    }
+
+    function isSuperAdmin() {
+       return isSuperAdminEmail() || currentRole() == 'super_admin' || currentRole() == 'admin';
+    }
+
+    function userSecurityFieldsAbsent() {
+      return !request.resource.data.keys().hasAny([
+        'role',
+        'managedAddressId',
+        'managedCenterIds'
+      ]);
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function clientCanAccessMail(uid) {
+      return isSelf(uid) &&
+        exists(/databases/$(database)/documents/clients/$(uid)) &&
+        get(/databases/$(database)/documents/clients/$(uid)).data.get('status', 'active') != 'suspended' &&
+        get(/databases/$(database)/documents/clients/$(uid)).data.get('paymentStatus', 'paid') != 'failed';
+    }
+
+    function isOwnRequestDoc(requestUid) {
+      return signedIn() && (
+        request.auth.uid == requestUid ||
+        (resource != null && (
+          resource.data.ownerUid == request.auth.uid ||
+          resource.data.uid == request.auth.uid
+        ))
+      );
+    }
+
+    function userSecurityFieldsUnchanged() {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny([
+        'role',
+        'managedAddressId',
+        'managedCenterIds'
+      ]);
+    }
+
+    function clientSelfUpdateFieldsAllowed() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'name',
+        'companyName',
+        'representative',
+        'phone',
+        'siret',
+        'documents',
+        'documentsMeta',
+        'documentsUploadMeta',
+        'lastUpdated',
+        'updatedAt'
+      ]);
+    }
+
+    function mailOwnerStatusUpdateAllowed() {
+      return signedIn() &&
+        resource.data.ownerUid == request.auth.uid &&
+        clientCanAccessMail(request.auth.uid) &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']) &&
+        request.resource.data.status in [
+          'received',
+          'processed',
+          'archived',
+          'Urgent',
+          'Nouveau',
+          'Lu',
+          'ArchivÃ©'
+        ];
+    }
+
+    function betaFeedbackCreateValid() {
+      return signedIn() &&
+        request.resource.data.keys().hasOnly([
+          'category',
+          'categoryLabel',
+          'priority',
+          'priorityLabel',
+          'message',
+          'status',
+          'source',
+          'pagePath',
+          'pageUrl',
+          'userAgent',
+          'createdByUid',
+          'createdByEmail',
+          'createdByRole',
+          'displayRole',
+          'centerId',
+          'centerIds',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        request.resource.data.keys().hasAll([
+          'category',
+          'priority',
+          'message',
+          'status',
+          'source',
+          'pagePath',
+          'createdByUid',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        request.resource.data.createdByUid == request.auth.uid &&
+        request.resource.data.status == 'new' &&
+        request.resource.data.source == 'in_app_beta_feedback' &&
+        request.resource.data.category in ['bug', 'ui', 'data', 'idea', 'other'] &&
+        request.resource.data.priority in ['normal', 'important', 'blocking'] &&
+        request.resource.data.message is string &&
+        request.resource.data.message.size() >= 10 &&
+        request.resource.data.message.size() <= 1800 &&
+        request.resource.data.pagePath is string &&
+        request.resource.data.createdAt == request.time &&
+        request.resource.data.updatedAt == request.time;
+    }
+
+    // -------------------------
+    // users
+    // -------------------------
+    match /users/{uid} {
+      allow get, list: if isSelf(uid) || isStaff();
+      allow create: if (isStaff() || isSelf(uid)) && userSecurityFieldsAbsent();
+      allow update: if (isStaff() || isSelf(uid)) && userSecurityFieldsUnchanged();
+      allow delete: if isStaff();
+
+      match /admin_notifications/{notifId} {
+        allow read, write: if isStaff();
+      }
+
+      match /{subCollection=**}/{docId} {
+        allow read, write: if isSelf(uid) || isStaff();
+      }
+    }
+
+    // -------------------------
+    // client_requests
+    // -------------------------
+    match /client_requests/{requestUid} {
+      allow get: if isOwnRequestDoc(requestUid) || (isStaff() && isStaffOf(resource.data));
+      allow list: if isStaff() && isStaffOf(resource.data);
+
+      allow create: if signedIn() && request.auth.uid == requestUid;
+      allow update: if isStaffOfExistingAndNext() || (
+        isOwnRequestDoc(requestUid) && 
+        resource.data.get('status', 'draft') in ['draft', 'documents_partial', 'docs_ready', 'payment_pending', 'payment_received'] &&
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['stripeCheckout', 'pdfJobs']) &&
+        (!('paymentStatus' in request.resource.data) || request.resource.data.paymentStatus in ['pending', resource.data.get('paymentStatus', 'pending')]) &&
+        (!('status' in request.resource.data) || request.resource.data.status in ['draft', 'documents_partial', 'docs_ready', 'payment_pending'])
+      );
+      allow delete: if isSuperAdmin() || (isStaff() && isStaffOf(resource.data));
+    }
+
+    // -------------------------
+    // clients
+    // -------------------------
+    match /clients/{uid} {
+      allow get: if isSelf(uid) || (isStaff() && isStaffOf(resource.data));
+      allow list: if isStaff() && isStaffOf(resource.data);
+
+      allow create: if isSuperAdmin() || (isStaff() && isStaffOf(request.resource.data));
+      allow delete: if isSuperAdmin() || (isStaff() && isStaffOf(resource.data));
+      allow update: if isStaffOfExistingAndNext() || (isSelf(uid) && clientSelfUpdateFieldsAllowed());
+    }
+
+    match /clients/{uid}/mails/{mailId} {
+      allow get, list: if clientCanAccessMail(uid) ||
+        (isStaff() && isStaffOf(get(/databases/$(database)/documents/clients/$(uid)).data));
+      allow create, update, delete: if isStaff() &&
+        isStaffOf(get(/databases/$(database)/documents/clients/$(uid)).data);
+    }
+
+    // -------------------------
+    // customers
+    // -------------------------
+    match /customers/{uid} {
+      allow get: if isSelf(uid) || isStaff();
+      allow list: if isStaff();
+
+      allow create, update: if isSelf(uid) || isStaff();
+      allow delete: if isStaff();
+
+      match /{subCollection=**}/{docId} {
+        allow read, write: if isSelf(uid) || isStaff();
+      }
+    }
+
+    // -------------------------
+    // mails
+    // -------------------------
+    match /mails/{docId} {
+      allow get, list: if (isStaff() && isStaffOf(resource.data)) ||
+        (signedIn() && resource.data.ownerUid == request.auth.uid && clientCanAccessMail(request.auth.uid));
+      allow create: if isSuperAdmin() || (isStaff() && isStaffOf(request.resource.data));
+      allow update: if isStaffOfExistingAndNext() || mailOwnerStatusUpdateAllowed();
+      allow delete: if isSuperAdmin() || (isStaff() && isStaffOf(resource.data));
+    }
+
+    // -------------------------
+    // logs / templates / PDF jobs
+    // -------------------------
+    match /activity_logs/{docId} {
+      allow read, list: if isSuperAdmin() || (isStaff() && isStaffOf(resource.data));
+      allow write: if false;
+    }
+
+    match /audit_logs/{docId} {
+      allow read, list: if isSuperAdmin() || (isStaff() && isStaffOf(resource.data));
+      allow write: if false;
+    }
+
+    match /beta_feedback/{feedbackId} {
+      allow create: if betaFeedbackCreateValid();
+      allow get, list: if isSuperAdmin();
+      allow update: if isSuperAdmin() &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status',
+          'updatedAt',
+          'handledAt',
+          'handledByUid',
+          'handledByEmail',
+          'adminNote'
+        ]) &&
+        request.resource.data.status in ['new', 'in_progress', 'resolved', 'ignored'];
+      allow delete: if isSuperAdmin();
+    }
+
+    match /emailTemplates/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /centers/{centerId} {
+      allow get, list: if isStaff();
+      allow create, update, delete: if isSuperAdmin();
+    }
+
+    match /pdf_generation_requests/{docId} {
+      allow read, list, create, update: if isStaff();
+      allow delete: if false;
+    }
+
+    match /pdf_job_requests/{docId} {
+      allow read, list: if isStaff();
+      allow write: if false;
+    }
+
+    match /pdf_requests_attestations_orly/{docId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'orly' });
+      allow write: if false;
+    }
+    match /pdf_requests_attestations_paris/{docId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'paris' });
+      allow write: if false;
+    }
+    match /pdf_requests_contrats_orly/{docId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'orly' });
+      allow write: if false;
+    }
+    match /pdf_requests_contrats_paris/{docId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'paris' });
+      allow write: if false;
+    }
+
+    // -------------------------
+    // courriers
+    // -------------------------
+    match /courriers/{docId} {
+      allow get: if (isStaff() && isStaffOf({ 'centerKey': resource.data.centerKey })) ||
+        (signedIn() && resource.data.ownerUid == request.auth.uid && clientCanAccessMail(request.auth.uid));
+      allow list: if (isStaff() && isStaffOf({ 'centerKey': resource.data.centerKey })) ||
+        (signedIn() && resource.data.ownerUid == request.auth.uid && clientCanAccessMail(request.auth.uid));
+      allow write: if false;
+    }
+
+    // -------------------------
+    // invoices / counters
+    // -------------------------
+    match /invoices/{invoiceId} {
+      allow get: if (isStaff() && isStaffOf(resource.data)) || isSelf(resource.data.clientId);
+      allow list: if isSuperAdmin() ||
+        (isStaff() && isStaffOf(resource.data)) ||
+        (signedIn() && isSelf(resource.data.clientId));
+      allow create: if isSuperAdmin() || (isStaff() && isStaffOf(request.resource.data));
+      allow update: if isSuperAdmin() ||
+        (isStaff() && isStaffOf(resource.data) && isStaffOf(request.resource.data));
+      allow delete: if isSuperAdmin();
+    }
+
+    match /counters/{docId} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    // Unified PDF requests collection (usually monitored by extensions)
+    match /pdf_requests/{jobId} {
+      allow read, list: if isStaff();
+      allow write: if false;
+    }
+
+    // Legacy or specific collections (keeping for compatibility but rules-protected)
+    match /pdf_requests_invoices_paris/{jobId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'paris' });
+      allow write: if false;
+    }
+    match /pdf_requests_invoices_orly/{jobId} {
+      allow read, list: if isStaff() && isStaffOf({ 'addressKey': 'orly' });
+      allow write: if false;
+    }
+
+    // -------------------------
+    // fallback
+    // -------------------------
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+

@@ -1,0 +1,15 @@
+I1004 08:00:50.404688   19851 load.go:31] Reloading schema and connectors...
+I1004 08:00:50.622316   19851 control.go:94] [/emulator/studio d06a] UpdateResources(): done
+Schema: sources: schema/schema.gql [1992B] 
+Connector "example": sources: example/mutations.gql [1243B] example/queries.gql [1801B] 
+I1004 08:00:50.768957   19851 codegen.go:82] [connector "example" javascriptSdk] Generating sources into "/home/user/studio/src/dataconnect-generated"
+I1004 08:00:50.855129   19851 collector.go:107] schema extensions wrote into "/home/user/studio/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [73251B] main/query.gql [5099B] main/mutation.gql [13679B] main/implicit.gql [1261B] main/input.gql [28173B] main/relation.gql [13746B] 
+I1004 08:00:50.860246   19851 collector.go:107] connector "example" javascriptSdk wrote into "/home/user/studio/src/dataconnect-generated"
+Generated sources: react/package.json [460B] react/index.cjs.js [3439B] README.md [40931B] react/index.d.ts [3961B] react/esm/package.json [17B] react/esm/index.esm.js [3269B] react/README.md [48299B] index.d.ts [8025B] esm/index.esm.js [3560B] esm/package.json [17B] index.cjs.js [4050B] package.json [863B] 
+I1004 08:00:50.865137   19851 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation
+I1004 08:00:50.865767   19851 load.go:109] Finished reloading
+I1004 08:00:50.874660   19851 dev.go:102] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I1004 08:00:59.288253   19851 control.go:94] [/emulator/studio 395a] UpdateResources(): done
+Schema: sources: schema/schema.gql [1992B] 
+Connector "example": sources: example/mutations.gql [1243B] example/queries.gql [1801B] 

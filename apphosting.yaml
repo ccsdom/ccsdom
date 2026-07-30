@@ -1,0 +1,42 @@
+runConfig:
+  maxInstances: 1
+
+location: europe-west4
+
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyDTiwZHqbVYKfPfLAs64w2JeCoO8E-CFYw
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: bizhome-hub
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:1076683588913:web:ab11c982d229fea1241c10
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: bizhome-hub.firebasestorage.app
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: bizhome-hub.firebaseapp.com
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "1076683588913"
+  - variable: NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+    value: pk_test_51RqWkBCam0qbdqzzEW4HSs0hjFrNBq2Lvq8ehBW5KDYzNapqklYOLaoPairHokSGOM2uzQyjDF3qkg07mCdegaFu00DhzCzPaW
+  - variable: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    value: AIzaSyBbgpc5bTN5-c_jzHbEd3vLtk6CTfPO5-s
+  - variable: NEXT_PUBLIC_ENABLE_EMAIL_NOTIFICATIONS
+    value: "true"
+  - variable: NEXT_PUBLIC_APP_URL
+    value: https://ccsdom.fr
+  - variable: GEMINI_API_KEY
+    secret: GEMINI_API_KEY
+    availability:
+      - RUNTIME
+  - variable: STRIPE_SECRET_KEY
+    secret: STRIPE_SECRET_KEY
+    availability:
+      - RUNTIME
+  - variable: STRIPE_WEBHOOK_SECRET
+    secret: STRIPE_WEBHOOK_SECRET
+    availability:
+      - RUNTIME
+  - variable: RESEND_API_KEY
+    secret: RESEND_API_KEY
+    availability:
+      - RUNTIME

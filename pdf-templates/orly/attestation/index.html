@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Attestation de domiciliation - Orly</title>
+  <style>
+    @page { size: A4; margin: 20mm 15mm 20mm 15mm; }
+    * { box-sizing: border-box; }
+    html, body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #111827;
+    }
+    h1, h2 {
+      color: #0f172a;
+      margin: 0;
+    }
+    h1 {
+      font-size: 17pt;
+      text-align: center;
+      margin: 16pt 0 14pt;
+      letter-spacing: 0.8pt;
+    }
+    p { margin: 7pt 0; }
+    strong { color: #0f172a; }
+    .container { position: relative; z-index: 1; }
+    .header {
+      display: grid;
+      grid-template-columns: 164pt 1fr;
+      gap: 18pt;
+      align-items: center;
+      padding-bottom: 12pt;
+      border-bottom: 2px solid #2563eb;
+    }
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12pt;
+    }
+    .brand-badge {
+      position: relative;
+      width: 82pt;
+      height: 82pt;
+      border-radius: 22pt;
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 58%, #60a5fa 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23pt;
+      font-weight: 900;
+      letter-spacing: 1.7pt;
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      box-shadow: 0 12pt 30pt rgba(37, 99, 235, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+      overflow: hidden;
+      text-shadow: 0 1pt 3pt rgba(15, 23, 42, 0.24);
+    }
+    .brand-badge::before {
+      content: "";
+      position: absolute;
+      top: -24pt;
+      right: -18pt;
+      width: 54pt;
+      height: 54pt;
+      border-radius: 999pt;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .brand-badge span { position: relative; z-index: 1; }
+    .brand-copy { color: #0f172a; }
+    .brand-copy .eyebrow {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.4pt;
+      color: #2563eb;
+      text-transform: uppercase;
+      margin-bottom: 2pt;
+    }
+    .brand-copy .title {
+      font-size: 17pt;
+      font-weight: 800;
+      line-height: 1.05;
+    }
+    .brand-copy .subtitle {
+      margin-top: 4pt;
+      font-size: 9.5pt;
+      color: #475569;
+    }
+    .brand h2 { font-size: 14pt; margin-bottom: 3pt; }
+    .brand small {
+      display: block;
+      font-size: 9.5pt;
+      color: #475569;
+      margin-top: 3pt;
+    }
+    .filigrane {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 80pt;
+      letter-spacing: 6pt;
+      color: rgba(15, 23, 42, 0.06);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .callout {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6pt;
+      padding: 12pt 14pt;
+      margin: 14pt 0;
+    }
+    .address-box {
+      margin: 14pt 0;
+      padding: 12pt 14pt;
+      border-left: 4px solid #2563eb;
+      background: #eff6ff;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .signature-block {
+      margin-top: 28pt;
+      padding-top: 14pt;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .signature-title {
+      font-size: 10pt;
+      color: #475569;
+      margin-bottom: 8pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="filigrane">CCS</div>
+
+  <div class="container">
+    <div class="header">
+      <div class="brand-mark">
+        <div class="brand-badge"><span>CCS</span></div>
+        <div class="brand-copy">
+          <div class="eyebrow">Centre Orly</div>
+          <div class="title">CCS DOM</div>
+          <div class="subtitle">Consulting Conseil Services</div>
+        </div>
+      </div>
+      <div class="brand">
+        <h2>CONSULTING CONSEIL SERVICES</h2>
+        <small>SARL - Capital 100 000 EUR</small>
+        <small>25 RUE EDMOND ROSTAND, 94310 ORLY</small>
+        <small>RCS Creteil 830 278 644 - Agrement Val-de-Marne AG/DOM/2024-06</small>
+      </div>
+    </div>
+
+    <h1>ATTESTATION DE DOMICILIATION</h1>
+
+    <p>
+      Je soussigne, <strong>M. Rabah MAHFOUF</strong>, agissant en qualite de gerant de
+      <strong>CONSULTING CONSEIL SERVICES</strong>, atteste que la societe ci-dessous
+      beneficie d'un contrat de domiciliation dans nos locaux.
+    </p>
+
+    {{#with data}}
+    <div class="callout">
+      <p>
+        <strong>Societe domiciliee :</strong>
+        {{#if companyName}}{{companyName}}{{else}}{{../companyName}}{{/if}}
+      </p>
+      <p>
+        <strong>Forme juridique :</strong>
+        {{#if legalStatusText}}
+          {{legalStatusText}}
+        {{else if otherLegalStatus}}
+          {{otherLegalStatus}}
+        {{else if legalStatus}}
+          {{legalStatus}}
+        {{else if ../legalStatusText}}
+          {{../legalStatusText}}
+        {{else if ../otherLegalStatus}}
+          {{../otherLegalStatus}}
+        {{else if ../legalStatus}}
+          {{../legalStatus}}
+        {{else}}
+          Non renseignee
+        {{/if}}
+      </p>
+      <p>
+        <strong>Capital social :</strong>
+        {{#if shareCapital}}{{shareCapital}} EUR{{else if ../shareCapital}}{{../shareCapital}} EUR{{else}}Non renseigne{{/if}}
+      </p>
+      <p>
+        <strong>Representant :</strong>
+        {{#if representative}}
+          {{representative}}
+        {{else if signatoryName}}
+          {{signatoryName}}
+        {{else if firstName}}
+          {{firstName}} {{lastName}}
+        {{else if ../representative}}
+          {{../representative}}
+        {{else if ../signatoryName}}
+          {{../signatoryName}}
+        {{else if ../firstName}}
+          {{../firstName}} {{../lastName}}
+        {{else}}
+          Non renseigne
+        {{/if}}
+      </p>
+      <p>
+        <strong>Immatriculation :</strong>
+        {{#if siret}}SIRET {{siret}}{{else if ../siret}}SIRET {{../siret}}{{else}}Societe en cours d'immatriculation{{/if}}
+      </p>
+    </div>
+
+    <p>Le siege social / l'adresse de domiciliation est fixe(e) a l'adresse suivante :</p>
+
+    <div class="address-box">
+      25 RUE EDMOND ROSTAND, 94310 ORLY
+    </div>
+
+    <p>
+      Cette attestation est etablie pour servir et valoir ce que de droit dans le cadre des
+      formalites administratives, bancaires et juridiques de la societe domiciliee.
+    </p>
+
+    <p>
+      Date d'effet de la domiciliation :
+      <strong>
+        {{#if effectiveDateDisplay}}{{effectiveDateDisplay}}{{else if A_COMPTER_DU}}{{A_COMPTER_DU}}{{else if today}}{{today}}{{else if signedAtDisplay}}{{signedAtDisplay}}{{else}}[date a completer]{{/if}}
+      </strong>
+    </p>
+
+    <div class="signature-block">
+      <div class="signature-title">
+        Fait a Orly, le
+        {{#if effectiveDateDisplay}}{{effectiveDateDisplay}}{{else if A_COMPTER_DU}}{{A_COMPTER_DU}}{{else if today}}{{today}}{{else if signedAtDisplay}}{{signedAtDisplay}}{{else}}[date a completer]{{/if}}
+      </div>
+      <p>
+        <strong>Pour CONSULTING CONSEIL SERVICES</strong><br />
+        M. Rabah MAHFOUF<br />
+        Gerant
+      </p>
+    </div>
+    {{/with}}
+  </div>
+</body>
+</html>

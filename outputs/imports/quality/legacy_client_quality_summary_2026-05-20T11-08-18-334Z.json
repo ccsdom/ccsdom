@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-05-20T11:08:20.027Z",
+  "projectId": "bizhome-hub",
+  "totalLegacyClients": 227,
+  "centerCounts": {
+    "orly_ville": 118,
+    "paris_12e": 109
+  },
+  "portalCounts": {
+    "pending_invitation": 227
+  },
+  "severityCounts": {
+    "warning": 6,
+    "minor": 5,
+    "ok": 216
+  },
+  "issueCounts": {
+    "siret_missing": 2,
+    "phone_invalid": 5,
+    "siret_invalid": 4
+  },
+  "duplicateEmailGroups": 0,
+  "outputs": {
+    "detailCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\quality\\legacy_client_quality_2026-05-20T11-08-18-334Z.csv",
+    "issuesCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\quality\\legacy_client_quality_issues_2026-05-20T11-08-18-334Z.csv",
+    "duplicateCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\quality\\legacy_client_duplicate_emails_2026-05-20T11-08-18-334Z.csv",
+    "summaryJson": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\quality\\legacy_client_quality_summary_2026-05-20T11-08-18-334Z.json"
+  }
+}

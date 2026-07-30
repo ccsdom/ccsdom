@@ -1,0 +1,29 @@
+.textLayer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.25;
+    line-height: 1;
+    text-size-adjust: none;
+    transform-origin: 0 0;
+    z-index: 2;
+  }
+  .textLayer span,
+  .textLayer br {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0 0;
+  }
+  .textLayer ::selection {
+    background: rgba(0, 0, 255, 0.3);
+  }
+  .textLayer .endOfContent {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    cursor: default;
+    user-select: none;
+  }

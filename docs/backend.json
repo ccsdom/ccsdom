@@ -1,0 +1,266 @@
+{
+  "entities": {
+    "Business": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Business",
+      "type": "object",
+      "description": "Represents a business entity that may use domiciliation services.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Business entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the business."
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The name of a contact person for the business."
+        },
+        "contactEmail": {
+          "type": "string",
+          "description": "The email address of a contact person for the business.",
+          "format": "email"
+        },
+        "contactPhone": {
+          "type": "string",
+          "description": "The phone number of a contact person for the business."
+        },
+        "address": {
+          "type": "string",
+          "description": "The physical address of the business."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "address"
+      ]
+    },
+    "VirtualOfficePackage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "VirtualOfficePackage",
+      "type": "object",
+      "description": "Represents a virtual office package offered to businesses.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the VirtualOfficePackage entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the virtual office package."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the virtual office package."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the virtual office package."
+        },
+        "features": {
+          "type": "array",
+          "description": "A list of features included in the virtual office package.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "price"
+      ]
+    },
+    "ServiceListing": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ServiceListing",
+      "type": "object",
+      "description": "Represents a listing of nearby services available to businesses.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ServiceListing entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the service."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the service."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the service (e.g., 'Accounting', 'Legal')."
+        },
+        "contactInformation": {
+          "type": "string",
+          "description": "Contact information for the service provider."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "category",
+        "contactInformation"
+      ]
+    },
+    "FAQ": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "FAQ",
+      "type": "object",
+      "description": "Represents a frequently asked question and its answer.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the FAQ entity."
+        },
+        "question": {
+          "type": "string",
+          "description": "The question being asked."
+        },
+        "answer": {
+          "type": "string",
+          "description": "The answer to the question."
+        }
+      },
+      "required": [
+        "id",
+        "question",
+        "answer"
+      ]
+    },
+    "BusinessVirtualOfficePackage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "BusinessVirtualOfficePackage",
+      "type": "object",
+      "description": "Represents the association between a business and a virtual office package.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the BusinessVirtualOfficePackage entity."
+        },
+        "businessId": {
+          "type": "string",
+          "description": "Reference to Business. (Relationship: Business 1:N BusinessVirtualOfficePackage)"
+        },
+        "virtualOfficePackageId": {
+          "type": "string",
+          "description": "Reference to VirtualOfficePackage. (Relationship: VirtualOfficePackage 1:N BusinessVirtualOfficePackage)"
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The date the business subscribed to the virtual office package.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The date the business's subscription to the virtual office package ends.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "businessId",
+        "virtualOfficePackageId",
+        "startDate"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/businesses/{businessId}",
+        "definition": {
+          "entityName": "Business",
+          "schema": {
+            "$ref": "#/backend/entities/Business"
+          },
+          "description": "Stores business details.  Access control will be based on user authentication.",
+          "params": [
+            {
+              "name": "businessId",
+              "description": "The unique identifier for the business."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/virtual_office_packages/{packageId}",
+        "definition": {
+          "entityName": "VirtualOfficePackage",
+          "schema": {
+            "$ref": "#/backend/entities/VirtualOfficePackage"
+          },
+          "description": "Stores virtual office package details. Access control will be based on admin privileges.",
+          "params": [
+            {
+              "name": "packageId",
+              "description": "The unique identifier for the virtual office package."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/business_virtual_office_packages/{associationId}",
+        "definition": {
+          "entityName": "BusinessVirtualOfficePackage",
+          "schema": {
+            "$ref": "#/backend/entities/BusinessVirtualOfficePackage"
+          },
+          "description": "Stores the association between a business and a virtual office package. Access control will be based on the businessId in the document, ensuring only authorized users or processes can access this data.",
+          "params": [
+            {
+              "name": "associationId",
+              "description": "The unique identifier for the association."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/service_listings/{serviceListingId}",
+        "definition": {
+          "entityName": "ServiceListing",
+          "schema": {
+            "$ref": "#/backend/entities/ServiceListing"
+          },
+          "description": "Stores nearby service listings. Publicly readable.",
+          "params": [
+            {
+              "name": "serviceListingId",
+              "description": "The unique identifier for the service listing."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/faqs/{faqId}",
+        "definition": {
+          "entityName": "FAQ",
+          "schema": {
+            "$ref": "#/backend/entities/FAQ"
+          },
+          "description": "Stores frequently asked questions and answers. Publicly readable.",
+          "params": [
+            {
+              "name": "faqId",
+              "description": "The unique identifier for the FAQ."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to manage business domiciliation data, focusing on simplicity, security, and scalability. It leverages structural segregation and denormalization to optimize security rules and query performance.\n\n*   `/businesses/{businessId}`: Stores business details.\n*   `/virtual_office_packages/{packageId}`: Stores virtual office package details.\n*   `/business_virtual_office_packages/{associationId}`: Stores associations between businesses and virtual office packages.\n*   `/service_listings/{serviceListingId}`: Stores nearby service listings.\n*   `/faqs/{faqId}`: Stores frequently asked questions and answers.\n\n**Authorization Independence:** Authorization Independence is achieved by avoiding hierarchical authorization dependencies. In this structure, each top-level collection (businesses, virtual_office_packages, etc.) can have its own security rules without relying on parent document data.\n\n**QAPs (Rules are not Filters):** The structure uses structural segregation to enable secure `list` operations. Each collection houses data with similar access needs. For instance, the `/faqs` collection might be publicly readable, while the `/businesses` collection would have stricter access controls based on authentication and potentially authorization roles."
+  }
+}

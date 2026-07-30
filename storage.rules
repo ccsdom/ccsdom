@@ -1,0 +1,217 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function currentUserDoc() {
+      return firestore.get(
+        /databases/(default)/documents/users/$(request.auth.uid)
+      );
+    }
+
+    function currentRole() {
+      return signedIn() &&
+        firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        ? currentUserDoc().data.role
+        : null;
+    }
+
+    function currentUserManagedAddressId() {
+      return signedIn() &&
+        firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        ? string(currentUserDoc().data.get('managedAddressId', '')).lower()
+        : '';
+    }
+
+    function currentUserManagedCenterIds() {
+      return signedIn() &&
+        firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        ? currentUserDoc().data.get('managedCenterIds', [])
+        : [];
+    }
+
+    function isStaff() {
+      return signedIn() && currentRole() in [
+        'admin',
+        'superadmin',
+        'super_admin',
+        'manager',
+        'manager_paris',
+        'manager_orly',
+        'secretary_paris',
+        'secretary_orly'
+      ];
+    }
+
+    function isStaffOf(loc) {
+      let r = string(request.auth.token.get('role', currentRole())).lower(); // Claims prioritaires
+      let l = (loc != null) ? string(loc).lower() : '';
+      let managedId = string(request.auth.token.get('managedAddressId', '')).lower();
+      let managedIds = request.auth.token.get('managedCenterIds', []);
+      let docManagedId = currentUserManagedAddressId();
+      let docManagedIds = currentUserManagedCenterIds();
+
+      return r in ['admin', 'superadmin', 'super_admin'] ||
+             (l == 'paris' && (
+               r in ['manager_paris', 'secretary_paris'] ||
+               managedId in ['paris', 'paris_12e'] ||
+               docManagedId in ['paris', 'paris_12e'] ||
+               managedIds.hasAny(['paris', 'paris_12e']) ||
+               docManagedIds.hasAny(['paris', 'paris_12e'])
+             )) ||
+             (l == 'paris_12e' && (
+               r in ['manager_paris', 'secretary_paris'] ||
+               managedId in ['paris', 'paris_12e'] ||
+               docManagedId in ['paris', 'paris_12e'] ||
+               managedIds.hasAny(['paris', 'paris_12e']) ||
+               docManagedIds.hasAny(['paris', 'paris_12e'])
+             )) ||
+             (l == 'orly' && (
+               r in ['manager_orly', 'secretary_orly'] ||
+               managedId in ['orly', 'orly_ville'] ||
+               docManagedId in ['orly', 'orly_ville'] ||
+               managedIds.hasAny(['orly', 'orly_ville']) ||
+               docManagedIds.hasAny(['orly', 'orly_ville'])
+             )) ||
+             (l == 'orly_ville' && (
+               r in ['manager_orly', 'secretary_orly'] ||
+               managedId in ['orly', 'orly_ville'] ||
+               docManagedId in ['orly', 'orly_ville'] ||
+               managedIds.hasAny(['orly', 'orly_ville']) ||
+               docManagedIds.hasAny(['orly', 'orly_ville'])
+             )) ||
+             managedId == l ||
+             docManagedId == l ||
+             managedIds.hasAny([l]) ||
+             docManagedIds.hasAny([l]);
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function requestCenterKey(requestUid) {
+      let requestData = firestore.get(
+        /databases/(default)/documents/client_requests/$(requestUid)
+      ).data;
+      let locationKey = string(requestData.get('locationKey', '')).lower();
+      let addressKey = string(requestData.get('addressKey', '')).lower();
+      let addressId = string(requestData.get('addressId', '')).lower();
+
+      return locationKey != ''
+        ? locationKey
+        : (addressKey != '' ? addressKey : addressId);
+    }
+
+    function clientRequestExists(requestUid) {
+      return firestore.exists(
+        /databases/(default)/documents/client_requests/$(requestUid)
+      );
+    }
+
+    function canReadOnboardingDocuments(requestUid) {
+      return isSelf(requestUid) ||
+        (
+          isStaff() &&
+          clientRequestExists(requestUid) &&
+          (
+            requestCenterKey(requestUid) == '' ||
+            isStaffOf(requestCenterKey(requestUid))
+          )
+        );
+    }
+
+    // -------------------------
+    // documents onboarding
+    // documents/{requestUid}/{docType}/{fileName}
+    // -------------------------
+    match /documents/{requestUid}/{allPaths=**} {
+      allow read: if canReadOnboardingDocuments(requestUid);
+      allow write: if (isSelf(requestUid) &&
+                    request.resource.size < 15 * 1024 * 1024 &&
+                    request.resource.contentType.matches('application/pdf|image/.*')) ||
+                   isStaff();
+    }
+
+    match /signatures/{addressKey}/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(addressKey)) || isSelf(uid);
+      allow write: if isStaff() || (isSelf(uid) && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'));
+    }
+
+    match /contracts/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(requestCenterKey(uid))) || isSelf(uid);
+      allow write: if isStaff();
+    }
+
+    match /templates/{fileName} {
+      allow read: if isStaff();
+      allow write: if isStaff();
+    }
+
+    match /mails/{uid}/{mailId}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(requestCenterKey(uid))) || isSelf(uid);
+      allow write: if isStaff();
+    }
+
+    match /courriers/{centerKey}/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(centerKey)) || isSelf(uid);
+      allow write: if isStaff();
+    }
+
+    match /incoming-mails/{centerKey}/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(centerKey)) || isSelf(uid);
+      allow write: if isStaff();
+    }
+
+    match /mailroom/{centerKey}/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(centerKey)) || isSelf(uid);
+      allow write: if isStaff();
+    }
+
+    match /formalites/{centerKey}/{uid}/{fileName} {
+      allow read: if (isStaff() && isStaffOf(centerKey)) || isSelf(uid);
+      allow write: if isStaff() &&
+        isStaffOf(centerKey) &&
+        request.resource.size < 25 * 1024 * 1024 &&
+        request.resource.contentType == 'application/pdf';
+    }
+
+    // -------------------------
+    // Documents générés par les extensions
+    // -------------------------
+    function isOwnerOfRequest(collection, requestId) {
+      return signedIn() && firestore.get(/databases/(default)/documents/$(collection)/$(requestId)).data.ownerUid == request.auth.uid;
+    }
+
+    match /attestations-paris/{fileName} {
+      allow read: if (isStaff() && isStaffOf('paris')) || isOwnerOfRequest('pdf_requests_attestations_paris', fileName.replace('.pdf', ''));
+    }
+    match /attestations-orly/{fileName} {
+      allow read: if (isStaff() && isStaffOf('orly')) || isOwnerOfRequest('pdf_requests_attestations_orly', fileName.replace('.pdf', ''));
+    }
+    match /contrats-paris/{fileName} {
+      allow read: if (isStaff() && isStaffOf('paris'))
+                  || isOwnerOfRequest('pdf_requests_contracts_paris', fileName.replace('.pdf', ''))
+                  || isOwnerOfRequest('pdf_requests_contrats_paris', fileName.replace('.pdf', ''));
+    }
+    match /contrats-orly/{fileName} {
+      allow read: if (isStaff() && isStaffOf('orly')) || isOwnerOfRequest('pdf_requests_contrats_orly', fileName.replace('.pdf', ''));
+    }
+    match /invoices-paris/{fileName} {
+      allow read: if (isStaff() && isStaffOf('paris')) || isOwnerOfRequest('pdf_requests_invoices_paris', fileName.replace('.pdf', ''));
+    }
+    match /invoices-orly/{fileName} {
+      allow read: if (isStaff() && isStaffOf('orly')) || isOwnerOfRequest('pdf_requests_invoices_orly', fileName.replace('.pdf', ''));
+    }
+
+    // -------------------------
+    // fallback
+    // -------------------------
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "source": "C:\\Users\\Lenovo\\Downloads\\LISTE DOMICILIATION CCS TECH (Réparé).xlsx",
+  "generatedAt": "2026-05-20T11:59:53",
+  "sheet": "Feuil1",
+  "rowsExtracted": 113,
+  "readyRows": 112,
+  "blockedRows": 1,
+  "duplicateEmailGroups": 2,
+  "duplicateEmailRows": 4,
+  "duplicateSiretGroups": 0,
+  "duplicateSiretRows": 0,
+  "issuesCount": {
+    "date_effet_non_normalisee": 1,
+    "email_absent": 1,
+    "email_corrige_virgule": 15,
+    "email_partage_dans_excel": 4,
+    "siret_format_a_verifier": 4,
+    "telephone_format_a_verifier": 4,
+    "telephone_zero_ajoute": 8
+  },
+  "defaults": {
+    "forfait": "classic",
+    "frequencePaiement": "monthly",
+    "centre": "paris"
+  },
+  "outputs": {
+    "readyCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\paris\\paris_clients_import_ready.csv",
+    "auditCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\paris\\paris_clients_import_audit.csv",
+    "duplicateEmailsCsv": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\paris\\paris_duplicate_emails_review.csv"
+  }
+}

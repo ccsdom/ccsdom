@@ -1,0 +1,26 @@
+.root {
+  width: 100%;
+}
+
+/* Les :global doivent être “ancrés” à une classe locale (ici .root) */
+.root :global(.react-pdf__Document) {
+  width: 100%;
+}
+
+.root :global(.react-pdf__Page) {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.root :global(.react-pdf__Page__canvas) {
+  max-width: 100%;
+  height: auto !important;
+  border-radius: 10px;
+}
+
+.root :global(.react-pdf__message) {
+  padding: 12px;
+  font-size: 14px;
+  color: hsl(var(--muted-foreground));
+}

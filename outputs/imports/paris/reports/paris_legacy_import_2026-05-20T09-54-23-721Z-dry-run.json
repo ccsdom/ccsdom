@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-05-20T09:54:25.861Z",
+  "projectId": "bizhome-hub",
+  "profile": "paris",
+  "mode": "dry-run",
+  "source": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\paris\\paris_clients_import_ready.csv",
+  "batchId": "paris_legacy_import_2026-05-20T09-54-23-721Z",
+  "options": {
+    "createAuthDisabled": true,
+    "limit": 10,
+    "writesClientRequests": false,
+    "writesInvoices": false,
+    "sendsEmails": false
+  },
+  "summary": {
+    "scanned": 10,
+    "wouldImport": 9,
+    "imported": 0,
+    "skipped": 1,
+    "wouldCreateAuthDisabled": 9,
+    "createdAuthDisabled": 0,
+    "existingAuthUsers": 1,
+    "legacyIdWithoutAuth": 0
+  },
+  "skipped": [
+    {
+      "sourceRow": "14",
+      "email": "benhaddirachid343@gmail.com",
+      "companyName": "ALL GUARD",
+      "siret": "93411184000013",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:FoWPfDLuNNgus5NQQxQTHsdV9u52",
+      "existingClients": [
+        {
+          "id": "FoWPfDLuNNgus5NQQxQTHsdV9u52",
+          "reason": "email"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "sourceRow": "6",
+      "email": "fazylzaboot99@gmail.com",
+      "companyName": "2FBZ.TRANSPORTS",
+      "siret": "93966595600016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "7",
+      "email": "w.aria.95@hotmail.fr",
+      "companyName": "2H CLEAN",
+      "siret": "98011645300013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "8",
+      "email": "ad-massin@hotmail.fr",
+      "companyName": "3D SECURITY FR",
+      "siret": "97873872200013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "9",
+      "email": "samiraabbas45@gmail.com",
+      "companyName": "ABBAS Samira",
+      "siret": "93398023700012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "10",
+      "email": "amina_laribi@yahoo.fr",
+      "companyName": "ADRIEN CONSEIL",
+      "siret": "94278129500012",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "telephone_zero_ajoute"
+      ]
+    },
+    {
+      "sourceRow": "11",
+      "email": "larbiaziz007@gmail.com",
+      "companyName": "AFL WORLD",
+      "siret": "98490344300013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "12",
+      "email": "simplysmart1@hotmail.fr",
+      "companyName": "AIT-AIDER YACINE",
+      "siret": "92500555500014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "13",
+      "email": "freebook@live.fr",
+      "companyName": "ALERTEA SECURITY",
+      "siret": "92812071600016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "15",
+      "email": "ahchertouh213@gmail.com",
+      "companyName": "AMD2 2024",
+      "siret": "93476396200016",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "email_corrige_virgule"
+      ]
+    }
+  ],
+  "created": []
+}

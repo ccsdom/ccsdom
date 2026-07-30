@@ -1,0 +1,2015 @@
+{
+  "generatedAt": "2026-05-19T15:39:40.570Z",
+  "projectId": "bizhome-hub",
+  "mode": "commit",
+  "source": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\orly\\orly_clients_import_ready.csv",
+  "batchId": "orly_legacy_import_2026-05-19T15-39-40-340Z",
+  "options": {
+    "createAuthDisabled": true,
+    "limit": 0,
+    "writesClientRequests": false,
+    "writesInvoices": false,
+    "sendsEmails": false
+  },
+  "summary": {
+    "scanned": 123,
+    "wouldImport": 118,
+    "imported": 118,
+    "skipped": 5,
+    "wouldCreateAuthDisabled": 118,
+    "createdAuthDisabled": 118,
+    "existingAuthUsers": 5,
+    "legacyIdWithoutAuth": 0
+  },
+  "skipped": [
+    {
+      "sourceRow": "35",
+      "email": "baldem.btp@gmail.com",
+      "companyName": "EUROPE ETANCHE",
+      "siret": "91757084800015",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+      "existingClients": [
+        {
+          "id": "VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "97",
+      "email": "madge02@yahoo.fr",
+      "companyName": "SECA IDF",
+      "siret": "94317790700012",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+      "existingClients": [
+        {
+          "id": "xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "125",
+      "email": "bbinam29@gmail.com",
+      "companyName": "TRANSPORT GTE",
+      "siret": "890711336",
+      "auth": "existing",
+      "warnings": [
+        "siret_invalide"
+      ],
+      "reason": "existing_client:ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "existingClients": [
+        {
+          "id": "ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "128",
+      "email": "mdiane56@yahoo.fr",
+      "companyName": "VIGILENCE SECURITY",
+      "siret": "98015308400010",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+      "existingClients": [
+        {
+          "id": "sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+          "reason": "email"
+        }
+      ]
+    },
+    {
+      "sourceRow": "14",
+      "email": "takfarinasbouda@hotmail.fr",
+      "companyName": "SOLVE CONSULTING",
+      "siret": "89826656400019",
+      "auth": "existing",
+      "warnings": [],
+      "reason": "existing_client:5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+      "existingClients": [
+        {
+          "id": "5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+          "reason": "email"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "sourceRow": "7",
+      "email": "hocinearib@gmail.com",
+      "companyName": "A.H PLUS DEMENAGEMENT",
+      "siret": "85200647700016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "8",
+      "email": "ab.services.contactpro@gmail.com",
+      "companyName": "AB SERVICES",
+      "siret": "93882176600012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "9",
+      "email": "belgacemameziane@gmail.com",
+      "companyName": "ABSH",
+      "siret": "83859117000025",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "10",
+      "email": "staf.autos@gmail.com",
+      "companyName": "ADEM AUTOS",
+      "siret": "93068966600012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "12",
+      "email": "benhaddirachid@gmail.com",
+      "companyName": "ALL SERVICES",
+      "siret": "",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "siret_manquant"
+      ]
+    },
+    {
+      "sourceRow": "13",
+      "email": "salah.ghanem1995@gmail.com",
+      "companyName": "AMG SERVICE",
+      "siret": "97746063300018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "14",
+      "email": "aziznemmar10@gmail.com",
+      "companyName": "AMZ AUTOS",
+      "siret": "85097784400016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "15",
+      "email": "aghiles-etude@outlook.fr",
+      "companyName": "AN TRANS",
+      "siret": "88428000900017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "16",
+      "email": "autocompany87@gmail.com",
+      "companyName": "AUTO COMPANY",
+      "siret": "93203483800015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "18",
+      "email": "baldem.btp@gmail.com",
+      "companyName": "BALDEM BTP",
+      "siret": "89925899000014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "19",
+      "email": "amarabouslah@gmail.com",
+      "companyName": "BATI PRO",
+      "siret": "97817289800022",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "20",
+      "email": "begpeinture28@gmail.com",
+      "companyName": "BEG PEINTURE",
+      "siret": "91162586100016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "21",
+      "email": "takfarinasbouda@hotmail.fr",
+      "companyName": "BEST EDUCATION",
+      "siret": "84233039100017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "23",
+      "email": "bfsecuriteprivee@gmail.com",
+      "companyName": "BF SECURITE PRIVEE",
+      "siret": "92254469700019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "25",
+      "email": "brscorpion93@gmail.com",
+      "companyName": "BR SCORPION",
+      "siret": "85293356300011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "26",
+      "email": "beacras.acras@gmail.com",
+      "companyName": "B-RESTAURANT",
+      "siret": "",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "siret_manquant"
+      ]
+    },
+    {
+      "sourceRow": "27",
+      "email": "nait.azouzou@hotmail.fr",
+      "companyName": "BTF FAMILY",
+      "siret": "88401954800020",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "29",
+      "email": "yazidboncer@gmail.com",
+      "companyName": "BY SERVICES",
+      "siret": "84926166400023",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "30",
+      "email": "cobitel.services@outlook.com",
+      "companyName": "COBITEL",
+      "siret": "94936041600018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "31",
+      "email": "csg.securite94@gmail.com",
+      "companyName": "COMPAGNIE DE SECURITE ET G",
+      "siret": "98412256400011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "32",
+      "email": "contact.dts94@gmail.com",
+      "companyName": "DIANTRA SECURITY",
+      "siret": "95074230400013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "33",
+      "email": "zainabenbekkou@yahoo.fr",
+      "companyName": "DIGITALCOM",
+      "siret": "89512280200013",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "34",
+      "email": "gildasehouli@yahoo.fr",
+      "companyName": "EG-SERVICES",
+      "siret": "93488924700011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "36",
+      "email": "contact.es94@gmail.com",
+      "companyName": "EXPERT SECURITY",
+      "siret": "88860399000019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "37",
+      "email": "contact.expressliv@gmail.com",
+      "companyName": "EXPRESS LIV",
+      "siret": "84759971900014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "38",
+      "email": "contact.fts94@gmail.com",
+      "companyName": "FIBER TECHNOLOGIES SOLUTIONS",
+      "siret": "94935264500012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "39",
+      "email": "jubanahi19@gmail.com",
+      "companyName": "FIBROPOSE",
+      "siret": "90040753700019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "40",
+      "email": "djouadi91hocine@gmail.com",
+      "companyName": "FIBROXYGENE",
+      "siret": "88328406900019",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "41",
+      "email": "contact.fpg94@gmail.com",
+      "companyName": "FORTIS PROTECTION GARDIENNAGE",
+      "siret": "97831361700018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "43",
+      "email": "ghservices454@gmail.com",
+      "companyName": "GH-SERVICES",
+      "siret": "98109391700012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "45",
+      "email": "mouradnouara7181@gmail.com",
+      "companyName": "GM SERVICES",
+      "siret": "93231215000018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "46",
+      "email": "goldsec94@gmail.com",
+      "companyName": "GOLD SECURITY PRIVATE",
+      "siret": "92105311200014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "47",
+      "email": "aziztoure@gmail.com",
+      "companyName": "GRAND EST PROTECT",
+      "siret": "95360073100012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "49",
+      "email": "guedesecuriteprivee@gmail.com",
+      "companyName": "GUEDE SECURITE PRIVEE",
+      "siret": "89174616600018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "50",
+      "email": "anishadim2020@gmail.com",
+      "companyName": "HDM SERVICES",
+      "siret": "98101295800014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "51",
+      "email": "dehiabenamara@outlook.fr",
+      "companyName": "HIGIE SERVICE",
+      "siret": "98071686400015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "52",
+      "email": "hmimiphone@gmail.com",
+      "companyName": "HTW EURO",
+      "siret": "97952567200015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "53",
+      "email": "contact.icnf94@gmail.com",
+      "companyName": "ICNF",
+      "siret": "87793572600019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "55",
+      "email": "nabil_belkessa@hotmail.fr",
+      "companyName": "INFO QUALITE PLUS",
+      "siret": "88032604600021",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "56",
+      "email": "abbasyerou@gmail.com",
+      "companyName": "INTELLIGENCE SERVICE",
+      "siret": "94930460400018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "58",
+      "email": "isa.securite94@gmail.com",
+      "companyName": "ISA SECURITE",
+      "siret": "83787835400021",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "59",
+      "email": "ismailmouloud7@gmail.com",
+      "companyName": "ISM-MUS SERVICES",
+      "siret": "91069322500013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "60",
+      "email": "karim.meradji95@gmail.com",
+      "companyName": "K2S GARDIENNAGE",
+      "siret": "89183460800012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "61",
+      "email": "cherifmechehed@gmail.com",
+      "companyName": "KAB ISOLATION",
+      "siret": "91155259400010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "63",
+      "email": "kimsecurite.privee@gmail.com",
+      "companyName": "KIMSECURITE PRIVEE",
+      "siret": "98071315000012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "64",
+      "email": "aliyazag50@gmail.com",
+      "companyName": "KYYA BTP",
+      "siret": "97895665400013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "65",
+      "email": "lahnaservices@outlook.fr",
+      "companyName": "LAHNA SERVICES",
+      "siret": "87855236300011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "66",
+      "email": "touazi.nabila@gmail.com",
+      "companyName": "LENA SERVICES",
+      "siret": "84453877700013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "67",
+      "email": "madge02@yahoo.fr",
+      "companyName": "LES COUVREURS ETANCHEURS P",
+      "siret": "94317824400019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "68",
+      "email": "exploitation.lmlogistique@gmail.com",
+      "companyName": "LM LOGISTIQUE",
+      "siret": "88834425600019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "69",
+      "email": "naitabdellahlounas@gmail.com",
+      "companyName": "LNS PLUS SERVICES",
+      "siret": "98036278400012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "70",
+      "email": "logitisservice@gmail.com",
+      "companyName": "LOGITIS SERVICES",
+      "siret": "90247634000010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "71",
+      "email": "salimabijoux@gmail.com",
+      "companyName": "LOUISE SERVICES",
+      "siret": "98384173500019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "72",
+      "email": "ls.gardiennage@gmail.com",
+      "companyName": "LS SECURITE",
+      "siret": "85213557300016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "73",
+      "email": "medinesecurite@gmail.com",
+      "companyName": "MEDINE SECURITE",
+      "siret": "92159301800010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "75",
+      "email": "ganounmassi@gmail.com",
+      "companyName": "MG SPEED SERVICES",
+      "siret": "90097232400017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "76",
+      "email": "amina_psy@hotmail.fr",
+      "companyName": "MINA ACCOMPAGNEMENT PSY",
+      "siret": "92267084900012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "79",
+      "email": "sidalimedjbar1@gmail.com",
+      "companyName": "MST",
+      "siret": "95176458800012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "80",
+      "email": "mnefous@hotmail.fr",
+      "companyName": "NEFOUS Ali",
+      "siret": "97976222600012",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "81",
+      "email": "contact@optimalis-securite.fr",
+      "companyName": "OPTIMALIS SECURITE PRIVEE",
+      "siret": "91980872500015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "82",
+      "email": "nourarebouh@outlook.com",
+      "companyName": "ORCI",
+      "siret": "94914796100013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "83",
+      "email": "parisfirstdriving@gmail.com",
+      "companyName": "PARIS FIRST DRIVING",
+      "siret": "94067628100014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "84",
+      "email": "paris.interprive@gmail.com",
+      "companyName": "PARIS INTER",
+      "siret": "90987799500011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "86",
+      "email": "prestaplus78@gmail.com",
+      "companyName": "PRESTA PLUS",
+      "siret": "85112363800013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "87",
+      "email": "benhaddirachid343@gmail.com",
+      "companyName": "PRESTIGE CARS 94",
+      "siret": "94344571800019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "88",
+      "email": "akli.meziane@gmail.com",
+      "companyName": "PRO CONSULTING AND SERVICES",
+      "siret": "88766868900011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "89",
+      "email": "azzougyanes@gmail.com",
+      "companyName": "PRO SERVICE",
+      "siret": "90414294000025",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "90",
+      "email": "ouarme888@gmail.com",
+      "companyName": "PROTECTION France SECURITY",
+      "siret": "91527222300024",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "92",
+      "email": "mdiane56@yahoo.fr",
+      "companyName": "RENOVATION 22",
+      "siret": "91190154400013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "93",
+      "email": "ouali.saal@gmail.com",
+      "companyName": "RHO TRANSPORTS",
+      "siret": "93462350500013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "96",
+      "email": "hamidielize@gmail.com",
+      "companyName": "S&N SERVICES",
+      "siret": "88757833400021",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "98",
+      "email": "samiyahadim@yahoo.fr",
+      "companyName": "SH CONSEIL ET GESTION",
+      "siret": "85367612000019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "99",
+      "email": "boudjemamessaoud9@gmail.com",
+      "companyName": "SIM SECURITE PRIVEE",
+      "siret": "98246754000018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "100",
+      "email": "smasri.lynda1@gmail.com",
+      "companyName": "SMASRI SERVICES",
+      "siret": "89265170400017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "102",
+      "email": "fatah.mouloudj@sofalom.fr",
+      "companyName": "SOFALOM",
+      "siret": "90760756800017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "104",
+      "email": "contact.sotrabal@gmail.com",
+      "companyName": "STAFF SERVICES",
+      "siret": "84763629700040",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "105",
+      "email": "ste.starcab94@gmail.com",
+      "companyName": "STARCAB94",
+      "siret": "82383153200028",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "106",
+      "email": "adembensalem@yahoo.fr",
+      "companyName": "STPC",
+      "siret": "98235584400019",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "telephone_a_verifier"
+      ]
+    },
+    {
+      "sourceRow": "107",
+      "email": "sylkaharoun200314@gmail.com",
+      "companyName": "SYLKA COM",
+      "siret": "87799151300012",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "108",
+      "email": "talebimportexport@gmail.com",
+      "companyName": "TA IMPORT EXPORT",
+      "siret": "84365370000016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "109",
+      "email": "tbfiber0@gmail.com",
+      "companyName": "TB FIBER",
+      "siret": "94907193000018",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "110",
+      "email": "ouarezki.nordine@live.fr",
+      "companyName": "TGT AUTOMOBILE",
+      "siret": "89231528400010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "111",
+      "email": "bbinam29@gmail.com",
+      "companyName": "T-GTE",
+      "siret": "94445723300012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "112",
+      "email": "ahcenetaguemount@hotmail.com",
+      "companyName": "THT SERVICES",
+      "siret": "89024647300015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "113",
+      "email": "tarek.kettane2016@gmail.com",
+      "companyName": "TK SERVICES",
+      "siret": "89540642900012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "114",
+      "email": "tarikmahfouf1997@hotmail.com",
+      "companyName": "TM SERVICES PLUS",
+      "siret": "92140673200013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "115",
+      "email": "sabrina.barbara@icloud.com",
+      "companyName": "TRADING MANAGEMENT SOLUTION",
+      "siret": "84843602800015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "116",
+      "email": "transalison2019@gmail.com",
+      "companyName": "TRANS ALISON",
+      "siret": "85177588200026",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "117",
+      "email": "transchabour@gmail.com",
+      "companyName": "TRANS CHABOUR",
+      "siret": "83750183200021",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "118",
+      "email": "f.saidutd@gmail.com",
+      "companyName": "TRANS LYDIA",
+      "siret": "98348743000016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "119",
+      "email": "mameri-rabah@hotmail.fr",
+      "companyName": "TRANS R.N MAM",
+      "siret": "93536794600016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "120",
+      "email": "transazi94@gmail.com",
+      "companyName": "TransAZI",
+      "siret": "90010302900014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "124",
+      "email": "transportdujour@outlook.fr",
+      "companyName": "TRANSPORT DU JOUR",
+      "siret": "88378690700021",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "126",
+      "email": "nassim.chelfi@outlook.fr",
+      "companyName": "TRANSPRO'N",
+      "siret": "91053664800017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "127",
+      "email": "ag.moussouni@gmail.com",
+      "companyName": "TRUCKPRO92",
+      "siret": "87946189500028",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "129",
+      "email": "gurgen.shamoyan@icloud.com",
+      "companyName": "WALT SERVICES",
+      "siret": "85112702700015",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "130",
+      "email": "yandrive.57@gmail.com",
+      "companyName": "YAN DRIVE",
+      "siret": "97844344800011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "132",
+      "email": "laliouimourad6@gmail.com",
+      "companyName": "ZLS",
+      "siret": "83327982100049",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "6",
+      "email": "bkdempro@gmail.com",
+      "companyName": "B.K DEM PRO",
+      "siret": "88526515700010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "7",
+      "email": "benamarayacine89@gmail.com",
+      "companyName": "BEN RH",
+      "siret": "84793178900014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "8",
+      "email": "tabani_1991@live.fr",
+      "companyName": "BIO'WASH CARS",
+      "siret": "84142214000027",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "9",
+      "email": "oudah.sofiane1993@gmail.com",
+      "companyName": "EDEN FIBRE",
+      "siret": "87919670700019",
+      "auth": "would_create_disabled",
+      "warnings": [
+        "forme_juridique_manquante"
+      ]
+    },
+    {
+      "sourceRow": "10",
+      "email": "nawalboulahbal85@gmail.com",
+      "companyName": "FIFI SERVICES PLUS",
+      "siret": "87994072400013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "11",
+      "email": "flayebat@yahoo.com",
+      "companyName": "FLAYE BAT",
+      "siret": "88093522600014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "12",
+      "email": "hbservices37@gmail.com",
+      "companyName": "HBS",
+      "siret": "90162146600027",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "13",
+      "email": "securitepriveeservice@gmail.com",
+      "companyName": "SERVICE SECURITE PRIVEE",
+      "siret": "91350907100019",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "15",
+      "email": "envichlef@gmail.com",
+      "companyName": "BA LOGISTIQUES",
+      "siret": "88386650100017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "16",
+      "email": "contact.bamyp94@gmail.com",
+      "companyName": "BAMYP",
+      "siret": "97882896000010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "17",
+      "email": "fibreoplus@gmail.com",
+      "companyName": "FIBRE OPLUS",
+      "siret": "90444051800010",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "18",
+      "email": "boufergueneadam@gmail.com",
+      "companyName": "STAF AUTOS",
+      "siret": "89876580500012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "19",
+      "email": "store.addict.beaute@gmail.com",
+      "companyName": "STORE ADDICT BEAUTE",
+      "siret": "84454368600027",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "20",
+      "email": "contact.topservices@gmail.com",
+      "companyName": "TOP SERVICES",
+      "siret": "89126404600014",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "21",
+      "email": "gdicar@outlook.fr",
+      "companyName": "TOPOBATI/GD ICAR",
+      "siret": "87855854300012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "22",
+      "email": "mal.zegane@gmail.com",
+      "companyName": "ZEGANE MMINKA",
+      "siret": "90768657000017",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "23",
+      "email": "belkhisboualem@gmail.com",
+      "companyName": "B.L PRESTA",
+      "siret": "88929879000011",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "24",
+      "email": "mahdizerarga3@gmail.com",
+      "companyName": "ZK PRESTA",
+      "siret": "88159658900013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "25",
+      "email": "rachidhassani93@gmail.com",
+      "companyName": "DJURA FIBRE",
+      "siret": "83829183900028",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "26",
+      "email": "contact.kendelservices@gmail.com",
+      "companyName": "KENDEL SERVICES",
+      "siret": "85019762500013",
+      "auth": "would_create_disabled",
+      "warnings": []
+    }
+  ],
+  "created": [
+    {
+      "uid": "xeFkQKtVuDSsOks0Rz2DCVayuKy1",
+      "email": "hocinearib@gmail.com",
+      "companyName": "A.H PLUS DEMENAGEMENT",
+      "auth": "created_disabled",
+      "clientPath": "clients/xeFkQKtVuDSsOks0Rz2DCVayuKy1",
+      "userPath": "users/xeFkQKtVuDSsOks0Rz2DCVayuKy1"
+    },
+    {
+      "uid": "iO3tc451v5boUnxfWfNNkaRynEj1",
+      "email": "ab.services.contactpro@gmail.com",
+      "companyName": "AB SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/iO3tc451v5boUnxfWfNNkaRynEj1",
+      "userPath": "users/iO3tc451v5boUnxfWfNNkaRynEj1"
+    },
+    {
+      "uid": "pcNTCv3wiuc7kNVOiHS3ansWM5D2",
+      "email": "belgacemameziane@gmail.com",
+      "companyName": "ABSH",
+      "auth": "created_disabled",
+      "clientPath": "clients/pcNTCv3wiuc7kNVOiHS3ansWM5D2",
+      "userPath": "users/pcNTCv3wiuc7kNVOiHS3ansWM5D2"
+    },
+    {
+      "uid": "tioldnFUVjbet5l8YpX8gsewXNe2",
+      "email": "staf.autos@gmail.com",
+      "companyName": "ADEM AUTOS",
+      "auth": "created_disabled",
+      "clientPath": "clients/tioldnFUVjbet5l8YpX8gsewXNe2",
+      "userPath": "users/tioldnFUVjbet5l8YpX8gsewXNe2"
+    },
+    {
+      "uid": "QlPHcL5bq4giaMvdphSNkK4DKQI3",
+      "email": "benhaddirachid@gmail.com",
+      "companyName": "ALL SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/QlPHcL5bq4giaMvdphSNkK4DKQI3",
+      "userPath": "users/QlPHcL5bq4giaMvdphSNkK4DKQI3"
+    },
+    {
+      "uid": "74ZviA0TMiUiUyA1TD2Tmh9cNNn2",
+      "email": "salah.ghanem1995@gmail.com",
+      "companyName": "AMG SERVICE",
+      "auth": "created_disabled",
+      "clientPath": "clients/74ZviA0TMiUiUyA1TD2Tmh9cNNn2",
+      "userPath": "users/74ZviA0TMiUiUyA1TD2Tmh9cNNn2"
+    },
+    {
+      "uid": "UsfGmIgJjUVFGPUF9MFJDRyaNhS2",
+      "email": "aziznemmar10@gmail.com",
+      "companyName": "AMZ AUTOS",
+      "auth": "created_disabled",
+      "clientPath": "clients/UsfGmIgJjUVFGPUF9MFJDRyaNhS2",
+      "userPath": "users/UsfGmIgJjUVFGPUF9MFJDRyaNhS2"
+    },
+    {
+      "uid": "vTtPV9xqLHgwgwtmJ9E3qFMurx03",
+      "email": "aghiles-etude@outlook.fr",
+      "companyName": "AN TRANS",
+      "auth": "created_disabled",
+      "clientPath": "clients/vTtPV9xqLHgwgwtmJ9E3qFMurx03",
+      "userPath": "users/vTtPV9xqLHgwgwtmJ9E3qFMurx03"
+    },
+    {
+      "uid": "oEcVmR5YWIeKcuzKsyleizY1D973",
+      "email": "autocompany87@gmail.com",
+      "companyName": "AUTO COMPANY",
+      "auth": "created_disabled",
+      "clientPath": "clients/oEcVmR5YWIeKcuzKsyleizY1D973",
+      "userPath": "users/oEcVmR5YWIeKcuzKsyleizY1D973"
+    },
+    {
+      "uid": "VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+      "email": "baldem.btp@gmail.com",
+      "companyName": "BALDEM BTP",
+      "auth": "created_disabled",
+      "clientPath": "clients/VB4eHsNmvlR5TUp5jFNWhKmljYU2",
+      "userPath": "users/VB4eHsNmvlR5TUp5jFNWhKmljYU2"
+    },
+    {
+      "uid": "ZZskpfPLleTeMfUFrPpr4s6xrcr2",
+      "email": "amarabouslah@gmail.com",
+      "companyName": "BATI PRO",
+      "auth": "created_disabled",
+      "clientPath": "clients/ZZskpfPLleTeMfUFrPpr4s6xrcr2",
+      "userPath": "users/ZZskpfPLleTeMfUFrPpr4s6xrcr2"
+    },
+    {
+      "uid": "GIoey2k28QQqLG8DVqJP15SSkKP2",
+      "email": "begpeinture28@gmail.com",
+      "companyName": "BEG PEINTURE",
+      "auth": "created_disabled",
+      "clientPath": "clients/GIoey2k28QQqLG8DVqJP15SSkKP2",
+      "userPath": "users/GIoey2k28QQqLG8DVqJP15SSkKP2"
+    },
+    {
+      "uid": "5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+      "email": "takfarinasbouda@hotmail.fr",
+      "companyName": "BEST EDUCATION",
+      "auth": "created_disabled",
+      "clientPath": "clients/5lYjuO5nIDhUpSSjZD31l3mpEwL2",
+      "userPath": "users/5lYjuO5nIDhUpSSjZD31l3mpEwL2"
+    },
+    {
+      "uid": "bPoRBSfXW0P0tlSz8PINYK9BdYL2",
+      "email": "bfsecuriteprivee@gmail.com",
+      "companyName": "BF SECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/bPoRBSfXW0P0tlSz8PINYK9BdYL2",
+      "userPath": "users/bPoRBSfXW0P0tlSz8PINYK9BdYL2"
+    },
+    {
+      "uid": "F52M2apySyZvuYmAUNRmfa8AyWf2",
+      "email": "brscorpion93@gmail.com",
+      "companyName": "BR SCORPION",
+      "auth": "created_disabled",
+      "clientPath": "clients/F52M2apySyZvuYmAUNRmfa8AyWf2",
+      "userPath": "users/F52M2apySyZvuYmAUNRmfa8AyWf2"
+    },
+    {
+      "uid": "SLOBwGGuZdeFSPzV0L8y3NVW1vD2",
+      "email": "beacras.acras@gmail.com",
+      "companyName": "B-RESTAURANT",
+      "auth": "created_disabled",
+      "clientPath": "clients/SLOBwGGuZdeFSPzV0L8y3NVW1vD2",
+      "userPath": "users/SLOBwGGuZdeFSPzV0L8y3NVW1vD2"
+    },
+    {
+      "uid": "gZKH84ggZOZnRn71eBtez2wgWOM2",
+      "email": "nait.azouzou@hotmail.fr",
+      "companyName": "BTF FAMILY",
+      "auth": "created_disabled",
+      "clientPath": "clients/gZKH84ggZOZnRn71eBtez2wgWOM2",
+      "userPath": "users/gZKH84ggZOZnRn71eBtez2wgWOM2"
+    },
+    {
+      "uid": "CxrcqY4y6mOGDzbGK8BMAcCarH13",
+      "email": "yazidboncer@gmail.com",
+      "companyName": "BY SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/CxrcqY4y6mOGDzbGK8BMAcCarH13",
+      "userPath": "users/CxrcqY4y6mOGDzbGK8BMAcCarH13"
+    },
+    {
+      "uid": "aaDepqignvQ8BexYv4MT2hphWLj1",
+      "email": "cobitel.services@outlook.com",
+      "companyName": "COBITEL",
+      "auth": "created_disabled",
+      "clientPath": "clients/aaDepqignvQ8BexYv4MT2hphWLj1",
+      "userPath": "users/aaDepqignvQ8BexYv4MT2hphWLj1"
+    },
+    {
+      "uid": "o9TArHtn5wMLfprOrBJmZCSf7Cy2",
+      "email": "csg.securite94@gmail.com",
+      "companyName": "COMPAGNIE DE SECURITE ET G",
+      "auth": "created_disabled",
+      "clientPath": "clients/o9TArHtn5wMLfprOrBJmZCSf7Cy2",
+      "userPath": "users/o9TArHtn5wMLfprOrBJmZCSf7Cy2"
+    },
+    {
+      "uid": "l3c3jskvieeb2l50sxU9VFyAxWg1",
+      "email": "contact.dts94@gmail.com",
+      "companyName": "DIANTRA SECURITY",
+      "auth": "created_disabled",
+      "clientPath": "clients/l3c3jskvieeb2l50sxU9VFyAxWg1",
+      "userPath": "users/l3c3jskvieeb2l50sxU9VFyAxWg1"
+    },
+    {
+      "uid": "kDLCLuRp1SQGcOFiNRMZ3hvrR3E3",
+      "email": "zainabenbekkou@yahoo.fr",
+      "companyName": "DIGITALCOM",
+      "auth": "created_disabled",
+      "clientPath": "clients/kDLCLuRp1SQGcOFiNRMZ3hvrR3E3",
+      "userPath": "users/kDLCLuRp1SQGcOFiNRMZ3hvrR3E3"
+    },
+    {
+      "uid": "5OK5tJ23tzRoxT59SvYaU8DrjKh1",
+      "email": "gildasehouli@yahoo.fr",
+      "companyName": "EG-SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/5OK5tJ23tzRoxT59SvYaU8DrjKh1",
+      "userPath": "users/5OK5tJ23tzRoxT59SvYaU8DrjKh1"
+    },
+    {
+      "uid": "iB0ziMzKWXNxrKhbieYR27GHt8Q2",
+      "email": "contact.es94@gmail.com",
+      "companyName": "EXPERT SECURITY",
+      "auth": "created_disabled",
+      "clientPath": "clients/iB0ziMzKWXNxrKhbieYR27GHt8Q2",
+      "userPath": "users/iB0ziMzKWXNxrKhbieYR27GHt8Q2"
+    },
+    {
+      "uid": "vPkna02mfeWwwF9WQO9YmUZdlRn2",
+      "email": "contact.expressliv@gmail.com",
+      "companyName": "EXPRESS LIV",
+      "auth": "created_disabled",
+      "clientPath": "clients/vPkna02mfeWwwF9WQO9YmUZdlRn2",
+      "userPath": "users/vPkna02mfeWwwF9WQO9YmUZdlRn2"
+    },
+    {
+      "uid": "rle7ca8Sk1bHeKMHS0GeWccePnr2",
+      "email": "contact.fts94@gmail.com",
+      "companyName": "FIBER TECHNOLOGIES SOLUTIONS",
+      "auth": "created_disabled",
+      "clientPath": "clients/rle7ca8Sk1bHeKMHS0GeWccePnr2",
+      "userPath": "users/rle7ca8Sk1bHeKMHS0GeWccePnr2"
+    },
+    {
+      "uid": "HsBD1hbmMaeMVYkDl78CIPiqRH93",
+      "email": "jubanahi19@gmail.com",
+      "companyName": "FIBROPOSE",
+      "auth": "created_disabled",
+      "clientPath": "clients/HsBD1hbmMaeMVYkDl78CIPiqRH93",
+      "userPath": "users/HsBD1hbmMaeMVYkDl78CIPiqRH93"
+    },
+    {
+      "uid": "mc0W7RSBd1cKZIe8IIIMbGxXvrB3",
+      "email": "djouadi91hocine@gmail.com",
+      "companyName": "FIBROXYGENE",
+      "auth": "created_disabled",
+      "clientPath": "clients/mc0W7RSBd1cKZIe8IIIMbGxXvrB3",
+      "userPath": "users/mc0W7RSBd1cKZIe8IIIMbGxXvrB3"
+    },
+    {
+      "uid": "0OFS0RXf9jXLjEGieXZ3X87vPrL2",
+      "email": "contact.fpg94@gmail.com",
+      "companyName": "FORTIS PROTECTION GARDIENNAGE",
+      "auth": "created_disabled",
+      "clientPath": "clients/0OFS0RXf9jXLjEGieXZ3X87vPrL2",
+      "userPath": "users/0OFS0RXf9jXLjEGieXZ3X87vPrL2"
+    },
+    {
+      "uid": "ePKbJs8NFFX9OIx6vcD01oBRbgu1",
+      "email": "ghservices454@gmail.com",
+      "companyName": "GH-SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/ePKbJs8NFFX9OIx6vcD01oBRbgu1",
+      "userPath": "users/ePKbJs8NFFX9OIx6vcD01oBRbgu1"
+    },
+    {
+      "uid": "NU6o3dT0yRffROs1jeCjXHKrjYn1",
+      "email": "mouradnouara7181@gmail.com",
+      "companyName": "GM SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/NU6o3dT0yRffROs1jeCjXHKrjYn1",
+      "userPath": "users/NU6o3dT0yRffROs1jeCjXHKrjYn1"
+    },
+    {
+      "uid": "csObkK4IknTZHDrccSAnKkPZ4eN2",
+      "email": "goldsec94@gmail.com",
+      "companyName": "GOLD SECURITY PRIVATE",
+      "auth": "created_disabled",
+      "clientPath": "clients/csObkK4IknTZHDrccSAnKkPZ4eN2",
+      "userPath": "users/csObkK4IknTZHDrccSAnKkPZ4eN2"
+    },
+    {
+      "uid": "xYOuB3HbomRcx1mW5PlXs4yR5203",
+      "email": "aziztoure@gmail.com",
+      "companyName": "GRAND EST PROTECT",
+      "auth": "created_disabled",
+      "clientPath": "clients/xYOuB3HbomRcx1mW5PlXs4yR5203",
+      "userPath": "users/xYOuB3HbomRcx1mW5PlXs4yR5203"
+    },
+    {
+      "uid": "vuYeyhpf1bSIMwDmC8f5MPZ8miJ2",
+      "email": "guedesecuriteprivee@gmail.com",
+      "companyName": "GUEDE SECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/vuYeyhpf1bSIMwDmC8f5MPZ8miJ2",
+      "userPath": "users/vuYeyhpf1bSIMwDmC8f5MPZ8miJ2"
+    },
+    {
+      "uid": "8pjuWkyOqkPK2CumJxbkLgU7M202",
+      "email": "anishadim2020@gmail.com",
+      "companyName": "HDM SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/8pjuWkyOqkPK2CumJxbkLgU7M202",
+      "userPath": "users/8pjuWkyOqkPK2CumJxbkLgU7M202"
+    },
+    {
+      "uid": "ORaLclSGqFZaNJ35I5GhqJgiQ653",
+      "email": "dehiabenamara@outlook.fr",
+      "companyName": "HIGIE SERVICE",
+      "auth": "created_disabled",
+      "clientPath": "clients/ORaLclSGqFZaNJ35I5GhqJgiQ653",
+      "userPath": "users/ORaLclSGqFZaNJ35I5GhqJgiQ653"
+    },
+    {
+      "uid": "H5fvflEWUUYjZkaCeS2b3gWYWS13",
+      "email": "hmimiphone@gmail.com",
+      "companyName": "HTW EURO",
+      "auth": "created_disabled",
+      "clientPath": "clients/H5fvflEWUUYjZkaCeS2b3gWYWS13",
+      "userPath": "users/H5fvflEWUUYjZkaCeS2b3gWYWS13"
+    },
+    {
+      "uid": "GNJwqEjHWvg1iqwANqUzbxc4C4A3",
+      "email": "contact.icnf94@gmail.com",
+      "companyName": "ICNF",
+      "auth": "created_disabled",
+      "clientPath": "clients/GNJwqEjHWvg1iqwANqUzbxc4C4A3",
+      "userPath": "users/GNJwqEjHWvg1iqwANqUzbxc4C4A3"
+    },
+    {
+      "uid": "Oxa4ayJc5AcfXy4VV2sG41QGbtm1",
+      "email": "nabil_belkessa@hotmail.fr",
+      "companyName": "INFO QUALITE PLUS",
+      "auth": "created_disabled",
+      "clientPath": "clients/Oxa4ayJc5AcfXy4VV2sG41QGbtm1",
+      "userPath": "users/Oxa4ayJc5AcfXy4VV2sG41QGbtm1"
+    },
+    {
+      "uid": "IO2S2QYlI6WgZEY5CGX15a2oTOI3",
+      "email": "abbasyerou@gmail.com",
+      "companyName": "INTELLIGENCE SERVICE",
+      "auth": "created_disabled",
+      "clientPath": "clients/IO2S2QYlI6WgZEY5CGX15a2oTOI3",
+      "userPath": "users/IO2S2QYlI6WgZEY5CGX15a2oTOI3"
+    },
+    {
+      "uid": "5SZGysJThaYsrQDxR4nXXaIDH333",
+      "email": "isa.securite94@gmail.com",
+      "companyName": "ISA SECURITE",
+      "auth": "created_disabled",
+      "clientPath": "clients/5SZGysJThaYsrQDxR4nXXaIDH333",
+      "userPath": "users/5SZGysJThaYsrQDxR4nXXaIDH333"
+    },
+    {
+      "uid": "GIaJ0B253xZmNdDAQu5pWwCsuXr2",
+      "email": "ismailmouloud7@gmail.com",
+      "companyName": "ISM-MUS SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/GIaJ0B253xZmNdDAQu5pWwCsuXr2",
+      "userPath": "users/GIaJ0B253xZmNdDAQu5pWwCsuXr2"
+    },
+    {
+      "uid": "rVs6hL6XYbask3zvtE1ugvMOPf22",
+      "email": "karim.meradji95@gmail.com",
+      "companyName": "K2S GARDIENNAGE",
+      "auth": "created_disabled",
+      "clientPath": "clients/rVs6hL6XYbask3zvtE1ugvMOPf22",
+      "userPath": "users/rVs6hL6XYbask3zvtE1ugvMOPf22"
+    },
+    {
+      "uid": "4Gcft3uR5Qa0ub3vESTqyDeP0tp2",
+      "email": "cherifmechehed@gmail.com",
+      "companyName": "KAB ISOLATION",
+      "auth": "created_disabled",
+      "clientPath": "clients/4Gcft3uR5Qa0ub3vESTqyDeP0tp2",
+      "userPath": "users/4Gcft3uR5Qa0ub3vESTqyDeP0tp2"
+    },
+    {
+      "uid": "mIksIygQCab7Zu4vSUIhd5gu1Ig2",
+      "email": "kimsecurite.privee@gmail.com",
+      "companyName": "KIMSECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/mIksIygQCab7Zu4vSUIhd5gu1Ig2",
+      "userPath": "users/mIksIygQCab7Zu4vSUIhd5gu1Ig2"
+    },
+    {
+      "uid": "Ui7HlTI6taV7gHxLRxS39WOMRzR2",
+      "email": "aliyazag50@gmail.com",
+      "companyName": "KYYA BTP",
+      "auth": "created_disabled",
+      "clientPath": "clients/Ui7HlTI6taV7gHxLRxS39WOMRzR2",
+      "userPath": "users/Ui7HlTI6taV7gHxLRxS39WOMRzR2"
+    },
+    {
+      "uid": "0ZeAExm9YONEusYf3xAEADySgCw1",
+      "email": "lahnaservices@outlook.fr",
+      "companyName": "LAHNA SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/0ZeAExm9YONEusYf3xAEADySgCw1",
+      "userPath": "users/0ZeAExm9YONEusYf3xAEADySgCw1"
+    },
+    {
+      "uid": "Be7Vn3HBQlW0UdKXycgmrYTF7ND3",
+      "email": "touazi.nabila@gmail.com",
+      "companyName": "LENA SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/Be7Vn3HBQlW0UdKXycgmrYTF7ND3",
+      "userPath": "users/Be7Vn3HBQlW0UdKXycgmrYTF7ND3"
+    },
+    {
+      "uid": "xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+      "email": "madge02@yahoo.fr",
+      "companyName": "LES COUVREURS ETANCHEURS P",
+      "auth": "created_disabled",
+      "clientPath": "clients/xBqSoxDvWSa4U28yyMqBmJy6CCe2",
+      "userPath": "users/xBqSoxDvWSa4U28yyMqBmJy6CCe2"
+    },
+    {
+      "uid": "aSwyzCkMmxRHFWMCsfAxfSYVNcr2",
+      "email": "exploitation.lmlogistique@gmail.com",
+      "companyName": "LM LOGISTIQUE",
+      "auth": "created_disabled",
+      "clientPath": "clients/aSwyzCkMmxRHFWMCsfAxfSYVNcr2",
+      "userPath": "users/aSwyzCkMmxRHFWMCsfAxfSYVNcr2"
+    },
+    {
+      "uid": "4OrLIHVhJVUHZpUhkbPZBKX34Wz1",
+      "email": "naitabdellahlounas@gmail.com",
+      "companyName": "LNS PLUS SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/4OrLIHVhJVUHZpUhkbPZBKX34Wz1",
+      "userPath": "users/4OrLIHVhJVUHZpUhkbPZBKX34Wz1"
+    },
+    {
+      "uid": "9Yl156xx1sfFKhLXNWdZX5944SO2",
+      "email": "logitisservice@gmail.com",
+      "companyName": "LOGITIS SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/9Yl156xx1sfFKhLXNWdZX5944SO2",
+      "userPath": "users/9Yl156xx1sfFKhLXNWdZX5944SO2"
+    },
+    {
+      "uid": "NlmKbkLReocaSG2Sh6JQz9dCa842",
+      "email": "salimabijoux@gmail.com",
+      "companyName": "LOUISE SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/NlmKbkLReocaSG2Sh6JQz9dCa842",
+      "userPath": "users/NlmKbkLReocaSG2Sh6JQz9dCa842"
+    },
+    {
+      "uid": "q6qeCVGedzRH0V3oZwXaVQcFoSl2",
+      "email": "ls.gardiennage@gmail.com",
+      "companyName": "LS SECURITE",
+      "auth": "created_disabled",
+      "clientPath": "clients/q6qeCVGedzRH0V3oZwXaVQcFoSl2",
+      "userPath": "users/q6qeCVGedzRH0V3oZwXaVQcFoSl2"
+    },
+    {
+      "uid": "GVXYHA5494aHQbShdep1OeWfJIq1",
+      "email": "medinesecurite@gmail.com",
+      "companyName": "MEDINE SECURITE",
+      "auth": "created_disabled",
+      "clientPath": "clients/GVXYHA5494aHQbShdep1OeWfJIq1",
+      "userPath": "users/GVXYHA5494aHQbShdep1OeWfJIq1"
+    },
+    {
+      "uid": "pSN9CfAMdAY9qwqUuoaskWMef6i1",
+      "email": "ganounmassi@gmail.com",
+      "companyName": "MG SPEED SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/pSN9CfAMdAY9qwqUuoaskWMef6i1",
+      "userPath": "users/pSN9CfAMdAY9qwqUuoaskWMef6i1"
+    },
+    {
+      "uid": "GYOxyXpwGBf83GVy8uWpdqMG2r43",
+      "email": "amina_psy@hotmail.fr",
+      "companyName": "MINA ACCOMPAGNEMENT PSY",
+      "auth": "created_disabled",
+      "clientPath": "clients/GYOxyXpwGBf83GVy8uWpdqMG2r43",
+      "userPath": "users/GYOxyXpwGBf83GVy8uWpdqMG2r43"
+    },
+    {
+      "uid": "SGd00NxNvWRxZVObtwEyg4sodVA3",
+      "email": "sidalimedjbar1@gmail.com",
+      "companyName": "MST",
+      "auth": "created_disabled",
+      "clientPath": "clients/SGd00NxNvWRxZVObtwEyg4sodVA3",
+      "userPath": "users/SGd00NxNvWRxZVObtwEyg4sodVA3"
+    },
+    {
+      "uid": "MLMepAqTwlPwyDD0kyuLOW8LJUm1",
+      "email": "mnefous@hotmail.fr",
+      "companyName": "NEFOUS Ali",
+      "auth": "created_disabled",
+      "clientPath": "clients/MLMepAqTwlPwyDD0kyuLOW8LJUm1",
+      "userPath": "users/MLMepAqTwlPwyDD0kyuLOW8LJUm1"
+    },
+    {
+      "uid": "RbUFWmEaxtbUcOuVIvEUu7jYlwX2",
+      "email": "contact@optimalis-securite.fr",
+      "companyName": "OPTIMALIS SECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/RbUFWmEaxtbUcOuVIvEUu7jYlwX2",
+      "userPath": "users/RbUFWmEaxtbUcOuVIvEUu7jYlwX2"
+    },
+    {
+      "uid": "LE994CBtPZSUsbO2XotwpVt8DeC2",
+      "email": "nourarebouh@outlook.com",
+      "companyName": "ORCI",
+      "auth": "created_disabled",
+      "clientPath": "clients/LE994CBtPZSUsbO2XotwpVt8DeC2",
+      "userPath": "users/LE994CBtPZSUsbO2XotwpVt8DeC2"
+    },
+    {
+      "uid": "FAWwJDjyEgXb3Sp61l1DrA4vAPP2",
+      "email": "parisfirstdriving@gmail.com",
+      "companyName": "PARIS FIRST DRIVING",
+      "auth": "created_disabled",
+      "clientPath": "clients/FAWwJDjyEgXb3Sp61l1DrA4vAPP2",
+      "userPath": "users/FAWwJDjyEgXb3Sp61l1DrA4vAPP2"
+    },
+    {
+      "uid": "WkDCkXH3LJfjKhM8nVfj1zu22fB3",
+      "email": "paris.interprive@gmail.com",
+      "companyName": "PARIS INTER",
+      "auth": "created_disabled",
+      "clientPath": "clients/WkDCkXH3LJfjKhM8nVfj1zu22fB3",
+      "userPath": "users/WkDCkXH3LJfjKhM8nVfj1zu22fB3"
+    },
+    {
+      "uid": "v8lRhhimdUg9j3VRcVvKX0vG2lz2",
+      "email": "prestaplus78@gmail.com",
+      "companyName": "PRESTA PLUS",
+      "auth": "created_disabled",
+      "clientPath": "clients/v8lRhhimdUg9j3VRcVvKX0vG2lz2",
+      "userPath": "users/v8lRhhimdUg9j3VRcVvKX0vG2lz2"
+    },
+    {
+      "uid": "FoWPfDLuNNgus5NQQxQTHsdV9u52",
+      "email": "benhaddirachid343@gmail.com",
+      "companyName": "PRESTIGE CARS 94",
+      "auth": "created_disabled",
+      "clientPath": "clients/FoWPfDLuNNgus5NQQxQTHsdV9u52",
+      "userPath": "users/FoWPfDLuNNgus5NQQxQTHsdV9u52"
+    },
+    {
+      "uid": "vSmbqCCntEfoaQAujhG9RvB52rh2",
+      "email": "akli.meziane@gmail.com",
+      "companyName": "PRO CONSULTING AND SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/vSmbqCCntEfoaQAujhG9RvB52rh2",
+      "userPath": "users/vSmbqCCntEfoaQAujhG9RvB52rh2"
+    },
+    {
+      "uid": "6uhHLwSJbqbIcvFiXTUqqoi7Ngs2",
+      "email": "azzougyanes@gmail.com",
+      "companyName": "PRO SERVICE",
+      "auth": "created_disabled",
+      "clientPath": "clients/6uhHLwSJbqbIcvFiXTUqqoi7Ngs2",
+      "userPath": "users/6uhHLwSJbqbIcvFiXTUqqoi7Ngs2"
+    },
+    {
+      "uid": "25w1hBl2BohsLLJtaHvCgdk5oFy2",
+      "email": "ouarme888@gmail.com",
+      "companyName": "PROTECTION France SECURITY",
+      "auth": "created_disabled",
+      "clientPath": "clients/25w1hBl2BohsLLJtaHvCgdk5oFy2",
+      "userPath": "users/25w1hBl2BohsLLJtaHvCgdk5oFy2"
+    },
+    {
+      "uid": "sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+      "email": "mdiane56@yahoo.fr",
+      "companyName": "RENOVATION 22",
+      "auth": "created_disabled",
+      "clientPath": "clients/sa8pDJw9I1OQ2ESRk6nrRpHWpEz2",
+      "userPath": "users/sa8pDJw9I1OQ2ESRk6nrRpHWpEz2"
+    },
+    {
+      "uid": "kbVvFWUzRph89WpXkfSptUEKlu53",
+      "email": "ouali.saal@gmail.com",
+      "companyName": "RHO TRANSPORTS",
+      "auth": "created_disabled",
+      "clientPath": "clients/kbVvFWUzRph89WpXkfSptUEKlu53",
+      "userPath": "users/kbVvFWUzRph89WpXkfSptUEKlu53"
+    },
+    {
+      "uid": "YzNAocyaClTjTDCqlmPHGPxYXJ02",
+      "email": "hamidielize@gmail.com",
+      "companyName": "S&N SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/YzNAocyaClTjTDCqlmPHGPxYXJ02",
+      "userPath": "users/YzNAocyaClTjTDCqlmPHGPxYXJ02"
+    },
+    {
+      "uid": "crthAL22NrbYFNuqZro7tTg6KQi1",
+      "email": "samiyahadim@yahoo.fr",
+      "companyName": "SH CONSEIL ET GESTION",
+      "auth": "created_disabled",
+      "clientPath": "clients/crthAL22NrbYFNuqZro7tTg6KQi1",
+      "userPath": "users/crthAL22NrbYFNuqZro7tTg6KQi1"
+    },
+    {
+      "uid": "nkLqN6YFLjNIw0BQ5o8l3agHFws1",
+      "email": "boudjemamessaoud9@gmail.com",
+      "companyName": "SIM SECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/nkLqN6YFLjNIw0BQ5o8l3agHFws1",
+      "userPath": "users/nkLqN6YFLjNIw0BQ5o8l3agHFws1"
+    },
+    {
+      "uid": "XuYNdpKzhITaU1oFTo02pIiMV2k2",
+      "email": "smasri.lynda1@gmail.com",
+      "companyName": "SMASRI SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/XuYNdpKzhITaU1oFTo02pIiMV2k2",
+      "userPath": "users/XuYNdpKzhITaU1oFTo02pIiMV2k2"
+    },
+    {
+      "uid": "zTpfdi6UQKRGCISHHMUTaCJX7Q02",
+      "email": "fatah.mouloudj@sofalom.fr",
+      "companyName": "SOFALOM",
+      "auth": "created_disabled",
+      "clientPath": "clients/zTpfdi6UQKRGCISHHMUTaCJX7Q02",
+      "userPath": "users/zTpfdi6UQKRGCISHHMUTaCJX7Q02"
+    },
+    {
+      "uid": "LHupqEF430XAD6KX4YxRDv94wJG3",
+      "email": "contact.sotrabal@gmail.com",
+      "companyName": "STAFF SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/LHupqEF430XAD6KX4YxRDv94wJG3",
+      "userPath": "users/LHupqEF430XAD6KX4YxRDv94wJG3"
+    },
+    {
+      "uid": "TDilOeQF6aNvtcFsrdBHJmLM8hm2",
+      "email": "ste.starcab94@gmail.com",
+      "companyName": "STARCAB94",
+      "auth": "created_disabled",
+      "clientPath": "clients/TDilOeQF6aNvtcFsrdBHJmLM8hm2",
+      "userPath": "users/TDilOeQF6aNvtcFsrdBHJmLM8hm2"
+    },
+    {
+      "uid": "zJjMKUxTslUjSu5R0dCVWsVuJ4b2",
+      "email": "adembensalem@yahoo.fr",
+      "companyName": "STPC",
+      "auth": "created_disabled",
+      "clientPath": "clients/zJjMKUxTslUjSu5R0dCVWsVuJ4b2",
+      "userPath": "users/zJjMKUxTslUjSu5R0dCVWsVuJ4b2"
+    },
+    {
+      "uid": "3ksQaPcKYGbDmsmSPTQvawzq36S2",
+      "email": "sylkaharoun200314@gmail.com",
+      "companyName": "SYLKA COM",
+      "auth": "created_disabled",
+      "clientPath": "clients/3ksQaPcKYGbDmsmSPTQvawzq36S2",
+      "userPath": "users/3ksQaPcKYGbDmsmSPTQvawzq36S2"
+    },
+    {
+      "uid": "KoOApnyRQKUm6zDaUqCZVeLiibJ2",
+      "email": "talebimportexport@gmail.com",
+      "companyName": "TA IMPORT EXPORT",
+      "auth": "created_disabled",
+      "clientPath": "clients/KoOApnyRQKUm6zDaUqCZVeLiibJ2",
+      "userPath": "users/KoOApnyRQKUm6zDaUqCZVeLiibJ2"
+    },
+    {
+      "uid": "O3LYvyp3Yob88NjlvhQmBhrlO3f1",
+      "email": "tbfiber0@gmail.com",
+      "companyName": "TB FIBER",
+      "auth": "created_disabled",
+      "clientPath": "clients/O3LYvyp3Yob88NjlvhQmBhrlO3f1",
+      "userPath": "users/O3LYvyp3Yob88NjlvhQmBhrlO3f1"
+    },
+    {
+      "uid": "HKpSMzVBR7eFV7As13MRYig9N2W2",
+      "email": "ouarezki.nordine@live.fr",
+      "companyName": "TGT AUTOMOBILE",
+      "auth": "created_disabled",
+      "clientPath": "clients/HKpSMzVBR7eFV7As13MRYig9N2W2",
+      "userPath": "users/HKpSMzVBR7eFV7As13MRYig9N2W2"
+    },
+    {
+      "uid": "ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "email": "bbinam29@gmail.com",
+      "companyName": "T-GTE",
+      "auth": "created_disabled",
+      "clientPath": "clients/ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "userPath": "users/ycB7ygmHL8bZXB8FftQQ1tp6B3K3"
+    },
+    {
+      "uid": "5YxPCW8wDuRpoMafV7a4ctz9gkq1",
+      "email": "ahcenetaguemount@hotmail.com",
+      "companyName": "THT SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/5YxPCW8wDuRpoMafV7a4ctz9gkq1",
+      "userPath": "users/5YxPCW8wDuRpoMafV7a4ctz9gkq1"
+    },
+    {
+      "uid": "zpvPLPOG63TnjMVWB7pemdH3spr2",
+      "email": "tarek.kettane2016@gmail.com",
+      "companyName": "TK SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/zpvPLPOG63TnjMVWB7pemdH3spr2",
+      "userPath": "users/zpvPLPOG63TnjMVWB7pemdH3spr2"
+    },
+    {
+      "uid": "a1i54qx2giUSE4HHGdFdcBued8r2",
+      "email": "tarikmahfouf1997@hotmail.com",
+      "companyName": "TM SERVICES PLUS",
+      "auth": "created_disabled",
+      "clientPath": "clients/a1i54qx2giUSE4HHGdFdcBued8r2",
+      "userPath": "users/a1i54qx2giUSE4HHGdFdcBued8r2"
+    },
+    {
+      "uid": "LNcp6w0B07OmHd416qPVMNegsSn1",
+      "email": "sabrina.barbara@icloud.com",
+      "companyName": "TRADING MANAGEMENT SOLUTION",
+      "auth": "created_disabled",
+      "clientPath": "clients/LNcp6w0B07OmHd416qPVMNegsSn1",
+      "userPath": "users/LNcp6w0B07OmHd416qPVMNegsSn1"
+    },
+    {
+      "uid": "lo5PsS0ZNqXpYyY5zieJq0yQDfg1",
+      "email": "transalison2019@gmail.com",
+      "companyName": "TRANS ALISON",
+      "auth": "created_disabled",
+      "clientPath": "clients/lo5PsS0ZNqXpYyY5zieJq0yQDfg1",
+      "userPath": "users/lo5PsS0ZNqXpYyY5zieJq0yQDfg1"
+    },
+    {
+      "uid": "UlhEWwnInLaA2VNMMGUEgMnLW6S2",
+      "email": "transchabour@gmail.com",
+      "companyName": "TRANS CHABOUR",
+      "auth": "created_disabled",
+      "clientPath": "clients/UlhEWwnInLaA2VNMMGUEgMnLW6S2",
+      "userPath": "users/UlhEWwnInLaA2VNMMGUEgMnLW6S2"
+    },
+    {
+      "uid": "mtuBSCj1LpgfsfoFNVvf84G9PX32",
+      "email": "f.saidutd@gmail.com",
+      "companyName": "TRANS LYDIA",
+      "auth": "created_disabled",
+      "clientPath": "clients/mtuBSCj1LpgfsfoFNVvf84G9PX32",
+      "userPath": "users/mtuBSCj1LpgfsfoFNVvf84G9PX32"
+    },
+    {
+      "uid": "qaPhRhCkBgRdVFOFrCU6EFBe7U93",
+      "email": "mameri-rabah@hotmail.fr",
+      "companyName": "TRANS R.N MAM",
+      "auth": "created_disabled",
+      "clientPath": "clients/qaPhRhCkBgRdVFOFrCU6EFBe7U93",
+      "userPath": "users/qaPhRhCkBgRdVFOFrCU6EFBe7U93"
+    },
+    {
+      "uid": "ljGKr0jffDZdjGKje1QABVNEQBh2",
+      "email": "transazi94@gmail.com",
+      "companyName": "TransAZI",
+      "auth": "created_disabled",
+      "clientPath": "clients/ljGKr0jffDZdjGKje1QABVNEQBh2",
+      "userPath": "users/ljGKr0jffDZdjGKje1QABVNEQBh2"
+    },
+    {
+      "uid": "0QFxCCZJn8YFqpmdoXOSIUDesaI2",
+      "email": "transportdujour@outlook.fr",
+      "companyName": "TRANSPORT DU JOUR",
+      "auth": "created_disabled",
+      "clientPath": "clients/0QFxCCZJn8YFqpmdoXOSIUDesaI2",
+      "userPath": "users/0QFxCCZJn8YFqpmdoXOSIUDesaI2"
+    },
+    {
+      "uid": "N98YflSqGfhureKHbkFromHdIy52",
+      "email": "nassim.chelfi@outlook.fr",
+      "companyName": "TRANSPRO'N",
+      "auth": "created_disabled",
+      "clientPath": "clients/N98YflSqGfhureKHbkFromHdIy52",
+      "userPath": "users/N98YflSqGfhureKHbkFromHdIy52"
+    },
+    {
+      "uid": "BHDY9txzB4URU4l4Dg7lGCjXUDH3",
+      "email": "ag.moussouni@gmail.com",
+      "companyName": "TRUCKPRO92",
+      "auth": "created_disabled",
+      "clientPath": "clients/BHDY9txzB4URU4l4Dg7lGCjXUDH3",
+      "userPath": "users/BHDY9txzB4URU4l4Dg7lGCjXUDH3"
+    },
+    {
+      "uid": "WV08OAsOr8Tqt8Tf7ucBYgoMEd42",
+      "email": "gurgen.shamoyan@icloud.com",
+      "companyName": "WALT SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/WV08OAsOr8Tqt8Tf7ucBYgoMEd42",
+      "userPath": "users/WV08OAsOr8Tqt8Tf7ucBYgoMEd42"
+    },
+    {
+      "uid": "sbveEivHyTWLxB0lCatoVnyLOoI3",
+      "email": "yandrive.57@gmail.com",
+      "companyName": "YAN DRIVE",
+      "auth": "created_disabled",
+      "clientPath": "clients/sbveEivHyTWLxB0lCatoVnyLOoI3",
+      "userPath": "users/sbveEivHyTWLxB0lCatoVnyLOoI3"
+    },
+    {
+      "uid": "vqesXyQieWXj21Coo75hQ608Sjb2",
+      "email": "laliouimourad6@gmail.com",
+      "companyName": "ZLS",
+      "auth": "created_disabled",
+      "clientPath": "clients/vqesXyQieWXj21Coo75hQ608Sjb2",
+      "userPath": "users/vqesXyQieWXj21Coo75hQ608Sjb2"
+    },
+    {
+      "uid": "Xj9R5PKw4vaM0vHJVGEoG4FV2br1",
+      "email": "bkdempro@gmail.com",
+      "companyName": "B.K DEM PRO",
+      "auth": "created_disabled",
+      "clientPath": "clients/Xj9R5PKw4vaM0vHJVGEoG4FV2br1",
+      "userPath": "users/Xj9R5PKw4vaM0vHJVGEoG4FV2br1"
+    },
+    {
+      "uid": "fiejYeePxIbREHaXAQ9GGCDBdlG2",
+      "email": "benamarayacine89@gmail.com",
+      "companyName": "BEN RH",
+      "auth": "created_disabled",
+      "clientPath": "clients/fiejYeePxIbREHaXAQ9GGCDBdlG2",
+      "userPath": "users/fiejYeePxIbREHaXAQ9GGCDBdlG2"
+    },
+    {
+      "uid": "FB0xeq5sipb923z5i0ua3qJMq5g2",
+      "email": "tabani_1991@live.fr",
+      "companyName": "BIO'WASH CARS",
+      "auth": "created_disabled",
+      "clientPath": "clients/FB0xeq5sipb923z5i0ua3qJMq5g2",
+      "userPath": "users/FB0xeq5sipb923z5i0ua3qJMq5g2"
+    },
+    {
+      "uid": "cwXLKiFzo8ZWI8HG3hqr22j8ViY2",
+      "email": "oudah.sofiane1993@gmail.com",
+      "companyName": "EDEN FIBRE",
+      "auth": "created_disabled",
+      "clientPath": "clients/cwXLKiFzo8ZWI8HG3hqr22j8ViY2",
+      "userPath": "users/cwXLKiFzo8ZWI8HG3hqr22j8ViY2"
+    },
+    {
+      "uid": "n1ON07rn80aR5v2Yb6SioxlzMY13",
+      "email": "nawalboulahbal85@gmail.com",
+      "companyName": "FIFI SERVICES PLUS",
+      "auth": "created_disabled",
+      "clientPath": "clients/n1ON07rn80aR5v2Yb6SioxlzMY13",
+      "userPath": "users/n1ON07rn80aR5v2Yb6SioxlzMY13"
+    },
+    {
+      "uid": "pkFu0ZBBo2MNHrV1mynJcvGxA1K3",
+      "email": "flayebat@yahoo.com",
+      "companyName": "FLAYE BAT",
+      "auth": "created_disabled",
+      "clientPath": "clients/pkFu0ZBBo2MNHrV1mynJcvGxA1K3",
+      "userPath": "users/pkFu0ZBBo2MNHrV1mynJcvGxA1K3"
+    },
+    {
+      "uid": "rLGELapGoASBKTOy462OVVmr3jG3",
+      "email": "hbservices37@gmail.com",
+      "companyName": "HBS",
+      "auth": "created_disabled",
+      "clientPath": "clients/rLGELapGoASBKTOy462OVVmr3jG3",
+      "userPath": "users/rLGELapGoASBKTOy462OVVmr3jG3"
+    },
+    {
+      "uid": "d0d2D2uDIZTeoL2LQTmLvtXGqqA2",
+      "email": "securitepriveeservice@gmail.com",
+      "companyName": "SERVICE SECURITE PRIVEE",
+      "auth": "created_disabled",
+      "clientPath": "clients/d0d2D2uDIZTeoL2LQTmLvtXGqqA2",
+      "userPath": "users/d0d2D2uDIZTeoL2LQTmLvtXGqqA2"
+    },
+    {
+      "uid": "BLaFUWzrYfhjyKXZtvSdnfr0dA83",
+      "email": "envichlef@gmail.com",
+      "companyName": "BA LOGISTIQUES",
+      "auth": "created_disabled",
+      "clientPath": "clients/BLaFUWzrYfhjyKXZtvSdnfr0dA83",
+      "userPath": "users/BLaFUWzrYfhjyKXZtvSdnfr0dA83"
+    },
+    {
+      "uid": "9SkRWsbAXEZPHNYsRuIhjTBchd23",
+      "email": "contact.bamyp94@gmail.com",
+      "companyName": "BAMYP",
+      "auth": "created_disabled",
+      "clientPath": "clients/9SkRWsbAXEZPHNYsRuIhjTBchd23",
+      "userPath": "users/9SkRWsbAXEZPHNYsRuIhjTBchd23"
+    },
+    {
+      "uid": "NPclTTgsNWUgcuEhy3W74cC9LQT2",
+      "email": "fibreoplus@gmail.com",
+      "companyName": "FIBRE OPLUS",
+      "auth": "created_disabled",
+      "clientPath": "clients/NPclTTgsNWUgcuEhy3W74cC9LQT2",
+      "userPath": "users/NPclTTgsNWUgcuEhy3W74cC9LQT2"
+    },
+    {
+      "uid": "lvO5NoexlVRs9dNr9DPb5g71Leb2",
+      "email": "boufergueneadam@gmail.com",
+      "companyName": "STAF AUTOS",
+      "auth": "created_disabled",
+      "clientPath": "clients/lvO5NoexlVRs9dNr9DPb5g71Leb2",
+      "userPath": "users/lvO5NoexlVRs9dNr9DPb5g71Leb2"
+    },
+    {
+      "uid": "eNWmCAxZqZTEDYaDZVGsF2OGwov1",
+      "email": "store.addict.beaute@gmail.com",
+      "companyName": "STORE ADDICT BEAUTE",
+      "auth": "created_disabled",
+      "clientPath": "clients/eNWmCAxZqZTEDYaDZVGsF2OGwov1",
+      "userPath": "users/eNWmCAxZqZTEDYaDZVGsF2OGwov1"
+    },
+    {
+      "uid": "30dSUfUm36eF84Nzzcpcu0UjkH52",
+      "email": "contact.topservices@gmail.com",
+      "companyName": "TOP SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/30dSUfUm36eF84Nzzcpcu0UjkH52",
+      "userPath": "users/30dSUfUm36eF84Nzzcpcu0UjkH52"
+    },
+    {
+      "uid": "EOuAKuw6cuP79o65gE3uv2JT8Mw1",
+      "email": "gdicar@outlook.fr",
+      "companyName": "TOPOBATI/GD ICAR",
+      "auth": "created_disabled",
+      "clientPath": "clients/EOuAKuw6cuP79o65gE3uv2JT8Mw1",
+      "userPath": "users/EOuAKuw6cuP79o65gE3uv2JT8Mw1"
+    },
+    {
+      "uid": "uLHDLd4WbJZXwLrvVmDmMaYRJLA3",
+      "email": "mal.zegane@gmail.com",
+      "companyName": "ZEGANE MMINKA",
+      "auth": "created_disabled",
+      "clientPath": "clients/uLHDLd4WbJZXwLrvVmDmMaYRJLA3",
+      "userPath": "users/uLHDLd4WbJZXwLrvVmDmMaYRJLA3"
+    },
+    {
+      "uid": "WynYY8VX9wbEl4FUUCw4VYYbpNj1",
+      "email": "belkhisboualem@gmail.com",
+      "companyName": "B.L PRESTA",
+      "auth": "created_disabled",
+      "clientPath": "clients/WynYY8VX9wbEl4FUUCw4VYYbpNj1",
+      "userPath": "users/WynYY8VX9wbEl4FUUCw4VYYbpNj1"
+    },
+    {
+      "uid": "ghfSLErn45WyzFnuuGHp5XQbCOz1",
+      "email": "mahdizerarga3@gmail.com",
+      "companyName": "ZK PRESTA",
+      "auth": "created_disabled",
+      "clientPath": "clients/ghfSLErn45WyzFnuuGHp5XQbCOz1",
+      "userPath": "users/ghfSLErn45WyzFnuuGHp5XQbCOz1"
+    },
+    {
+      "uid": "HHku3eDHNwMKQaNN7RYN5ZatioP2",
+      "email": "rachidhassani93@gmail.com",
+      "companyName": "DJURA FIBRE",
+      "auth": "created_disabled",
+      "clientPath": "clients/HHku3eDHNwMKQaNN7RYN5ZatioP2",
+      "userPath": "users/HHku3eDHNwMKQaNN7RYN5ZatioP2"
+    },
+    {
+      "uid": "oiVjFf8df5WPtENTz3YCNR2ceII3",
+      "email": "contact.kendelservices@gmail.com",
+      "companyName": "KENDEL SERVICES",
+      "auth": "created_disabled",
+      "clientPath": "clients/oiVjFf8df5WPtENTz3YCNR2ceII3",
+      "userPath": "users/oiVjFf8df5WPtENTz3YCNR2ceII3"
+    }
+  ]
+}

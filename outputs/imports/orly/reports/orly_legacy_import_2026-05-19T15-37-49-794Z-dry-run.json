@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-05-19T15:37:50.171Z",
+  "projectId": "bizhome-hub",
+  "mode": "dry-run",
+  "source": "C:\\Users\\Lenovo\\Downloads\\Travail\\ccsdom\\outputs\\imports\\orly\\orly_clients_import_ready.csv",
+  "batchId": "orly_legacy_import_2026-05-19T15-37-49-794Z",
+  "options": {
+    "createAuthDisabled": true,
+    "limit": 3,
+    "writesClientRequests": false,
+    "writesInvoices": false,
+    "sendsEmails": false
+  },
+  "summary": {
+    "scanned": 3,
+    "wouldImport": 3,
+    "imported": 0,
+    "skipped": 0,
+    "wouldCreateAuthDisabled": 3,
+    "createdAuthDisabled": 0,
+    "existingAuthUsers": 0,
+    "legacyIdWithoutAuth": 0
+  },
+  "skipped": [],
+  "candidates": [
+    {
+      "sourceRow": "7",
+      "email": "hocinearib@gmail.com",
+      "companyName": "A.H PLUS DEMENAGEMENT",
+      "siret": "85200647700016",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "8",
+      "email": "ab.services.contactpro@gmail.com",
+      "companyName": "AB SERVICES",
+      "siret": "93882176600012",
+      "auth": "would_create_disabled",
+      "warnings": []
+    },
+    {
+      "sourceRow": "9",
+      "email": "belgacemameziane@gmail.com",
+      "companyName": "ABSH",
+      "siret": "83859117000025",
+      "auth": "would_create_disabled",
+      "warnings": []
+    }
+  ],
+  "created": []
+}

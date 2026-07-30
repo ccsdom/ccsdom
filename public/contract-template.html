@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrat de Domiciliation</title>
+    <style>
+        body { font-family: 'Helvetica', 'Arial', sans-serif; font-size: 10pt; line-height: 1.5; color: #333; }
+        .page { page-break-after: always; }
+        .page:last-child { page-break-after: avoid; }
+        h2 { font-size: 14pt; text-align: center; margin-top: 1rem; margin-bottom: 2rem; }
+        h3 { font-size: 11pt; font-weight: bold; margin-bottom: 0.5rem; }
+        p { margin-top: 0; margin-bottom: 1rem; }
+        .font-bold { font-weight: bold; }
+        .italic { font-style: italic; }
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .signature-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; padding-top: 3rem; }
+        .underline { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h2>CONTRAT DE DOMICILIATION COMMERCIALE</h2>
+
+        <p class="font-bold">Entre les soussignés :</p>
+        <div class="mb-4">
+            <p class="font-bold">{{domiciliataire.name}}</p>
+            <p>{{domiciliataire.type}}, au capital de {{domiciliataire.capital}}</p>
+            <p>Siège social {{domiciliataire.address}}</p>
+            <p>Immatriculée au RCS de {{domiciliataire.rcs}}</p>
+            <p>Agrément préfectoral de {{domiciliataire.approval}}</p>
+            <p>Représentée par {{domiciliataire.representative}}.</p>
+            <p class="italic mb-2">Ci-après désignée « le domiciliataire »</p>
+            <p class="font-bold my-2">D'une part,</p>
+        </div>
+
+        <div class="mb-4">
+            <p class="font-bold">Et</p>
+            <p>La société «{{domicilie.companyName}}»</p>
+            <p>{{domicilie.legalStatus}} au capital de {{domicilie.shareCapital}}€</p>
+            <p>Dont le siège social sera fixé au {{domiciliataire.address}}</p>
+            {{#if (eq domiciliie.projectType "transfert")}}
+                <p>Immatriculée sous le n° {{domicilie.siret}} auprès du RCS de [Ancien Greffe]</p>
+            {{else}}
+                <p>En cours d'immatriculation auprès du RCS de {{domiciliataire.rcsCity}}</p>
+            {{/if}}
+            <p>Représentée par : {{domicilie.firstName}} {{domicilie.lastName}}</p>
+            <p>Agissant en qualité de : {{domicilie.quality}}</p>
+            <p>Et demeurant : {{domicilie.address}}</p>
+            <p>E-mail : {{domicilie.email}}</p>
+            <p>Tel : {{domicilie.phone}}</p>
+            <p class="italic mt-2">Ci-après désignée « le domicilié »</p>
+            <p class="font-bold my-2">D'autre part,</p>
+        </div>
+        
+        <p class="text-center italic mb-8">Ci-après ensemble désignées « les parties »</p>
+
+        <h3 class="mb-2">APRES AVOIR RAPPELE QUE :</h3>
+        <p class="mb-2">{{domiciliataire.name}} dispose d'un local à usage de bureaux situé à {{domiciliataire.address}} qu'il exploite en vue de la prestation de services communs aux entreprises.</p>
+        <p class="mb-4">{{domiciliataire.localDetails}}</p>
+
+        <h3 class="text-center mb-4">IL A ETE CONVENU CE QUI SUIT :</h3>
+        <p><span class="font-bold">Article 1 - Objet :</span> Le présent contrat a pour objet la domiciliation du siège social de l'entreprise domiciliée conformément aux dispositions des articles R 123-167 à R 123-171 du Code de commerce relatifs à la domiciliation des entreprises.</p>
+        <p><span class="font-bold">Article 2 – Obligations du domiciliataire :</span> Le domiciliataire s'engage à : être immatriculé au Registre du Commerce et des Sociétés ou au Répertoire des Métiers ; mettre à la disposition du domicilié des locaux permettant une réunion régulière des organes chargés de la direction, de l'administration ou de la surveillance de l'entreprise et l'installation des services nécessaires à la tenue, à la conservation et à la consultation des livres, registres et documents prescrits par les lois et règlements ; informer le greffe du tribunal, à l'expiration du contrat ou, en cas de résiliation de celui-ci, de la cessation de la domiciliation de l'entreprise dans ses locaux.</p>
+        {{#if (eq domiciliataire.id "orly_ville")}}
+            <p><span class="font-bold">Article 2 bis – Conservation des documents comptables :</span> Le domicilié conserve tous ses livres, registres et documents comptables dans ses propres locaux ou systèmes de stockage. Le domiciliataire ne conserve pas ces documents et n’est pas responsable de leur sécurité ou de leur confidentialité. Le domicilié reste seul responsable de l’exactitude, de la mise à jour et de la conservation de ses documents conformément à la réglementation en vigueur (articles L123-22 et suivants du Code de commerce, 10 ans pour la comptabilité, 6 ans pour les documents fiscaux sauf dispositions spécifiques).</p>
+        {{/if}}
+        <p><span class="font-bold">Article 3 - Obligations du domicilié :</span> Le domicilié s'engage à utiliser effectivement et exclusivement les locaux susvisés pour son siège social et à informer le domiciliataire de toute modification de son activité, de sa forme juridique, de son objet et de l'identité des personnes ayant le pouvoir de l'engager.</p>
+        <p><span class="font-bold">Article 4 - Mandat :</span> Le domicilié donne mandat au domiciliataire de recevoir, en son nom, toute notification.</p>
+    </div>
+    <div class="page">
+        <p><span class="font-bold">Article 5 – Durée :</span> Le présent contrat est consenti pour une durée de 12 Mois à compter du {{today}}. Il se renouvellera par tacite reconduction pour une durée de 12 mois, sauf dénonciation notifiée par l'une des parties par lettre recommandée avec demande d'avis de réception 02 mois avant le terme fixé. Le présent contrat pourra également être résilié par anticipation, par l’une ou l’autre partie en cas de manquement par les présentes. Dans ce cas, la résiliation prend effet de plein droit 30 jours après la réception d’une mise en demeure adressée, par lettre recommandée avec demande d’avis de réception, par la partie lésée à la partie défaillante et demeurée infructueuse. Lors de l'expiration du contrat ou en cas de résiliation, le domiciliataire devra informer le Greffe du Tribunal de commerce de {{domiciliataire.rcsCity}} de la cessation de la domiciliation.</p>
+        <p><span class="font-bold">Article 6 - Redevance :</span> Les tarifs et prestations proposés par la société {{domiciliataire.name}}, et que le domicilié accepte, sont les suivants : {{mailPlan.priceText}}</p>
+        <div style="margin-left: 2rem; margin-top: 1rem;">
+            <p class="font-bold">Formule de réexpédition du courrier :</p>
+            <p>[{{#if (eq mailPlan.id "classic")}}X{{else}} {{/if}}] Aucune</p>
+            {{#if (eq domiciliataire.id "paris_12e")}}
+                <p>[{{#if (ne mailPlan.id "classic")}}X{{else}} {{/if}}] Hebdomadaire 0€ (Enveloppes de réexpédition libellés et affranchies fournies par le client)</p>
+                <p style="font-size: 8pt; margin-top: 0.5rem;">La réexpédition du courrier est limitée à 40 courriers (&lt;20g) par mois. Tout courrier envoyé en sus serait facturé au tarif de 0,75 € en plus des frais postaux en vigueur. La facture de l’affranchissement pour les réexpéditions sera établie mensuellement à la fin du mois civil. La réexpédition postale s’effectue à l'adresse indiquée par le domicilié.</p>
+            {{else}}
+                <p>[{{#if (eq mailPlan.id "business")}}X{{else}} {{/if}}] Mensuelle 10€ HT / Mois ; 30€ HT / Trim. ; 120€ HT / An, hors affranchissement</p>
+                <p>[{{#if (eq mailPlan.id "premium")}}X{{else}} {{/if}}] Hebdomadaire 15€ HT / Mois ; 45€ HT / Trim. ; 180€ HT / An, hors affranchissement</p>
+                <p style="font-size: 8pt; margin-top: 0.5rem;">La réexpédition quotidienne est limitée à 40 courriers (&lt;20g) par mois. Tout courrier envoyé en sus serait facturé au tarif de 0,75 € en plus des frais postaux en vigueur. La facture de l’affranchissement pour les réexpéditions mensuelle, hebdomadaire et bi-hebdomadaire se fera trimestriellement et sera jointe à votre facture de fin de mois. La réexpédition postale s’effectue à l'adresse indiquée par le domicilié.</p>
+            {{/if}}
+        </div>
+        {{#if (eq domiciliataire.id "orly_ville")}}
+            <p><span class="font-bold">Article 6 bis – Récupération du courrier et paiement des redevances :</span> <span class="font-bold">Récupération du courrier :</span> Le domicilié s’engage à récupérer régulièrement son courrier au sein des locaux du domiciliataire ou à organiser sa réexpédition selon la formule choisie. Tout courrier non récupéré pendant 3 mois sera renvoyé à l’expéditeur, à la charge du domicilié. <span class="font-bold">Paiement des redevances :</span> Le domicilié s’engage à régler la redevance annuelle ou mensuelle prévue à l’article 6, ainsi que les frais liés à la réexpédition ou au traitement du courrier, avant l’échéance prévue. En cas de non-paiement, le domiciliataire pourra : suspendre l’accès au courrier et aux services liés à la domiciliation ; appliquer des pénalités de retard conformément à la législation en vigueur ; résilier le contrat après mise en demeure restée infructueuse pendant 30 jours.</p>
+        {{/if}}
+        <p><span class="font-bold">Article 7 – Pièces justificatives :</span> Le domicilié s’engage à communiquer à {{domiciliataire.name}}, lors de la signature du présent contrat, les pièces suivantes : - Une attestation de sa situation d’auto-entrepreneur - Un Kbis si sa société est déjà immatriculée - Une copie d’attestation de parution au Journal Officiel si sa société est en cours de création - La copie de sa pièce d’identité - Un justificatif de domicile - Une procuration postale dûment remplie et signée.</p>
+        <p><span class="font-bold">Article 8 - Dépôt de garantie :</span> Le domicilié verse, au moment de la signature du présent contrat, la somme de soixante-quinze euros 75 € à titre de dépôt de garantie. A la fin du contrat, ce dépôt de garantie sera remboursé déduction faite des sommes éventuellement dues au domiciliataire. Il ne dispense pas le domicilié d'acquitter les loyers jusqu'au terme prévu.</p>
+        <p><span class="font-bold">Article 9 - Attribution de juridiction :</span> Tout litige survenant entre les parties, relatif à l'exécution du présent contrat sera porté devant le tribunal de commerce compétent.</p>
+        <p><span class="font-bold">Article 10 - Signature :</span> Le contrat doit être établi en deux exemplaires originaux, dont l'un doit être remis au Domicilié. Il est impératif que le nom du signataire, sa signature et le cachet de la société {{domiciliataire.name}} soient présents sur chaque exemplaire, à l'exception des contrats validés avec une signature électronique.</p>
+
+        <p class="mt-8">Fait à {{domiciliataire.rcsCity}}, le {{today}} en 02 exemplaires.</p>
+        
+        <div class="signature-section">
+            <div>
+                <h3 class="font-bold">Le domiciliataire</h3>
+                <p>{{domiciliataire.name}}</p>
+            </div>
+            <div>
+                <h3 class="font-bold">Le domicilié</h3>
+                <p>Précédé de la mention manuscrite « Lu et approuvé »</p>
+                <img src="{{domicilie.signatureDataUrl}}" alt="Signature" style="width: 150px; height: auto; margin-top: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

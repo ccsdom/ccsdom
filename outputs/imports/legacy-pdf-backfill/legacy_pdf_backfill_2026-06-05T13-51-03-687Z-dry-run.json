@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-06-05T13:51:01.880Z",
+  "mode": "dry-run",
+  "summary": {
+    "scanned": 227,
+    "eligible": 1,
+    "missingEmail": 0,
+    "missingAddressKey": 0,
+    "alreadyComplete": 0,
+    "contractJobsToCreate": 1,
+    "attestationJobsToCreate": 1,
+    "repaired": 0
+  },
+  "items": [
+    {
+      "clientId": "ycB7ygmHL8bZXB8FftQQ1tp6B3K3",
+      "companyName": "T-GTE",
+      "email": "bbinam29@gmail.com",
+      "addressKey": "orly",
+      "effectiveDateDisplay": "24/04/2025",
+      "needsContract": true,
+      "needsAttestation": true
+    }
+  ]
+}

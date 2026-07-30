@@ -1,0 +1,20 @@
+{
+  "source": "C:\\Users\\Lenovo\\Downloads\\LISTE DOMICILIATION REPRISE (Réparé) (1).xlsx",
+  "total_rows_extracted": 148,
+  "unique_rows": 148,
+  "duplicates_detected": 0,
+  "ready_active_rows": 123,
+  "inactive_rows_excluded_from_ready": 25,
+  "active_with_account_email": 123,
+  "active_without_valid_email": 0,
+  "active_missing_siret": 2,
+  "active_invalid_siret": 1,
+  "active_phone_to_verify": 1,
+  "assumptions": [
+    "centre fixe a orly pour tout le fichier fourni",
+    "forfait par defaut classic pour reprise historique",
+    "frequencePaiement par defaut monthly a confirmer avant import definitif",
+    "les lignes avec date de sortie sont exclues du fichier ready mais conservees dans audit",
+    "createAccount=false quand email absent/invalide afin de ne pas creer de compte digital inutilisable"
+  ]
+}
