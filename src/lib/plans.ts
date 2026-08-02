@@ -16,11 +16,35 @@ export type MailPlan = {
   features: Record<string, MailPlanFeatureValue>;
 };
 
+export const VAT_RATE = 0.20; // TVA 20% France
+
+export function calculateVat(htAmount: number, vatRate = VAT_RATE): number {
+  return Math.round((htAmount * vatRate) * 100) / 100;
+}
+
+export function calculateTtc(htAmount: number, vatRate = VAT_RATE): number {
+  return Math.round((htAmount * (1 + vatRate)) * 100) / 100;
+}
+
+export function formatPriceHt(htAmount: number): string {
+  return `${htAmount.toFixed(2).replace(".", ",")} € HT`;
+}
+
+export function formatPriceTtc(htAmount: number): string {
+  const ttc = calculateTtc(htAmount);
+  return `${ttc.toFixed(2).replace(".", ",")} € TTC`;
+}
+
+export function formatPriceFull(htAmount: number): string {
+  const ttc = calculateTtc(htAmount);
+  return `${htAmount.toFixed(2).replace(".", ",")} € HT (${ttc.toFixed(2).replace(".", ",")} € TTC)`;
+}
+
 export const mailPlans: MailPlan[] = [
   {
     id: "classic",
     name: "Classic",
-    price: "19,99 € HT/mois",
+    price: "19,99 € HT/mois (23,99 € TTC)",
     numericPrice: 19.99,
     description: "Retrait sur place uniquement. Aucun scan, aucune notification.",
     stripeMonthlyPriceId: "price_1S170KCam0qbdqzzQ2MbafOg",
@@ -38,7 +62,7 @@ export const mailPlans: MailPlan[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "29,99 € HT/mois",
+    price: "29,99 € HT/mois (35,99 € TTC)",
     numericPrice: 29.99,
     description: "Scan du courrier et notification email simple.",
     stripeMonthlyPriceId: "price_1S1739Cam0qbdqzzvFqXX7pc",
@@ -56,7 +80,7 @@ export const mailPlans: MailPlan[] = [
   {
     id: "business",
     name: "Business",
-    price: "34,99 € HT/mois",
+    price: "34,99 € HT/mois (41,99 € TTC)",
     numericPrice: 34.99,
     description: "Scan, notification email simple et réexpédition mensuelle.",
     isRecommended: true,
@@ -75,7 +99,7 @@ export const mailPlans: MailPlan[] = [
   {
     id: "premium",
     name: "Premium",
-    price: "39,99 € HT/mois",
+    price: "39,99 € HT/mois (47,99 € TTC)",
     numericPrice: 39.99,
     description: "Scan, résumé IA, alerte prioritaire et réexpédition hebdomadaire.",
     stripeMonthlyPriceId: "price_1SD0NCCam0qbdqzzSV1ldxBM",
@@ -139,7 +163,7 @@ export const expertAccompanimentPlans = {
   creation: {
     id: "expert_creation",
     name: "Accompagnement expert à la création",
-    price: "400 € HT",
+    price: "400 € HT (480 € TTC)",
     numericPrice: 400,
     icon: LifeBuoy,
     stripePriceId: "price_1SDKhHCam0qbdqzzGV8NO114",
@@ -153,7 +177,7 @@ export const expertAccompanimentPlans = {
   transfert: {
     id: "expert_transfert",
     name: "Accompagnement expert au transfert",
-    price: "350 € HT",
+    price: "350 € HT (420 € TTC)",
     numericPrice: 350,
     icon: LifeBuoy,
     stripePriceId: "price_1SDKi4Cam0qbdqzzsYAfwwkI",
@@ -175,3 +199,4 @@ export const soloAccompanimentPlan = {
   stripePriceId: null,
   features: [],
 };
+

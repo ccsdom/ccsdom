@@ -46,8 +46,9 @@ export default function Pricing() {
             choisissez le niveau de service qui correspond au quotidien de votre entreprise.
           </p>
           <p className="mx-auto inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-            Tous les prix affiches sont hors taxes (HT)
+            Prix indiqués HT + TVA 20% (avec détails TTC)
           </p>
+
         </div>
 
         <div className="mb-14 flex items-center justify-center gap-6">
@@ -124,10 +125,18 @@ export default function Pricing() {
                         >
                           <span className="text-5xl font-black tracking-tight text-slate-950">{displayPrice}€</span>
                           <span className="ml-1 font-medium text-slate-500">HT/mois</span>
+                          <p className="mt-1.5 text-xs font-semibold text-slate-500">
+                            soit {(monthlyPrice * (isYearly ? 0.9 : 1) * 1.20).toFixed(2).replace('.', ',')}€ TTC/mois (TVA 20%)
+                          </p>
                         </motion.div>
                       </AnimatePresence>
-                      {isYearly && <p className="mt-2 text-sm font-bold text-primary">Facturé {yearlyPrice.toFixed(2).replace('.', ',')}€ HT/an</p>}
+                      {isYearly && (
+                        <p className="mt-2 text-sm font-bold text-primary">
+                          Facturé {yearlyPrice.toFixed(2).replace('.', ',')}€ HT/an ({ (yearlyPrice * 1.20).toFixed(2).replace('.', ',')}€ TTC/an)
+                        </p>
+                      )}
                     </div>
+
                   </CardHeader>
 
                   <CardContent className="flex-grow pt-4">

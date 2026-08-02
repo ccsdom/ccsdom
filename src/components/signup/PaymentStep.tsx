@@ -334,8 +334,9 @@ const PaymentStep: React.FC<PaymentStepProps> = ({
         </Button>
 
         <p className="max-w-md text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          Les montants affiches dans le parcours sont hors taxes (HT).
+          Montants indiqués HT • La TVA de 20% est automatiquement calculée et appliquée lors du règlement.
         </p>
+
 
         <div className="max-w-md rounded-2xl border border-primary/15 bg-primary/5 p-4 text-left">
           <div className="flex items-start gap-3">

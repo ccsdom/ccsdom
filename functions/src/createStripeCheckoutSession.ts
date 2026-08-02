@@ -177,6 +177,7 @@ export const createStripeCheckoutSession = onCall(
         payment_method_types: ["card"],
         client_reference_id: uid,
         metadata: baseMetadata,
+        automatic_tax: { enabled: true },
         subscription_data:
           finalMode === "subscription"
             ? { metadata: baseMetadata }
@@ -188,6 +189,7 @@ export const createStripeCheckoutSession = onCall(
         billing_address_collection: "required",
         allow_promotion_codes: true,
       });
+
 
       const db = admin.firestore();
       const now = admin.firestore.FieldValue.serverTimestamp();
