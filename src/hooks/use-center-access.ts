@@ -60,9 +60,25 @@ export function useCenterAccess() {
     const expectedIds = new Set(normalizedActualManagedCenterIds);
     setIsCenterAccessLoading(true);
 
+    const fallbackStates = normalizedActualManagedCenterIds.reduce<Record<string, ManagedCenterState>>(
+      (acc, centerId) => {
+        acc[centerId] = buildDefaultCenterState(centerId);
+        return acc;
+      },
+      {}
+    );
+    let hasSettled = false;
+    const loadingTimeout = window.setTimeout(() => {
+      if (hasSettled) return;
+      setCentersById(fallbackStates);
+      setIsCenterAccessLoading(false);
+    }, 5000);
+
     const unsubscribe = onSnapshot(
       collection(db, "centers"),
       (snapshot) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         const nextStates = normalizedActualManagedCenterIds.reduce<Record<string, ManagedCenterState>>(
           (acc, centerId) => {
             acc[centerId] = buildDefaultCenterState(centerId);
@@ -90,20 +106,18 @@ export function useCenterAccess() {
         setIsCenterAccessLoading(false);
       },
       (error) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         console.error("[useCenterAccess] Failed to observe centers:", error);
-        const fallbackStates = normalizedActualManagedCenterIds.reduce<Record<string, ManagedCenterState>>(
-          (acc, centerId) => {
-            acc[centerId] = buildDefaultCenterState(centerId);
-            return acc;
-          },
-          {}
-        );
         setCentersById(fallbackStates);
         setIsCenterAccessLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      window.clearTimeout(loadingTimeout);
+      unsubscribe();
+    };
   }, [db, requiresManagedCenterChecks, normalizedActualManagedCenterIds]);
 
   const suspendedCenters = React.useMemo(() => {
