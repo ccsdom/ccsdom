@@ -57,6 +57,8 @@ import { useCenterAccess } from '@/hooks/use-center-access';
 import { httpsCallable, getFunctions } from 'firebase/functions';
 import { useAuth, useDb, useFirebase, useCollection, useMemoFirebase } from '@/firebase';
 import { AddressAutocomplete } from '@/components/address-autocomplete';
+import { SubscriptionPlanBadge, SubscriptionPlanLegend } from '@/components/subscription-plan-badge';
+import { resolveMailPlanId, type MailPlanId } from '@/lib/plans';
 
 /* =========================
    Types & constantes
@@ -1115,11 +1117,17 @@ const ClientTable = ({
   const [sortDescriptor, setSortDescriptor] = React.useState<{ column: keyof Client; direction: 'asc' | 'desc'; }>({ column: 'joinDate', direction: 'desc' });
   const [searchTerm, setSearchTerm] = React.useState('');
   const [statusFilter, setStatusFilter] = React.useState<'all' | ClientStatus>('all');
+  const [planFilter, setPlanFilter] = React.useState<'all' | MailPlanId>('all');
   const [editingClient, setEditingClient] = React.useState<Client | null>(null);
 
   const filteredAndSortedClients = React.useMemo(() => {
     let filtered = clients;
     if (statusFilter !== 'all') filtered = filtered.filter(client => client.status === statusFilter);
+    if (planFilter !== 'all') {
+      filtered = filtered.filter(
+        client => resolveMailPlanId(client as unknown as Record<string, any>) === planFilter
+      );
+    }
     if (searchTerm) {
       const t = searchTerm.toLowerCase();
       filtered = filtered.filter(client => client.name.toLowerCase().includes(t) || client.email.toLowerCase().includes(t));
@@ -1131,7 +1139,7 @@ const ClientTable = ({
       const cmp = first < second ? -1 : first > second ? 1 : 0;
       return sortDescriptor.direction === 'desc' ? -cmp : cmp;
     });
-  }, [clients, sortDescriptor, searchTerm, statusFilter]);
+  }, [clients, sortDescriptor, searchTerm, statusFilter, planFilter]);
 
   const totalPages = Math.ceil(filteredAndSortedClients.length / pageSize);
   const paginatedClients = React.useMemo(() => {
@@ -1193,6 +1201,18 @@ const ClientTable = ({
             <SelectItem value="En attente de validation">En attente de validation</SelectItem>
           </SelectContent>
         </Select>
+        <Select value={planFilter} onValueChange={(v) => setPlanFilter(v as 'all' | MailPlanId)}>
+          <SelectTrigger className="w-full sm:w-[180px]">
+            <SelectValue placeholder="Filtrer par forfait" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous les forfaits</SelectItem>
+            <SelectItem value="classic">Classic</SelectItem>
+            <SelectItem value="starter">Starter</SelectItem>
+            <SelectItem value="business">Business</SelectItem>
+            <SelectItem value="premium">Premium</SelectItem>
+          </SelectContent>
+        </Select>
 
         {selectedClients.length > 0 && (
           <DropdownMenu>
@@ -1210,6 +1230,13 @@ const ClientTable = ({
             </DropdownMenuContent>
           </DropdownMenu>
         )}
+      </div>
+
+      <div className="mb-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Repères forfaits</span>
+          <SubscriptionPlanLegend />
+        </div>
       </div>
 
       {/* Mobile */}
@@ -1263,7 +1290,7 @@ const ClientTable = ({
               <CardContent className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="font-medium">Offre</p>
-                  <p className="text-muted-foreground capitalize">{client.plan}</p>
+                  <SubscriptionPlanBadge planId={client.plan} className="mt-1" />
                 </div>
                 <div>
                   <p className="font-medium">Statut</p>
@@ -1346,7 +1373,7 @@ const ClientTable = ({
                       <div className="font-normal">{client.email}</div>
                       <div className="text-xs text-muted-foreground">{client.phone}</div>
                     </TableCell>
-                    <TableCell className="capitalize">{client.plan}</TableCell>
+                    <TableCell><SubscriptionPlanBadge planId={client.plan} compact /></TableCell>
                     <TableCell>{getJoinDate(client)}</TableCell>
                     <TableCell>
                       <Badge

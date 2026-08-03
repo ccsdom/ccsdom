@@ -55,6 +55,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { SubscriptionPlanBadge } from "@/components/subscription-plan-badge";
 import {
   Table,
   TableBody,
@@ -527,6 +528,7 @@ export default function AdminValidationPage() {
                               <CardDescription className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
                                 {item.siret || "SIRET non renseigné"}
                               </CardDescription>
+                              {item.mailPlanId ? <SubscriptionPlanBadge planId={item.mailPlanId} compact /> : null}
                             </div>
                             <Badge
                               variant={getSignupStatusVariant(item.status)}
@@ -635,6 +637,7 @@ export default function AdminValidationPage() {
                             <div className="mt-1 w-fit rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-500">
                               {item.siret || "SANS SIRET"}
                             </div>
+                            {item.mailPlanId ? <SubscriptionPlanBadge planId={item.mailPlanId} compact className="mt-1.5" /> : null}
                           </TableCell>
 
                           <TableCell>

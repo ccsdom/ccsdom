@@ -85,6 +85,7 @@ import {
 import { CLIENT_STATUS, SIGNUP_REQUEST_STATUS } from "@/lib/constants/signup";
 import { getSignupStatusLabel, getSignupStatusVariant } from "@/features/signup/status";
 import { isMailScanEnabled, resolveMailPlanId, type MailPlanId } from "@/lib/plans";
+import { SubscriptionPlanBadge } from "@/components/subscription-plan-badge";
 
 const scanSchema = z.object({
   client: z.string().min(1, { message: "Veuillez sélectionner un client." }),
@@ -154,20 +155,6 @@ function getClientMailPlanId(client: Partial<Client>): MailPlanId {
 
 function clientCanReceiveDigitalMail(client: Partial<Client>) {
   return isMailScanEnabled(getClientMailPlanId(client));
-}
-
-function getMailPlanLabel(planId: MailPlanId) {
-  switch (planId) {
-    case "starter":
-      return "Starter";
-    case "business":
-      return "Business";
-    case "premium":
-      return "Premium";
-    case "classic":
-    default:
-      return "Classic";
-  }
 }
 
 function canSeeClientForRole(
@@ -964,19 +951,11 @@ export default function ScanMailPage() {
                                             <Badge variant="outline" className="text-[10px] h-4 px-1 border-slate-200 bg-white text-slate-500">
                                               {getCenterName(getClientCenterId(client))}
                                             </Badge>
-                                            <Badge
-                                              variant="outline"
-                                              className={cn(
-                                                "text-[10px] h-4 px-1",
-                                                canReceiveDigitalMail
-                                                  ? "border-primary/20 bg-primary/5 text-primary"
-                                                  : "border-amber-200 bg-amber-50 text-amber-700"
-                                              )}
-                                            >
-                                              {canReceiveDigitalMail
-                                                ? getMailPlanLabel(planId)
-                                                : "Classic - retrait"}
-                                            </Badge>
+                                            <SubscriptionPlanBadge
+                                              planId={planId}
+                                              compact
+                                              suffix={canReceiveDigitalMail ? undefined : "- retrait"}
+                                            />
                                             <span className="text-[10px] text-slate-400 truncate">
                                               {client.email}
                                             </span>
@@ -1030,18 +1009,10 @@ export default function ScanMailPage() {
                         <Badge variant="outline" className="border-primary/20 bg-primary/10 text-primary">
                           {getCenterName(getClientCenterId(selectedClient))}
                         </Badge>
-                        <Badge
-                          variant="outline"
-                          className={cn(
-                            selectedClientCanReceiveDigitalMail
-                              ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                              : "border-amber-200 bg-amber-50 text-amber-700"
-                          )}
-                        >
-                          {selectedClientCanReceiveDigitalMail
-                            ? getMailPlanLabel(getClientMailPlanId(selectedClient))
-                            : "Classic - retrait"}
-                        </Badge>
+                        <SubscriptionPlanBadge
+                          planId={getClientMailPlanId(selectedClient)}
+                          suffix={selectedClientCanReceiveDigitalMail ? undefined : "- retrait"}
+                        />
                       </div>
                     </div>
                     {!selectedClientCanReceiveDigitalMail ? (

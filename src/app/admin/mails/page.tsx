@@ -54,6 +54,7 @@ import { OperationalAccessNotice } from "@/components/admin/operational-access-n
 import { legacyCenterKey } from "@/lib/access-control";
 import { SIGNUP_REQUEST_STATUS } from "@/lib/constants/signup";
 import { getSignupStatusLabel, getSignupStatusVariant } from "@/features/signup/status";
+import { SubscriptionPlanBadge } from "@/components/subscription-plan-badge";
 
 /* =========================
    Types & Config
@@ -73,6 +74,7 @@ interface Mail {
   receivedAt: any;
   status: string;
   centerKey?: string;
+  planId?: string;
   summary?: string;
   analysis?: any;
   aiAnalysis?: any;
@@ -1500,6 +1502,7 @@ function MailCard({ mail, isUrgent = false, onUpdateStatus, formatDate }: {
                 <Badge variant="outline" className="h-5 border-slate-200 bg-slate-50 py-0 text-[9px] text-slate-600">
                   {getCenterDisplayLabel(mail.centerKey)}
                 </Badge>
+                {mail.planId ? <SubscriptionPlanBadge planId={mail.planId} compact /> : null}
                 <Badge variant="outline" className={cn("text-[9px] py-0 h-4", notificationMeta.className)}>
                   {notificationMeta.label}
                 </Badge>
