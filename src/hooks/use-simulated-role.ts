@@ -60,6 +60,21 @@ const EMPTY_ACCESS: RoleAccess = {
   managedCenterIds: [],
 };
 
+async function withTimeout<T>(
+  promise: Promise<T>,
+  fallback: T,
+  timeoutMs: number
+): Promise<T> {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<T>((resolve) => {
+    timeoutId = setTimeout(() => resolve(fallback), timeoutMs);
+  });
+
+  return Promise.race([promise, timeout]).finally(() => {
+    if (timeoutId) clearTimeout(timeoutId);
+  });
+}
+
 function rolesShareOperationalScope(
   first: UserRole | null,
   second: UserRole | null
@@ -197,15 +212,23 @@ export const useRole = (): {
         return;
       }
 
-      let claimsAccess = await fetchAccessFromClaims(user, false);
-      const firestoreAccess = await fetchAccessFromFirestore(user.uid, db);
+      const claimsPromise = fetchAccessFromClaims(user, false);
+      const firestorePromise = fetchAccessFromFirestore(user.uid, db);
+      let [claimsAccess, firestoreAccess] = await Promise.all([
+        withTimeout(claimsPromise, EMPTY_ACCESS, 4000),
+        withTimeout(firestorePromise, EMPTY_ACCESS, 4000),
+      ]);
 
       if (
         !claimsAccess.role ||
         claimsAccess.role === "client" ||
         (firestoreAccess.role && firestoreAccess.role !== claimsAccess.role)
       ) {
-        const refreshedAccess = await fetchAccessFromClaims(user, true);
+        const refreshedAccess = await withTimeout(
+          fetchAccessFromClaims(user, true),
+          EMPTY_ACCESS,
+          4000
+        );
         if (refreshedAccess.role) claimsAccess = refreshedAccess;
       }
 
@@ -220,6 +243,16 @@ export const useRole = (): {
       setActualManagedAddressId(access.managedAddressId);
       setActualManagedCenterIds(access.managedCenterIds);
       setIsLoading(false);
+
+      void Promise.all([claimsPromise, firestorePromise]).then(
+        ([resolvedClaims, resolvedFirestore]) => {
+          if (cancelled) return;
+          const resolvedAccess = mergeAccessSources(resolvedClaims, resolvedFirestore);
+          setActualRole(resolvedAccess.role ?? "client");
+          setActualManagedAddressId(resolvedAccess.managedAddressId);
+          setActualManagedCenterIds(resolvedAccess.managedCenterIds);
+        }
+      );
     });
 
     return () => {
