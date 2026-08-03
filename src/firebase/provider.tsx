@@ -1,6 +1,6 @@
 'use client';
 
-import React, { DependencyList, createContext, useContext, ReactNode, useMemo, useState, useEffect } from 'react';
+import React, { DependencyList, createContext, useContext, ReactNode, useMemo, useState, useEffect, useRef } from 'react';
 import { FirebaseApp } from 'firebase/app';
 import { Firestore, doc, onSnapshot } from 'firebase/firestore';
 import { FirebaseStorage } from 'firebase/storage';
@@ -76,6 +76,7 @@ export const FirebaseProvider: React.FC<FirebaseProviderProps> = ({
   googleProvider,
   payments,
 }) => {
+  const lastTokenRefreshProfileKey = useRef<string | null>(null);
   const [userAuthState, setUserAuthState] = useState<UserAuthState>({
     user: null,
     isUserLoading: true,
@@ -104,11 +105,13 @@ export const FirebaseProvider: React.FC<FirebaseProviderProps> = ({
   }, [auth]);
 
   // --- REFRESH TOKEN EFFECT ---
-  // Surveille le document 'users/{uid}' pour détecter un changement de rôle
-  // et forcer le rafraîchissement du token (Custom Claims) sans relog.
+  // Observe le document 'users/{uid}' pour detecter un changement de role
+  // et force un rafraichissement unique des Custom Claims sans reconnexion.
   useEffect(() => {
     const user = userAuthState.user;
     if (!user || !firestore) return;
+
+    lastTokenRefreshProfileKey.current = null;
 
     const userDocRef = doc(firestore, 'users', user.uid);
     const unsubscribe = onSnapshot(userDocRef, async (snap) => {
@@ -125,8 +128,18 @@ export const FirebaseProvider: React.FC<FirebaseProviderProps> = ({
 
         // Si divergence entre Firestore et le Token
         if (data.role !== currentClaimRole || data.managedAddressId !== currentClaimAddress || centersChanged) {
+          const profileKey = [
+            user.uid,
+            String(data.role ?? ""),
+            String(data.managedAddressId ?? ""),
+            firestoreCenters.join("|"),
+          ].join("::");
+
+          if (lastTokenRefreshProfileKey.current === profileKey) return;
+          lastTokenRefreshProfileKey.current = profileKey;
+
           console.log(`[FirebaseProvider] Role/Address update detected for ${user.uid}. Refreshing token...`);
-          // Force refresh (true) pour récupérer les nouveaux claims du backend
+          // Force une seule actualisation du token pour cette version du profil.
           await user.getIdToken(true);
           console.log(`[FirebaseProvider] Token refreshed successfully.`);
         }
