@@ -1,6 +1,6 @@
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
-import { analyzeClientFlow } from "../../ai/flows/analyzeClient";
+
 
 /**
  * Analyse un client via l'IA Genkit.
@@ -29,10 +29,12 @@ export const analyzeClient = onCall({ region: "europe-west9" }, async (request) 
   try {
     logger.info(`[analyzeClient] Lancement de l'analyse pour: ${clientData.companyName || clientData.name}`);
     
-    // 3. Exécution du flux Genkit
+    // 3. Exécution du flux Genkit (lazy import pour optimiser l'initialisation)
+    const { analyzeClientFlow } = await import("../../ai/flows/analyzeClient");
     const result = await analyzeClientFlow(clientData);
     
     return result;
+
   } catch (error: any) {
     logger.error("[analyzeClient] Erreur lors de l'analyse IA:", error);
     throw new HttpsError("internal", "Une erreur est survenue lors de l'analyse IA.");

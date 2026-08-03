@@ -46,6 +46,8 @@ test-results/
 functions/secrets/
 .agents/
 .codex-dev-server*
+.codex-*
+
 
 # Editor directories and files
 .vscode

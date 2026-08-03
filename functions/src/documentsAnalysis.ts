@@ -4,9 +4,9 @@ import * as logger from "firebase-functions/logger";
 import { getStorage } from "firebase-admin/storage";
 
 import { GEMINI_API_KEY, GENAI_MODEL_NAME, DOCAI_PROCESSOR_NAME } from "./_config/secrets";
-import { analyzeIdentityDocFlow } from "./ai/flows/analyzeIdentityDoc";
 
 if (!admin.apps.length) admin.initializeApp();
+
 
 type VerificationStatus = "processing" | "passed" | "warning" | "failed" | "unreadable" | "unsupported";
 type CheckStatus = "passed" | "warning" | "failed" | "missing" | "skipped";
@@ -109,11 +109,14 @@ export const analyzeIdentityDocuments = onObjectFinalized(
       const file = storage.bucket(bucket).file(path);
       const [buffer] = await file.download();
 
+      const { analyzeIdentityDocFlow } = await import("./ai/flows/analyzeIdentityDoc");
+
       const analysis = await analyzeIdentityDocFlow({
         docType,
         fileBase64: buffer.toString("base64"),
         contentType,
       });
+
 
       const report = buildVerificationReport({
         docType,
