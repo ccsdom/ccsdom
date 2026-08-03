@@ -231,9 +231,16 @@ export default function AdminValidationPage() {
       q = query(q, where("addressKey", "in", scopedAddressKeys));
     }
 
+    let hasSettled = false;
+    const loadingTimeout = window.setTimeout(() => {
+      if (!hasSettled) setLoading(false);
+    }, 5000);
+
     const unsub = onSnapshot(
       q,
       (snapshot) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         const next: SignupRequestItem[] = snapshot.docs.map((docSnap) => ({
           id: docSnap.id,
           ...(docSnap.data() as Omit<SignupRequestItem, "id">),
@@ -242,6 +249,8 @@ export default function AdminValidationPage() {
         setLoading(false);
       },
       (error) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         console.error("[AdminValidationPage] onSnapshot error:", error);
         toast({
           variant: "destructive",
@@ -252,7 +261,10 @@ export default function AdminValidationPage() {
       }
     );
 
-    return () => unsub();
+    return () => {
+      window.clearTimeout(loadingTimeout);
+      unsub();
+    };
   }, [db, toast, displayRole, managedCenterIds, isSuperAdminView]);
 
   const filteredItems = React.useMemo(() => {

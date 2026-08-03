@@ -529,19 +529,31 @@ export default function ScanMailPage() {
       mailsQuery = query(mailsQuery, where("centerKey", "in", scopedCenterKeys));
     }
 
+    let hasSettled = false;
+    const loadingTimeout = window.setTimeout(() => {
+      if (!hasSettled) setIsFetchingMails(false);
+    }, 5000);
+
     const unsubscribe = onSnapshot(
       mailsQuery,
       (snapshot) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         setRecentMails(snapshot.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() } as MailRecord)));
         setIsFetchingMails(false);
       },
       (error) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         console.error("Error fetching recent mails:", error);
         setIsFetchingMails(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      window.clearTimeout(loadingTimeout);
+      unsubscribe();
+    };
   }, [db, displayRole, isSuperAdminView, effectiveManagedCenterIds]);
 
   useEffect(() => {
@@ -573,9 +585,16 @@ export default function ScanMailPage() {
       requestsQuery = query(requestsQuery, where("addressKey", "in", scopedAddressKeys));
     }
 
+    let hasSettled = false;
+    const loadingTimeout = window.setTimeout(() => {
+      if (!hasSettled) setIsFetchingRequests(false);
+    }, 5000);
+
     const unsubscribe = onSnapshot(
       requestsQuery,
       (snapshot) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         const nextRequests = snapshot.docs
           .map((docSnap) => ({ id: docSnap.id, ...docSnap.data() } as FollowUpRequest))
           .filter((request) => requestNeedsFollowUp(request))
@@ -584,12 +603,17 @@ export default function ScanMailPage() {
         setIsFetchingRequests(false);
       },
       (error) => {
+        hasSettled = true;
+        window.clearTimeout(loadingTimeout);
         console.error("Error fetching follow-up requests:", error);
         setIsFetchingRequests(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      window.clearTimeout(loadingTimeout);
+      unsubscribe();
+    };
   }, [db, displayRole, isSuperAdminView, scopedAddressKeys]);
 
   // Pre-select client if ID is in URL
