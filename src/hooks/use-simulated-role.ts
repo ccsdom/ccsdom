@@ -5,12 +5,11 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { UserRole } from "@/lib/types/user";
 import {
-  onAuthStateChanged,
   getIdTokenResult,
   type User as FirebaseUser,
 } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { useAuth, useDb } from "@/firebase";
+import { useDb, useUser } from "@/firebase";
 import { normalizeRole } from "@/lib/constants/roles";
 import {
   managedAddressIdFromData,
@@ -174,8 +173,8 @@ export const useRole = (): {
   actualManagedCenterIds: string[];
   isLoading: boolean;
 } => {
-  const auth = useAuth();
   const db = useDb();
+  const { user, isUserLoading } = useUser();
 
   const [actualRole, setActualRole] = React.useState<UserRole | null>(null);
   const [actualManagedAddressId, setActualManagedAddressId] = React.useState<string | null>(null);
@@ -185,33 +184,25 @@ export const useRole = (): {
   const { simulatedRole, setSimulatedRole, reset } = useSimulatedRoleStore();
 
   React.useEffect(() => {
-    if (auth === null) {
-      setIsLoading(false);
+    if (isUserLoading) {
+      setIsLoading(true);
+      return;
+    }
+
+    let cancelled = false;
+
+    if (!user) {
       setActualRole(null);
       setActualManagedAddressId(null);
       setActualManagedCenterIds([]);
       reset();
+      setIsLoading(false);
       return;
     }
 
-    if (!auth) return;
+    setIsLoading(true);
 
-    let cancelled = false;
-
-    const unsub = onAuthStateChanged(auth, async (user) => {
-      if (cancelled) return;
-
-      setIsLoading(true);
-
-      if (!user) {
-        setActualRole(null);
-        setActualManagedAddressId(null);
-        setActualManagedCenterIds([]);
-        reset();
-        setIsLoading(false);
-        return;
-      }
-
+    const resolveAccess = async () => {
       const claimsPromise = fetchAccessFromClaims(user, false);
       const firestorePromise = fetchAccessFromFirestore(user.uid, db);
       let [claimsAccess, firestoreAccess] = await Promise.all([
@@ -233,12 +224,9 @@ export const useRole = (): {
       }
 
       const access = mergeAccessSources(claimsAccess, firestoreAccess);
+      if (cancelled) return;
 
-      let role = access.role;
-      if (!role) {
-        role = "client";
-      }
-
+      const role = access.role ?? "client";
       setActualRole(role);
       setActualManagedAddressId(access.managedAddressId);
       setActualManagedCenterIds(access.managedCenterIds);
@@ -253,13 +241,14 @@ export const useRole = (): {
           setActualManagedCenterIds(resolvedAccess.managedCenterIds);
         }
       );
-    });
+    };
+
+    void resolveAccess();
 
     return () => {
       cancelled = true;
-      unsub();
     };
-  }, [auth, db, reset]);
+  }, [db, isUserLoading, reset, user]);
 
   // Reset simulation if actual role is no longer super_admin
   React.useEffect(() => {
