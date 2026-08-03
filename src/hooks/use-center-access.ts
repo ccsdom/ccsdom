@@ -120,6 +120,15 @@ export function useCenterAccess() {
     };
   }, [db, requiresManagedCenterChecks, normalizedActualManagedCenterIds]);
 
+  React.useEffect(() => {
+    if (!isCenterAccessLoading) return;
+
+    const timeout = window.setTimeout(() => {
+      setIsCenterAccessLoading(false);
+    }, 7000);
+
+    return () => window.clearTimeout(timeout);
+  }, [isCenterAccessLoading]);
   const suspendedCenters = React.useMemo(() => {
     return normalizedActualManagedCenterIds
       .map((centerId) => centersById[centerId] ?? buildDefaultCenterState(centerId))

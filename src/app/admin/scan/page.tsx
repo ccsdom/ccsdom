@@ -624,6 +624,16 @@ export default function ScanMailPage() {
     };
   }, [db, displayRole, isSuperAdminView, scopedAddressKeysKey]);
 
+  useEffect(() => {
+    if (!isFetchingMails && !isFetchingRequests) return;
+
+    const timeout = window.setTimeout(() => {
+      setIsFetchingMails(false);
+      setIsFetchingRequests(false);
+    }, 7000);
+
+    return () => window.clearTimeout(timeout);
+  }, [isFetchingMails, isFetchingRequests]);
   // Pre-select client if ID is in URL
   useEffect(() => {
     if (preselectedClientId && clients.length > 0 && !form.getValues("client")) {

@@ -271,6 +271,12 @@ export default function AdminValidationPage() {
     };
   }, [db, toast, displayRole, managedCenterIdsKey, isSuperAdminView]);
 
+  React.useEffect(() => {
+    if (!loading) return;
+
+    const timeout = window.setTimeout(() => setLoading(false), 7000);
+    return () => window.clearTimeout(timeout);
+  }, [loading]);
   const filteredItems = React.useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return items;
