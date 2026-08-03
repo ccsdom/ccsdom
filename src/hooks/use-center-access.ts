@@ -149,6 +149,7 @@ export function useCenterAccess() {
 
   return {
     ...roleState,
+    isLoading: roleState.isLoading || isCenterAccessLoading,
     managedCenterIds: effectiveManagedCenterIds,
     managedAddressId: effectiveManagedAddressId,
     actualManagedCenterIds:

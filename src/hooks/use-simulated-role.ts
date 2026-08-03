@@ -60,6 +60,46 @@ const EMPTY_ACCESS: RoleAccess = {
   managedCenterIds: [],
 };
 
+function rolesShareOperationalScope(
+  first: UserRole | null,
+  second: UserRole | null
+): boolean {
+  if (!first || !second) return true;
+  if (first === second) return true;
+
+  const managerRoles: UserRole[] = ["manager", "manager_paris", "manager_orly"];
+  const secretaryRoles: UserRole[] = ["secretary_paris", "secretary_orly"];
+
+  return (
+    (managerRoles.includes(first) && managerRoles.includes(second)) ||
+    (secretaryRoles.includes(first) && secretaryRoles.includes(second))
+  );
+}
+
+function mergeAccessSources(claims: RoleAccess, profile: RoleAccess): RoleAccess {
+  const role =
+    !claims.role || claims.role === "client"
+      ? profile.role ?? claims.role
+      : claims.role;
+  const canUseProfileScope = rolesShareOperationalScope(claims.role, profile.role);
+  const managedCenterIds = Array.from(
+    new Set([
+      ...claims.managedCenterIds,
+      ...(canUseProfileScope ? profile.managedCenterIds : []),
+    ])
+  );
+
+  return {
+    role,
+    managedCenterIds,
+    managedAddressId:
+      (canUseProfileScope ? profile.managedAddressId : null) ??
+      claims.managedAddressId ??
+      managedCenterIds[0] ??
+      null,
+  };
+}
+
 function accessFromData(data: any, fallbackRole?: UserRole | null): RoleAccess {
   const role = normalizeRole(data?.role) ?? fallbackRole ?? null;
   const managedCenterIds = managedCenterIdsFromData(data, role);
@@ -157,21 +197,19 @@ export const useRole = (): {
         return;
       }
 
-      let access = await fetchAccessFromClaims(user, false);
+      let claimsAccess = await fetchAccessFromClaims(user, false);
+      const firestoreAccess = await fetchAccessFromFirestore(user.uid, db);
 
-      if (!access.role || access.role === "client") {
-        const firestoreAccess = await fetchAccessFromFirestore(user.uid, db);
-        if (firestoreAccess.role) {
-          access = firestoreAccess;
-        }
-      }
-
-      if (!access.role || access.role === "client") {
+      if (
+        !claimsAccess.role ||
+        claimsAccess.role === "client" ||
+        (firestoreAccess.role && firestoreAccess.role !== claimsAccess.role)
+      ) {
         const refreshedAccess = await fetchAccessFromClaims(user, true);
-        if (refreshedAccess.role) {
-          access = refreshedAccess;
-        }
+        if (refreshedAccess.role) claimsAccess = refreshedAccess;
       }
+
+      const access = mergeAccessSources(claimsAccess, firestoreAccess);
 
       let role = access.role;
       if (!role) {
