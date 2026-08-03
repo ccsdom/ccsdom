@@ -7,9 +7,8 @@ import { GENAI_MODEL_NAME, DOCAI_PROCESSOR_NAME } from "./_config/secrets";
 setGlobalOptions({
   region: "europe-west9",
   maxInstances: 5,
-  // ✅ secrets globaux (dispos dans tous les modules)
-  secrets: [GENAI_MODEL_NAME, DOCAI_PROCESSOR_NAME],
 });
+
 
 if (!admin.apps.length) admin.initializeApp();
 
