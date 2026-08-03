@@ -200,6 +200,10 @@ export default function AdminValidationPage() {
   const [loading, setLoading] = React.useState(true);
   const [search, setSearch] = React.useState("");
 
+  const managedCenterIdsKey = React.useMemo(
+    () => [...managedCenterIds].sort().join("|"),
+    [managedCenterIds]
+  );
   React.useEffect(() => {
     if (isSuperAdminView) {
       setItems([]);
@@ -265,7 +269,7 @@ export default function AdminValidationPage() {
       window.clearTimeout(loadingTimeout);
       unsub();
     };
-  }, [db, toast, displayRole, managedCenterIds, isSuperAdminView]);
+  }, [db, toast, displayRole, managedCenterIdsKey, isSuperAdminView]);
 
   const filteredItems = React.useMemo(() => {
     const q = search.trim().toLowerCase();

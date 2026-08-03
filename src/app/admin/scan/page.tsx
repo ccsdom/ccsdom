@@ -324,6 +324,14 @@ export default function ScanMailPage() {
     [effectiveManagedCenterIds]
   );
 
+  const effectiveManagedCenterIdsKey = useMemo(
+    () => [...effectiveManagedCenterIds].sort().join("|"),
+    [effectiveManagedCenterIds]
+  );
+  const scopedAddressKeysKey = useMemo(
+    () => [...scopedAddressKeys].sort().join("|"),
+    [scopedAddressKeys]
+  );
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(true);
@@ -491,7 +499,7 @@ export default function ScanMailPage() {
     };
   }, [
     displayRole,
-    effectiveManagedCenterIds,
+    effectiveManagedCenterIdsKey,
     db,
     toast,
     isSuperAdminView,
@@ -554,7 +562,7 @@ export default function ScanMailPage() {
       window.clearTimeout(loadingTimeout);
       unsubscribe();
     };
-  }, [db, displayRole, isSuperAdminView, effectiveManagedCenterIds]);
+  }, [db, displayRole, isSuperAdminView, effectiveManagedCenterIdsKey]);
 
   useEffect(() => {
     if (isSuperAdminView) {
@@ -614,7 +622,7 @@ export default function ScanMailPage() {
       window.clearTimeout(loadingTimeout);
       unsubscribe();
     };
-  }, [db, displayRole, isSuperAdminView, scopedAddressKeys]);
+  }, [db, displayRole, isSuperAdminView, scopedAddressKeysKey]);
 
   // Pre-select client if ID is in URL
   useEffect(() => {
