@@ -28,7 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useAuth, useDb, useFirebase, useStorage } from "@/firebase";
+import { useDb, useFirebase, useStorage, useUser } from "@/firebase";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -339,12 +339,11 @@ function useMailData() {
   const [lastVisible, setLastVisible] = useState<QueryDocumentSnapshot | null>(null);
   const [hasMore, setHasMore] = useState(true);
 
-  const auth = useAuth();
+  const { user: currentUser, isUserLoading } = useUser();
   const db = useDb();
   const storage = useStorage();
   const { toast } = useToast();
 
-  const currentUser = auth?.currentUser ?? null;
 
   const normalizeStatus = useCallback((status?: string): Status => {
     switch (String(status ?? "").trim()) {
@@ -394,7 +393,14 @@ function useMailData() {
 
   const fetchPage = useCallback(
     async (mode: "initial" | "more") => {
-      if (!currentUser || !db) return;
+      if (!db || isUserLoading) return;
+      if (!currentUser) {
+        if (mode === "initial") {
+          setMails([]);
+          setIsLoading(false);
+        }
+        return;
+      }
 
       if (mode === "initial") setIsLoading(true);
 
@@ -451,13 +457,13 @@ function useMailData() {
         if (mode === "initial") setIsLoading(false);
       }
     },
-    [currentUser, db, lastVisible, normalizeStatus, resolveDocUrl, toast]
+    [currentUser, db, isUserLoading, lastVisible, normalizeStatus, resolveDocUrl, toast]
   );
 
   useEffect(() => {
     fetchPage("initial");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentUser?.uid]);
+  }, [currentUser?.uid, isUserLoading]);
 
   const refresh = useCallback(() => fetchPage("initial"), [fetchPage]);
 
@@ -513,6 +519,13 @@ function useMailData() {
     },
     [db, currentUser, denormalizeStatus]
   );
+
+  useEffect(() => {
+    if (!isLoading) return;
+
+    const timeout = window.setTimeout(() => setIsLoading(false), 7000);
+    return () => window.clearTimeout(timeout);
+  }, [isLoading]);
 
   return {
     mails,

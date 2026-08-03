@@ -630,8 +630,18 @@ function AdminMailManagerContent() {
     );
 
     return () => unsubscribe();
-  }, [db, displayRole, isSuperAdminView, managedCenterIds]);
+  }, [db, displayRole, isSuperAdminView, managedCenterKeySignature]);
 
+  useEffect(() => {
+    if (!loading && !requestsLoading) return;
+
+    const timeout = window.setTimeout(() => {
+      setLoading(false);
+      setRequestsLoading(false);
+    }, 7000);
+
+    return () => window.clearTimeout(timeout);
+  }, [loading, requestsLoading]);
   const { urgentMails, regularMails } = useMemo(() => {
     const scopedCenterSet = new Set(scopedCenterKeys);
 
